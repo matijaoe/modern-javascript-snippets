@@ -1,0 +1,446 @@
+{
+  "const ⚡": {
+    "prefix": "co",
+    "body": [
+      "const $1"
+    ],
+    "description": "const statement"
+  },
+  "let ⚡": {
+    "prefix": "le",
+    "body": [
+      "let $1"
+    ],
+    "description": "let statement"
+  },
+  "const assignment ⚡": {
+    "prefix": "ca",
+    "body": [
+      "const ${1:name} = $2"
+    ],
+    "description": "const assignment"
+  },
+  "let assignment ⚡": {
+    "prefix": "la",
+    "body": [
+      "let ${1:name} = $2"
+    ],
+    "description": "let assignment"
+  },
+  "class ⚡": {
+    "prefix": "cls",
+    "body": [
+      "class $1"
+    ],
+    "description": "class"
+  },
+  "function ⚡": {
+    "prefix": "fn",
+    "body": [
+      "function ${1:name}($2) {",
+      "\t$3",
+      "}"
+    ],
+    "description": ""
+  },
+  "export function ⚡": {
+    "prefix": "exfn",
+    "body": [
+      "export function ${1:name}($2) {",
+      "\t$3",
+      "}"
+    ],
+    "description": ""
+  },
+  "named arrow function ⚡": {
+    "prefix": "nfn",
+    "body": [
+      "const ${1:name} = ($2) => {$3}"
+    ],
+    "description": ""
+  },
+  "export named arrow function ⚡": {
+    "prefix": "exnfn",
+    "body": [
+      "export const ${1:name} = ($2) => {$3}"
+    ],
+    "description": ""
+  },
+  "anon arrow function ⚡": {
+    "prefix": [
+      "anfn",
+      "af"
+    ],
+    "body": [
+      "($1) => $2"
+    ],
+    "description": ""
+  },
+  "console.log ⚡": {
+    "prefix": "cl",
+    "body": [
+      "console.log($1)"
+    ],
+    "description": ""
+  },
+  "consoleLogMessage": {
+    "prefix": "clm",
+    "body": [
+      "console.log('$1')"
+    ],
+    "description": "Console log message."
+  },
+  "console.log object": {
+    "prefix": "clo",
+    "body": [
+      "console.log({ $1 })"
+    ],
+    "description": ""
+  },
+  "console.log from clipboard": {
+    "prefix": "clc",
+    "body": [
+      "console.log({ $CLIPBOARD })"
+    ],
+    "description": ""
+  },
+  "console.log item ⚡": {
+    "prefix": "cli",
+    "body": [
+      "console.log('$1 :>>', ${2:$1})"
+    ],
+    "description": ""
+  },
+  "console.error ⚡": {
+    "prefix": "cer",
+    "body": [
+      "console.error('$1')"
+    ],
+    "description": ""
+  },
+  "console.warn ⚡": {
+    "prefix": "cwa",
+    "body": [
+      "console.warn('$1')"
+    ],
+    "description": ""
+  },
+  "consoleLogGroup": {
+    "prefix": "clg",
+    "body": [
+      "// ====== LOG START ======",
+      "console.log('\\n')",
+      "console.group('Log')",
+      "console.log(${1})",
+      "console.groupEnd()",
+      "console.log('\\n')",
+      "// ====== LOG END ======",
+      "$0"
+    ],
+    "description": "Console log, wrapped in a formatted and styled console group."
+  },
+  "console.table ⚡": {
+    "prefix": "cta",
+    "body": [
+      "console.table($1)"
+    ],
+    "description": ""
+  },
+  "destructure object ⚡": {
+    "prefix": "dob",
+    "body": [
+      "const { $2 } = ${1:object}"
+    ],
+    "description": ""
+  },
+  "destructure array ⚡": {
+    "prefix": "dar",
+    "body": [
+      "const [$2] = ${1:array}"
+    ],
+    "description": ""
+  },
+  "const string ⚡": {
+    "prefix": "cst",
+    "body": [
+      "const ${1:name} = '$2'"
+    ],
+    "description": "init array"
+  },
+  "const array ⚡": {
+    "prefix": "car",
+    "body": [
+      "const ${1:items} = [$2]"
+    ],
+    "description": "init array"
+  },
+  "const object ⚡": {
+    "prefix": "cob",
+    "body": [
+      "const ${1:name} = { $2 }"
+    ],
+    "description": "init array"
+  },
+  "native fetch ⚡": {
+    "prefix": "fetch",
+    "body": [
+      "fetch('$1').then(res => res.json())"
+    ],
+    "description": ""
+  },
+  "const native fetch ⚡": {
+    "prefix": "cfetch",
+    "body": [
+      "const ${2|data,{ data }|} = await fetch('$1').then(res => res.json())"
+    ],
+    "description": ""
+  },
+  "setInterval ⚡": {
+    "prefix": "si",
+    "body": "setInterval(() => {\n\t${2}\n}, ${1:delay})",
+    "description": "Executes the given function at specified intervals in ES6 syntax"
+  },
+  "setTimeout ⚡": {
+    "prefix": "st",
+    "body": "setTimeout(() => {\n\t${2}\n}, ${1:delay})",
+    "description": "Executes the given function after the specified delay in ES6 syntax"
+  },
+  "import ⚡": {
+    "prefix": "im",
+    "body": "import { $2 } from '$1'",
+    "description": ""
+  },
+  "import default ⚡": {
+    "prefix": "imd",
+    "body": "import $2 from '$1'",
+    "description": ""
+  },
+  "import all ⚡": {
+    "prefix": "imda",
+    "body": "import * as $2 from '$1'",
+    "description": ""
+  },
+  "export all from ⚡": {
+    "prefix": "exa",
+    "body": "export * from '$1'",
+    "description": ""
+  },
+  "export from ⚡": {
+    "prefix": "exfr",
+    "body": "export { $2 } from '$1'",
+    "description": ""
+  },
+  "Object.entries ⚡": {
+    "prefix": "oe",
+    "body": [
+      "Object.entries(${0:object})"
+    ],
+    "description": "Object.entries() method."
+  },
+  "Object.fromEntries ⚡": {
+    "prefix": "ofe",
+    "body": [
+      "Object.fromEntries(${0:iterable})"
+    ],
+    "description": "Object.fromEntries() method."
+  },
+  "Object.keys ⚡": {
+    "prefix": "ok",
+    "body": [
+      "Object.keys(${0:object})"
+    ],
+    "description": "Object.keys() method."
+  },
+  "Object.values ⚡": {
+    "prefix": "ov",
+    "body": [
+      "Object.values(${0:object})"
+    ],
+    "description": "Object.values() method."
+  },
+  "if ⚡": {
+    "prefix": "if",
+    "body": "if (${1:condition}) {\n\t${2}\n}",
+    "description": ""
+  },
+  "if-else ⚡": {
+    "prefix": "ife",
+    "body": "if (${1:condition}) {\n\t${2}\n} else {\n\t${3}\n}",
+    "description": ""
+  },
+  "try-catch ⚡": {
+    "prefix": "tc",
+    "body": [
+      "try {",
+      "\t$0",
+      "} catch (error) {",
+      "\t",
+      "}"
+    ],
+    "description": "Try-catch statement."
+  },
+  "try-catch-finally ⚡": {
+    "prefix": "tcf",
+    "body": [
+      "try {",
+      "\t$0",
+      "} catch (error) {",
+      "\t",
+      "} finally {",
+      "\t",
+      "}"
+    ],
+    "description": "Try-catch-finally statement."
+  },
+  "try-finally ⚡": {
+    "prefix": "tf",
+    "body": [
+      "try {",
+      "\t$0",
+      "} finally {",
+      "\t",
+      "}"
+    ],
+    "description": "Try-finally statement."
+  },
+  "JSON.parse ⚡": {
+    "prefix": "jp",
+    "body": [
+      "JSON.parse(${1:json})"
+    ],
+    "description": "JSON.parse() method."
+  },
+  "JSON.stringify ⚡": {
+    "prefix": "js",
+    "body": [
+      "JSON.stringify(${1:value})"
+    ],
+    "description": "JSON.stringify() method."
+  },
+  "JSON.stringify pretty ⚡": {
+    "prefix": "jsp",
+    "body": [
+      "JSON.stringify(${1:value}, null, 2)"
+    ],
+    "description": "JSON.stringify() method."
+  },
+  "OR (||) ⚡": {
+    "prefix": "or",
+    "body": [
+      "|| $0"
+    ],
+    "description": ""
+  },
+  "AND (&&) ⚡": {
+    "prefix": "and",
+    "body": [
+      "&& $0"
+    ],
+    "description": ""
+  },
+  "Nullish coalescing (??) ⚡": {
+    "prefix": "nc",
+    "body": [
+      "?? $0"
+    ],
+    "description": ""
+  },
+  "strict equality (===) ⚡": {
+    "prefix": "eq",
+    "body": [
+      "=== $0"
+    ],
+    "description": ""
+  },
+  "logical OR expression ⚡": {
+    "prefix": "ore",
+    "body": [
+      "${1:value} || ${2:value}"
+    ],
+    "description": ""
+  },
+  "logical AND expression ⚡": {
+    "prefix": "ande",
+    "body": [
+      "${1:value} && ${2:value}"
+    ],
+    "description": ""
+  },
+  "Nullish coalescing expression (??) ⚡": {
+    "prefix": "nce",
+    "body": [
+      "${1:item} ?? ${2:default}"
+    ],
+    "description": ""
+  },
+  "strict equality expression ⚡": {
+    "prefix": "eqe",
+    "body": [
+      "${1:value} === ${2:value}"
+    ],
+    "description": ""
+  },
+  "Ternary expression ⚡": {
+    "prefix": "ter",
+    "body": [
+      "${1:condition} ? ${2:ifTrue} : ${3:ifFalse}"
+    ],
+    "description": ""
+  },
+  "Logical OR assignment (||=) ⚡": {
+    "prefix": "ora",
+    "body": [
+      "${1:name} ||= ${2:default}"
+    ],
+    "description": ""
+  },
+  "Nullish coalescing assignment (??=) ⚡": {
+    "prefix": "nca",
+    "body": [
+      "${1:name} ??= ${2:default}"
+    ],
+    "description": ""
+  },
+  "addition assignment ⚡": {
+    "prefix": "add",
+    "body": [
+      "${1:value} += ${2:1}"
+    ],
+    "description": ""
+  },
+  "subtraction assignment ⚡": {
+    "prefix": "sub",
+    "body": [
+      "${1:value} -= ${2:1}"
+    ],
+    "description": ""
+  },
+  "multiplication assignment ⚡": {
+    "prefix": "mul",
+    "body": [
+      "${1:value} *= ${2:1}"
+    ],
+    "description": ""
+  },
+  "division assignment ⚡": {
+    "prefix": "div",
+    "body": [
+      "${1:value} /= ${2:1}"
+    ],
+    "description": ""
+  },
+  "is nil ⚡": {
+    "prefix": "isNil",
+    "body": [
+      "${1:value} == null"
+    ],
+    "description": ""
+  },
+  "is not nil ⚡": {
+    "prefix": "notNil",
+    "body": [
+      "${1:value} != null"
+    ],
+    "description": ""
+  }
+}

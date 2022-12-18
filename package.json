@@ -1,0 +1,29 @@
+{
+  "name": "modern-javascript-snippets",
+  "displayName": "Modern JavaScript Snippets",
+  "version": "0.0.1",
+  "description": "",
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "javascript",
+    "typescript",
+    "es6"
+  ],
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/javascript.json"
+      }
+    ]
+  }
+}
