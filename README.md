@@ -1,6 +1,6 @@
 # Modern JavaScript Snippets ⚡
 
-    🚧 *Work in progress*
+    🚧 Work in progress
 
 
 
