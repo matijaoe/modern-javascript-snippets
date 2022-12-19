@@ -1,10 +1,13 @@
 # Modern JavaScript Snippets ⚡
 
+    🚧 *Work in progress*
+
+
+
 > Short and memorable JavaScript & TypeScript snippets for the modern-day developer.
 
-🚧 *Work in progress*
+<br>
 
----
 ![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1C.svg?style=for-the-badge&logo=javascript&logoColor=%23323330)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
@@ -25,7 +28,7 @@ Supported file extensions:
 The following is not mandatory, but provides a nicer experience.
 
 Search for `editor.snippetSuggestions` and `editor.snippetSuggestions` in user settings, or edit the settings.json directly:
-```json
+```jsonc
 // Show snippet suggestions on top of other suggestions.
 "editor.snippetSuggestions": "top",
 
