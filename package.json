@@ -13,8 +13,7 @@
   "publisher": "matijao",
   "repository": "https://github.com/mat2ja/modern-javascript-snippets",
   "categories": [
-    "Snippets",
-    "Programming Languages"
+    "Snippets"
   ],
   "keywords": [
     "javascript",
@@ -22,7 +21,13 @@
     "js",
     "ts",
     "es6",
-    "ESNext"
+    "es10",
+    "esnext",
+    "intellisense",
+    "autocomplete",
+    "vscode",
+    "snippets",
+    "snippet"
   ],
   "galleryBanner": {
     "color": "#EFDB50",
