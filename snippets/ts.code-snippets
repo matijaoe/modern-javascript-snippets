@@ -1,0 +1,65 @@
+{
+  "const assignment (typed) ⚡": {
+    "prefix": "cat",
+    "body": [
+      "const ${1:name}: ${2:string} = ${3:value}"
+    ],
+    "description": "const assignment"
+  },
+  "let assignment (typed) ⚡": {
+    "prefix": "lat",
+    "body": [
+      "let ${1:name}: ${2:string} = ${3:value}"
+    ],
+    "description": "let assignment"
+  },
+  "const array (typed) ⚡": {
+    "prefix": "caat",
+    "body": [
+      "const ${1:items}: ${2:string[]} = [$0]"
+    ],
+    "description": "array assignment"
+  },
+  "const object (typed) ⚡": {
+    "prefix": "caot",
+    "body": [
+      "const ${1:name}: ${2:object} = { $0 }"
+    ],
+    "description": "object assignment"
+  },
+  "interface ⚡": {
+    "prefix": "int",
+    "body": [
+      "interface ${1:Model} {\n\t$0\n}"
+    ],
+    "description": ""
+  },
+  "interface extends ⚡": {
+    "prefix": "inte",
+    "body": [
+      "interface ${1:Model} extends {2:Base} {\n\t$0\n}"
+    ],
+    "description": ""
+  },
+  "type ⚡": {
+    "prefix": "tp",
+    "body": [
+      "type ${1:Model} = $0"
+    ],
+    "description": ""
+  },
+  "type union ⚡": {
+    "prefix": "tpu",
+    "body": [
+      "type ${1:Model} = $2 | $3"
+    ],
+    "description": ""
+  },
+  "type intersection ⚡": {
+    "prefix": "tpi",
+    "body": [
+      "type ${1:Model} = $2 & $3"
+    ],
+    "description": ""
+  },
+}

@@ -1,13 +1,14 @@
 {
+  // Declarations
   "const ⚡": {
-    "prefix": "co",
+    "prefix": "c",
     "body": [
       "const $1"
     ],
     "description": "const statement"
   },
   "let ⚡": {
-    "prefix": "le",
+    "prefix": "l",
     "body": [
       "let $1"
     ],
@@ -16,136 +17,46 @@
   "const assignment ⚡": {
     "prefix": "ca",
     "body": [
-      "const ${1:name} = $2"
+      "const ${1:name} = ${2:value}"
     ],
     "description": "const assignment"
   },
   "let assignment ⚡": {
     "prefix": "la",
     "body": [
-      "let ${1:name} = $2"
+      "let ${1:name} = ${2:value}"
     ],
     "description": "let assignment"
   },
-  "class ⚡": {
-    "prefix": "cls",
+  "const string ⚡": {
+    "prefix": "cas",
     "body": [
-      "class $1"
+      "const ${1:name} = '$0'"
     ],
-    "description": "class"
+    "description": "string assignment"
   },
-  "function ⚡": {
-    "prefix": "fn",
+  "const string with template literals ⚡": {
+    "prefix": "catl",
     "body": [
-      "function ${1:name}($2) {",
-      "\t$3",
-      "}"
+      "const ${1:name} = `$0`"
     ],
-    "description": ""
+    "description": "string assignment with template literals"
   },
-  "export function ⚡": {
-    "prefix": "exfn",
+  "const array ⚡": {
+    "prefix": "caa",
     "body": [
-      "export function ${1:name}($2) {",
-      "\t$3",
-      "}"
+      "const ${1:items} = [$0]"
     ],
-    "description": ""
+    "description": "array assignment"
   },
-  "named arrow function ⚡": {
-    "prefix": "nfn",
+  "const object ⚡": {
+    "prefix": "cao",
     "body": [
-      "const ${1:name} = ($2) => {$3}"
+      "const ${1:name} = { $0 }"
     ],
-    "description": ""
+    "description": "object assignment"
   },
-  "export named arrow function ⚡": {
-    "prefix": "exnfn",
-    "body": [
-      "export const ${1:name} = ($2) => {$3}"
-    ],
-    "description": ""
-  },
-  "anon arrow function ⚡": {
-    "prefix": [
-      "anfn",
-      "af"
-    ],
-    "body": [
-      "($1) => $2"
-    ],
-    "description": ""
-  },
-  "console.log ⚡": {
-    "prefix": "cl",
-    "body": [
-      "console.log($1)"
-    ],
-    "description": ""
-  },
-  "consoleLogMessage": {
-    "prefix": "clm",
-    "body": [
-      "console.log('$1')"
-    ],
-    "description": "Console log message."
-  },
-  "console.log object": {
-    "prefix": "clo",
-    "body": [
-      "console.log({ $1 })"
-    ],
-    "description": ""
-  },
-  "console.log from clipboard": {
-    "prefix": "clc",
-    "body": [
-      "console.log({ $CLIPBOARD })"
-    ],
-    "description": ""
-  },
-  "console.log item ⚡": {
-    "prefix": "cli",
-    "body": [
-      "console.log('$1 :>>', ${2:$1})"
-    ],
-    "description": ""
-  },
-  "console.error ⚡": {
-    "prefix": "cer",
-    "body": [
-      "console.error('$1')"
-    ],
-    "description": ""
-  },
-  "console.warn ⚡": {
-    "prefix": "cwa",
-    "body": [
-      "console.warn('$1')"
-    ],
-    "description": ""
-  },
-  "consoleLogGroup": {
-    "prefix": "clg",
-    "body": [
-      "// ====== LOG START ======",
-      "console.log('\\n')",
-      "console.group('Log')",
-      "console.log(${1})",
-      "console.groupEnd()",
-      "console.log('\\n')",
-      "// ====== LOG END ======",
-      "$0"
-    ],
-    "description": "Console log, wrapped in a formatted and styled console group."
-  },
-  "console.table ⚡": {
-    "prefix": "cta",
-    "body": [
-      "console.table($1)"
-    ],
-    "description": ""
-  },
+  // Destructuring
   "destructure object ⚡": {
     "prefix": "dob",
     "body": [
@@ -160,26 +71,183 @@
     ],
     "description": ""
   },
-  "const string ⚡": {
-    "prefix": "cst",
+  // Class
+  "class ⚡": {
+    "prefix": "cs",
     "body": [
-      "const ${1:name} = '$2'"
+      "class ${1:Name} {\n\t$0\n}"
     ],
-    "description": "init array"
+    "description": "class"
   },
-  "const array ⚡": {
-    "prefix": "car",
+  "class extends ⚡": {
+    "prefix": "cse",
     "body": [
-      "const ${1:items} = [$2]"
+      "class ${1:Class} extends ${2:Base} {\n\t$0\n}"
     ],
-    "description": "init array"
+    "description": "class"
   },
-  "const object ⚡": {
-    "prefix": "cob",
+  "class with constructior ⚡": {
+    "prefix": "csc",
     "body": [
-      "const ${1:name} = { $2 }"
+      "class ${1:Class} {",
+      "\tconstructor($2) {",
+      "\t\t$0",
+      "\t}",
+      "}"
     ],
-    "description": "init array"
+    "description": "class with constructor"
+  },
+  "class extends with constructor ⚡": {
+    "prefix": "csec",
+    "body": [
+      "class ${1:Class} extends ${2:Base} {",
+      "\tconstructor($3) {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "class extends with constructor"
+  },
+  // Functions
+  "function ⚡": {
+    "prefix": "fn",
+    "body": [
+      "function ${1:name}($2) {",
+      "\t$0",
+      "}"
+    ],
+    "description": ""
+  },
+  "export function ⚡": {
+    "prefix": "efn",
+    "body": [
+      "export function ${1:name}($2) {",
+      "\t$0",
+      "}"
+    ],
+    "description": ""
+  },
+  "named arrow function ⚡": {
+    "prefix": "nfn",
+    "body": [
+      "const ${1:name} = ($2) => {$0}"
+    ],
+    "description": ""
+  },
+  "export named arrow function ⚡": {
+    "prefix": "enfn",
+    "body": [
+      "export const ${1:name} = ($2) => {$0}"
+    ],
+    "description": ""
+  },
+  "arrow function ⚡": {
+    "prefix": "af",
+    "body": [
+      "($1) => $0"
+    ],
+    "description": ""
+  },
+  "arrow function with body ⚡": {
+    "prefix": "afb",
+    "body": [
+      "($1) => {",
+      "\t$0",
+      "}"
+    ],
+    "description": ""
+  },
+  "method ⚡": {
+    "prefix": "met",
+    "body": [
+      "${1:name}($2) {\n\t$0\n}"
+    ],
+    "description": ""
+  },
+  // Console
+  "console.log ⚡": {
+    "prefix": "cl",
+    "body": [
+      "console.log($0)"
+    ],
+    "description": ""
+  },
+  "console.log message ⚡": {
+    "prefix": "clm",
+    "body": [
+      "console.log('$0')"
+    ],
+    "description": "Console log message."
+  },
+  "console.log object ⚡": {
+    "prefix": "clo",
+    "body": [
+      "console.log({ $0 })"
+    ],
+    "description": ""
+  },
+  "console.log from clipboard ⚡": {
+    "prefix": "clc",
+    "body": [
+      "console.log({ $CLIPBOARD })"
+    ],
+    "description": ""
+  },
+  "console.log labeled ⚡": {
+    "prefix": "cll",
+    "body": [
+      "console.log('$1 ->', $1$2)"
+    ],
+    "description": ""
+  },
+  "console.error ⚡": {
+    "prefix": "ce",
+    "body": [
+      "console.error('$1')"
+    ],
+    "description": ""
+  },
+  "console.error labeled ⚡": {
+    "prefix": "ce",
+    "body": [
+      "console.error('$1 ->', $1$2)"
+    ],
+    "description": ""
+  },
+  "console.warn ⚡": {
+    "prefix": "cw",
+    "body": [
+      "console.warn('$1')"
+    ],
+    "description": ""
+  },
+  "console.warn labeled ⚡": {
+    "prefix": "cwl",
+    "body": [
+      "console.warn('$1 ->', ${2:$1})"
+    ],
+    "description": ""
+  },
+  "console group": {
+    "prefix": "clg",
+    "body": [
+      "// ====== LOG START ======",
+      "console.log('\\n')",
+      "console.group('Log')",
+      "console.log(${1})",
+      "console.groupEnd()",
+      "console.log('\\n')",
+      "// ====== LOG END ======",
+      "$0"
+    ],
+    "description": "Console log, wrapped in a formatted and styled console group."
+  },
+  "console.table ⚡": {
+    "prefix": "ct",
+    "body": [
+      "ckonsole.table($1)"
+    ],
+    "description": ""
   },
   "native fetch ⚡": {
     "prefix": "fetch",
@@ -230,6 +298,11 @@
     "body": "export { $2 } from '$1'",
     "description": ""
   },
+  "export default ⚡": {
+    "prefix": "exd",
+    "body": "export default $0",
+    "description": ""
+  },
   "Object.entries ⚡": {
     "prefix": "oe",
     "body": [
@@ -258,14 +331,30 @@
     ],
     "description": "Object.values() method."
   },
+  // Flow
   "if ⚡": {
     "prefix": "if",
-    "body": "if (${1:condition}) {\n\t${2}\n}",
+    "body": "if (${1:condition}) {\n\t${2}\n}$0",
     "description": ""
   },
   "if-else ⚡": {
     "prefix": "ife",
     "body": "if (${1:condition}) {\n\t${2}\n} else {\n\t${3}\n}",
+    "description": ""
+  },
+  "if-else-if ⚡": {
+    "prefix": "ifei",
+    "body": "if (${1:condition}) {\n\t${2}\n} else {\n\t${3}\n}",
+    "description": ""
+  },
+  "else ⚡": {
+    "prefix": "el",
+    "body": "else {\n\t${3}\n}",
+    "description": ""
+  },
+  "else if ⚡": {
+    "prefix": "ei",
+    "body": "else if (${1:condition}) {\n\t${2}\n}",
     "description": ""
   },
   "try-catch ⚡": {
@@ -278,6 +367,30 @@
       "}"
     ],
     "description": "Try-catch statement."
+  },
+  "switch ⚡": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:cond}) {",
+      "\tcase ${2:value}:",
+      "\t\t$0",
+      "\t\t\tbreak;",
+      "\tdefault:",
+      "\t\tbreak;",
+      "}"
+    ],
+    "description": "Switch statement"
+  },
+  "case ⚡": {
+    "prefix": [
+      "case"
+    ],
+    "body": [
+      "case ${1:value}:",
+      "\tt$0",
+      "\tbreak;"
+    ],
+    "description": "Case clause."
   },
   "try-catch-finally ⚡": {
     "prefix": "tcf",
@@ -430,17 +543,31 @@
     "description": ""
   },
   "is nil ⚡": {
-    "prefix": "isNil",
+    "prefix": "nil",
     "body": [
       "${1:value} == null"
     ],
     "description": ""
   },
   "is not nil ⚡": {
-    "prefix": "notNil",
+    "prefix": "nnil",
     "body": [
       "${1:value} != null"
     ],
     "description": ""
+  },
+  "template literal string ⚡": {
+    "prefix": "tls",
+    "body": [
+      "`$1${$2}$3`"
+    ],
+    "description": "template literal string"
+  },
+  "template literal expression ⚡": {
+    "prefix": "tl",
+    "body": [
+      "${$2}"
+    ],
+    "description": "template literal"
   }
 }
