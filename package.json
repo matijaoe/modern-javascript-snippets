@@ -1,21 +1,28 @@
 {
-  "name": "modern-javascript-snippets",
+  "name": "modern-js-snippets",
   "displayName": "Modern JavaScript Snippets",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.4",
+  "description": "Code snippets for modern JavaScript ⚡",
+  "license": "MIT",
   "categories": [
     "Snippets"
   ],
+  "scripts": {
+    "publish": "vsce package && vsce publish"
+  },
   "keywords": [
     "javascript",
     "typescript",
+    "js",
+    "ts",
     "es6"
   ],
+  "icon": "assets/icon.png",
   "engines": {
-    "vscode": "^1.74.0"
+    "vscode": "^1.x.x"
   },
   "author": {
-    "name": "matijao"
+    "name": "Matija Osrečki"
   },
   "publisher": "matijao",
   "repository": {
