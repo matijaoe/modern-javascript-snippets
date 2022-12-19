@@ -52,7 +52,7 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 ### Placeholders
 - Placeholders are tabstops with values, such as `${1:name}` 
 - Placeholder text will be inserted and selected such that it can be easily changed 
-- Can be nested, like `${1:another ${2:placeholder}}`.
+- Can be nested, like `${1:another ${2:placeholder}}`
 
 
 ## Snippets
