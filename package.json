@@ -5,7 +5,8 @@
   "description": "Code snippets for modern JavaScript & TypeScript ⚡",
   "license": "MIT",
   "categories": [
-    "Snippets"
+    "Snippets",
+    "Programming Languages"
   ],
   "scripts": {
     "publish": "vsce package && vsce publish"

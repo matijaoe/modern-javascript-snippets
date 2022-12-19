@@ -1,8 +1,58 @@
 # Modern JavaScript Snippets ⚡
 
-*Work in progress*
+> Short and memorable JavaScript & TypeScript snippets for the modern-day developer.
+
+🚧 *Work in progress*
 
 ---
+![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1C.svg?style=for-the-badge&logo=javascript&logoColor=%23323330)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+
+
+
+## Support
+Only JavaScript and TypeScript will be supported. 
+Specific frameworks will get their own extensions. No bloat.
+
+Supported file extensions:
+- `.js`
+- `.ts`
+- `.jsx`
+- `.tsx`
+
+
+## Setup
+The following is not mandatory, but provides a nicer experience.
+
+Search for `editor.snippetSuggestions` and `editor.snippetSuggestions` in user settings, or edit the settings.json directly:
+```json
+// Show snippet suggestions on top of other suggestions.
+"editor.snippetSuggestions": "top",
+
+// Tab complete will insert the best matching suggestion when pressing tab.
+"editor.snippetSuggestions": "on"
+```
+
+## Style
+All code snippets are without semicolons (`;`). 
+
+You can use these snippets along with Prettier/ESLint to have your code automatically formatted to your preference.
+
+## Snippet syntax
+
+### Tabstops
+- With tabstops you can make the editor cursor move inside a snippet
+- `$1`, `$2`, `$3` specify cursor locations, in order in which tabstops will be visited
+- `$0` denotes the final cursor position
+- Multiple occurrences of the same tabstop are linked and updated in sync
+
+### Placeholders
+- Placeholders are tabstops with values, such as `${1:name}` 
+- Placeholder text will be inserted and selected such that it can be easily changed 
+- Can be nested, like `${1:another ${2:placeholder}}`.
+
+
+## Snippets
 
 ### Declarations
 
@@ -111,7 +161,7 @@ const ${1:name} = ($2) => {$0}
 
 #### `enfn` &nbsp; - &nbsp; export named arrow function
 ```js
-const ${1:name} = ($2) => {$0}
+export const ${1:name} = ($2) => {$0}
 ```
 
 #### `af` &nbsp; - &nbsp; arrow function
@@ -142,7 +192,7 @@ console.log($0)
 
 #### `clm` &nbsp; - &nbsp; console.log message
 ```js
-console.log($0)
+console.log('$0')
 ```
 
 #### `clo` &nbsp; - &nbsp; console.log object
@@ -179,3 +229,5 @@ console.error('$1 ->', ${2:$1})
 ```js
 console.warn('$1 ->', ${2:$1})
 ```
+
+*...and many more (evertyhing will be documented)*
