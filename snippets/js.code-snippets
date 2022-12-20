@@ -5,56 +5,48 @@
     "body": [
       "const $1"
     ],
-    "description": "const statement"
   },
   "let ⚡": {
     "prefix": "l",
     "body": [
       "let $1"
     ],
-    "description": "let statement"
   },
   "const assignment ⚡": {
     "prefix": "ca",
     "body": [
       "const ${1:name} = ${2:value}"
     ],
-    "description": "const assignment"
   },
   "let assignment ⚡": {
     "prefix": "la",
     "body": [
       "let ${1:name} = ${2:value}"
     ],
-    "description": "let assignment"
   },
   "const string ⚡": {
     "prefix": "cas",
     "body": [
       "const ${1:name} = '$0'"
     ],
-    "description": "string assignment"
   },
   "const string with template literals ⚡": {
     "prefix": "catl",
     "body": [
       "const ${1:name} = `$0`"
     ],
-    "description": "string assignment with template literals"
   },
   "const array ⚡": {
     "prefix": "caa",
     "body": [
       "const ${1:items} = [$0]"
     ],
-    "description": "array assignment"
   },
   "const object ⚡": {
     "prefix": "cao",
     "body": [
       "const ${1:name} = { $0 }"
     ],
-    "description": "object assignment"
   },
   // Destructuring
   "destructure object ⚡": {
@@ -62,14 +54,12 @@
     "body": [
       "const { $2 } = ${1:object}"
     ],
-    "description": ""
   },
   "destructure array ⚡": {
     "prefix": "dar",
     "body": [
       "const [$2] = ${1:array}"
     ],
-    "description": ""
   },
   // Class
   "class ⚡": {
@@ -77,14 +67,12 @@
     "body": [
       "class ${1:Name} {\n\t$0\n}"
     ],
-    "description": "class"
   },
   "class extends ⚡": {
     "prefix": "cse",
     "body": [
       "class ${1:Class} extends ${2:Base} {\n\t$0\n}"
     ],
-    "description": "class"
   },
   "class with constructior ⚡": {
     "prefix": "csc",
@@ -95,7 +83,6 @@
       "\t}",
       "}"
     ],
-    "description": "class with constructor"
   },
   "class extends with constructor ⚡": {
     "prefix": "csec",
@@ -106,7 +93,6 @@
       "\t}",
       "}"
     ],
-    "description": "class extends with constructor"
   },
   // Functions
   "function ⚡": {
@@ -116,7 +102,14 @@
       "\t$0",
       "}"
     ],
-    "description": ""
+  },
+  "async function ⚡": {
+    "prefix": "fna",
+    "body": [
+      "async function ${1:name}($2) {",
+      "\t$0",
+      "}"
+    ],
   },
   "export function ⚡": {
     "prefix": "efn",
@@ -125,28 +118,36 @@
       "\t$0",
       "}"
     ],
-    "description": ""
   },
   "named arrow function ⚡": {
     "prefix": "nfn",
     "body": [
       "const ${1:name} = ($2) => {$0}"
     ],
-    "description": ""
+  },
+  "async named arrow function ⚡": {
+    "prefix": "nfna",
+    "body": [
+      "async const ${1:name} = ($2) => {$0}"
+    ],
   },
   "export named arrow function ⚡": {
     "prefix": "enfn",
     "body": [
       "export const ${1:name} = ($2) => {$0}"
     ],
-    "description": ""
   },
   "arrow function ⚡": {
     "prefix": "af",
     "body": [
       "($1) => $0"
     ],
-    "description": ""
+  },
+  "async arrow function ⚡": {
+    "prefix": "afa",
+    "body": [
+      "async ($1) => $0"
+    ],
   },
   "arrow function with body ⚡": {
     "prefix": "afb",
@@ -155,14 +156,20 @@
       "\t$0",
       "}"
     ],
-    "description": ""
+  },
+  "async arrow function with body ⚡": {
+    "prefix": "afba",
+    "body": [
+      "async ($1) => {",
+      "\t$0",
+      "}"
+    ],
   },
   "method ⚡": {
     "prefix": "met",
     "body": [
       "${1:name}($2) {\n\t$0\n}"
     ],
-    "description": ""
   },
   // Console
   "console.log ⚡": {
@@ -170,63 +177,54 @@
     "body": [
       "console.log($0)"
     ],
-    "description": ""
   },
   "console.log message ⚡": {
     "prefix": "clm",
     "body": [
       "console.log('$0')"
     ],
-    "description": "Console log message."
   },
   "console.log object ⚡": {
     "prefix": "clo",
     "body": [
       "console.log({ $0 })"
     ],
-    "description": ""
   },
   "console.log from clipboard ⚡": {
     "prefix": "clc",
     "body": [
       "console.log({ $CLIPBOARD })"
     ],
-    "description": ""
   },
   "console.log labeled ⚡": {
     "prefix": "cll",
     "body": [
       "console.log('$1 ->', $1$2)"
     ],
-    "description": ""
   },
   "console.error ⚡": {
     "prefix": "ce",
     "body": [
       "console.error('$1')"
     ],
-    "description": ""
   },
   "console.error labeled ⚡": {
     "prefix": "ce",
     "body": [
       "console.error('$1 ->', $1$2)"
     ],
-    "description": ""
   },
   "console.warn ⚡": {
     "prefix": "cw",
     "body": [
       "console.warn('$1')"
     ],
-    "description": ""
   },
   "console.warn labeled ⚡": {
     "prefix": "cwl",
     "body": [
       "console.warn('$1 ->', ${2:$1})"
     ],
-    "description": ""
   },
   "console group": {
     "prefix": "clg",
@@ -240,122 +238,101 @@
       "// ====== LOG END ======",
       "$0"
     ],
-    "description": "Console log, wrapped in a formatted and styled console group."
   },
   "console.table ⚡": {
     "prefix": "ct",
     "body": [
       "console.table($1)"
     ],
-    "description": ""
   },
   "native fetch ⚡": {
     "prefix": "fe",
     "body": [
       "fetch('$1').then(res => res.json())"
     ],
-    "description": ""
   },
   "fetch assignment ⚡": {
     "prefix": "fea",
     "body": [
       "const ${2|data,{ data }|} = await fetch('$1').then(res => res.json())"
     ],
-    "description": ""
   },
   "setInterval ⚡": {
     "prefix": "si",
     "body": "setInterval(() => {\n\t${0}\n}, ${1:delay})",
-    "description": "Executes the given function at specified intervals in ES6 syntax"
   },
   "setTimeout ⚡": {
     "prefix": "st",
     "body": "setTimeout(() => {\n\t${0}\n}, ${1:delay})",
-    "description": "Executes the given function after the specified delay in ES6 syntax"
   },
   "import ⚡": {
     "prefix": "im",
     "body": "import { $2 } from '$1'",
-    "description": ""
   },
   "import default ⚡": {
     "prefix": "imd",
     "body": "import $2 from '$1'",
-    "description": ""
   },
   "import all ⚡": {
     "prefix": "imda",
     "body": "import * as $2 from '$1'",
-    "description": ""
   },
   "export from ⚡": {
     "prefix": "ex",
     "body": "export { $2 } from '$1'",
-    "description": ""
   },
   "export all from ⚡": {
     "prefix": "exa",
     "body": "export * from '$1'",
-    "description": ""
   },
   "export default ⚡": {
     "prefix": "exd",
     "body": "export default $0",
-    "description": ""
   },
   "Object.entries ⚡": {
     "prefix": "oe",
     "body": [
       "Object.entries(${0:object})"
     ],
-    "description": "Object.entries() method."
   },
   "Object.fromEntries ⚡": {
     "prefix": "ofe",
     "body": [
       "Object.fromEntries(${0:iterable})"
     ],
-    "description": "Object.fromEntries() method."
   },
   "Object.keys ⚡": {
     "prefix": "ok",
     "body": [
       "Object.keys(${0:object})"
     ],
-    "description": "Object.keys() method."
   },
   "Object.values ⚡": {
     "prefix": "ov",
     "body": [
       "Object.values(${0:object})"
     ],
-    "description": "Object.values() method."
   },
   // Flow
   "if ⚡": {
     "prefix": "if",
     "body": "if (${1:condition}) {\n\t${2}\n}$0",
-    "description": ""
   },
   "if-else ⚡": {
     "prefix": "ife",
     "body": "if (${1:condition}) {\n\t${2}\n} else {\n\t${3}\n}",
-    "description": ""
   },
   "if-else-if ⚡": {
     "prefix": "ifei",
     "body": "if (${1:condition}) {\n\t${2}\n} else {\n\t${3}\n}",
-    "description": ""
   },
   "else ⚡": {
     "prefix": "el",
     "body": "else {\n\t${3}\n}",
-    "description": ""
   },
   "else if ⚡": {
     "prefix": "ei",
     "body": "else if (${1:condition}) {\n\t${2}\n}",
-    "description": ""
   },
   "try-catch ⚡": {
     "prefix": "tc",
@@ -366,7 +343,6 @@
       "\t",
       "}"
     ],
-    "description": "Try-catch statement."
   },
   "switch ⚡": {
     "prefix": "switch",
@@ -379,7 +355,6 @@
       "\t\tbreak;",
       "}"
     ],
-    "description": "Switch statement"
   },
   "case ⚡": {
     "prefix": [
@@ -390,7 +365,6 @@
       "\tt$0",
       "\tbreak;"
     ],
-    "description": "Case clause."
   },
   "try-catch-finally ⚡": {
     "prefix": "tcf",
@@ -403,7 +377,6 @@
       "\t",
       "}"
     ],
-    "description": "Try-catch-finally statement."
   },
   "try-finally ⚡": {
     "prefix": "tf",
@@ -414,147 +387,126 @@
       "\t",
       "}"
     ],
-    "description": "Try-finally statement."
   },
   "JSON.parse ⚡": {
     "prefix": "jp",
     "body": [
       "JSON.parse(${1:json})"
     ],
-    "description": "JSON.parse() method."
   },
   "JSON.stringify ⚡": {
     "prefix": "js",
     "body": [
       "JSON.stringify(${1:value})"
     ],
-    "description": "JSON.stringify() method."
   },
   "JSON.stringify pretty ⚡": {
     "prefix": "jsp",
     "body": [
       "JSON.stringify(${1:value}, null, 2)"
     ],
-    "description": "JSON.stringify() method."
   },
   "OR (||) ⚡": {
     "prefix": "or",
     "body": [
       "|| $0"
     ],
-    "description": ""
   },
   "AND (&&) ⚡": {
     "prefix": "and",
     "body": [
       "&& $0"
     ],
-    "description": ""
   },
   "Nullish coalescing (??) ⚡": {
     "prefix": "nc",
     "body": [
       "?? $0"
     ],
-    "description": ""
   },
   "strict equality (===) ⚡": {
     "prefix": "eq",
     "body": [
       "=== $0"
     ],
-    "description": ""
   },
   "logical OR expression ⚡": {
     "prefix": "ore",
     "body": [
       "${1:value} || ${2:value}"
     ],
-    "description": ""
   },
   "logical AND expression ⚡": {
     "prefix": "ande",
     "body": [
       "${1:value} && ${2:value}"
     ],
-    "description": ""
   },
   "Nullish coalescing expression (??) ⚡": {
     "prefix": "nce",
     "body": [
       "${1:item} ?? ${2:default}"
     ],
-    "description": ""
   },
   "strict equality expression ⚡": {
     "prefix": "eqe",
     "body": [
       "${1:value} === ${2:value}"
     ],
-    "description": ""
   },
   "Ternary expression ⚡": {
     "prefix": "ter",
     "body": [
       "${1:condition} ? ${2:ifTrue} : ${3:ifFalse}"
     ],
-    "description": ""
   },
   "Logical OR assignment (||=) ⚡": {
     "prefix": "ora",
     "body": [
       "${1:name} ||= ${2:default}"
     ],
-    "description": ""
   },
   "Nullish coalescing assignment (??=) ⚡": {
     "prefix": "nca",
     "body": [
       "${1:name} ??= ${2:default}"
     ],
-    "description": ""
   },
   "addition assignment ⚡": {
     "prefix": "add",
     "body": [
       "${1:value} += ${2:1}"
     ],
-    "description": ""
   },
   "subtraction assignment ⚡": {
     "prefix": "sub",
     "body": [
       "${1:value} -= ${2:1}"
     ],
-    "description": ""
   },
   "multiplication assignment ⚡": {
     "prefix": "mul",
     "body": [
       "${1:value} *= ${2:1}"
     ],
-    "description": ""
   },
   "division assignment ⚡": {
     "prefix": "div",
     "body": [
       "${1:value} /= ${2:1}"
     ],
-    "description": ""
   },
   "template literal string ⚡": {
     "prefix": "tls",
     "body": [
       "`$1${$2}$3`"
     ],
-    "description": "template literal string"
   },
   "template literal expression ⚡": {
     "prefix": "tl",
     "body": [
       "${$2}"
     ],
-    "description": "template literal"
   },
   // Type
   "is array ⚡": {
@@ -562,76 +514,65 @@
     "body": [
       "Array.isArray(${1:value})"
     ],
-    "description": "is array"
   },
   "typeof ⚡": {
     "prefix": "to",
     "body": [
       "typeof ${0:operand} === '${1|bigint,boolean,function,number,object,string,symbol,undefined|}'"
     ],
-    "description": "is array"
   },
-  "instanceof": {
+  "instanceof ⚡": {
     "prefix": "io",
     "body": [
       "${1:object} instanceof ${0:constructor}"
     ],
-    "description": "instanceof operator"
   },
   "is nil ⚡": {
     "prefix": "isnil",
     "body": [
       "${1:value} == null"
     ],
-    "description": ""
   },
   "is not nil ⚡": {
     "prefix": "nnil",
     "body": [
       "${1:value} != null"
     ],
-    "description": ""
   },
-  "return": {
+  "return ⚡": {
     "prefix": "re",
     "body": [
       "return $0"
     ],
-    "description": ""
   },
-  "return object": {
+  "return object ⚡": {
     "prefix": "reo",
     "body": [
       "return {\n\t$0\n}"
     ],
-    "description": ""
   },
-  "return object inline": {
+  "return object inline ⚡": {
     "prefix": "rei",
     "body": [
       "return ({$0})"
     ],
-    "description": ""
   },
-  "uniq": {
+  "uniq ⚡": {
     "prefix": "uniq",
     "body": [
       "[...new Set(${0:array})]"
     ],
-    "description": ""
   },
-  "parse int": {
+  "parse int ⚡": {
     "prefix": "pi",
     "body": [
       "parseInt(${1:value}, ${2|10,2,8,16|})"
     ],
-    "description": ""
   },
-  "parse float": {
+  "parse float ⚡": {
     "prefix": "pf",
     "body": [
       "parseFloat(${1:value})"
     ],
-    "description": ""
   },
 }
