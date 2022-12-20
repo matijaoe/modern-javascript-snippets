@@ -33,7 +33,7 @@ Search for `editor.snippetSuggestions` and `editor.snippetSuggestions` in user s
 "editor.snippetSuggestions": "top",
 
 // Tab complete will insert the best matching suggestion when pressing tab.
-"editor.snippetSuggestions": "on"
+"editor.tabCompletion": "on"
 ```
 
 ## Style
@@ -109,17 +109,11 @@ const { $2 } = ${1:object}
 const [$2] = ${1:array}
 ```
 
-### Class
+### Classes
+
 #### `cs` &nbsp; - &nbsp; class
 ```js
 class ${1:Class} {
-  $0
-}
-```
-
-#### `cse` &nbsp; - &nbsp; class extends
-```js
-class ${1:Class} extends ${2:Base} {
   $0
 }
 ```
@@ -133,7 +127,14 @@ class ${1:Class}  {
 }
 ```
 
-#### `csce` &nbsp; - &nbsp; class with constructor
+#### `cse` &nbsp; - &nbsp; class extends
+```js
+class ${1:Class} extends ${2:Base} {
+  $0
+}
+```
+
+#### `csce` &nbsp; - &nbsp; class extends with constructor
 ```js
 class ${1:Class} extends ${2:Base} {
   constructor($3) {
@@ -142,7 +143,15 @@ class ${1:Class} extends ${2:Base} {
 }
 ```
 
-### Function
+#### `met` &nbsp; - &nbsp; method
+```js
+${1:name}($2) {
+  $0
+}
+```
+
+### Functions
+
 #### `fn` &nbsp; - &nbsp; function
 ```js
 function ${1:name}($2) {,
@@ -179,13 +188,6 @@ export const ${1:name} = ($2) => {$0}
 }
 ```
 
-#### `met` &nbsp; - &nbsp; method
-```js
-${1:name}($2) {
-  $0
-}
-```
-
 ### Console
 
 #### `cl` &nbsp; - &nbsp; console.log
@@ -201,6 +203,11 @@ console.log('$0')
 #### `clo` &nbsp; - &nbsp; console.log object
 ```js
 console.log({ $0 })
+```
+
+#### `clc` &nbsp; - &nbsp; console.log from clipboard 
+```js
+console.log({ $CLIPBOARD })
 ```
 
 #### `ce` &nbsp; - &nbsp; console.error
@@ -231,6 +238,86 @@ console.error('$1 ->', ${2:$1})
 #### `cwl` &nbsp; - &nbsp; console.warn (labeled)
 ```js
 console.warn('$1 ->', ${2:$1})
+```
+
+### Misc
+
+#### `ce` &nbsp; - &nbsp; fetch
+```js
+fetch('$1').then(res => res.json())
+```
+
+#### `fea` &nbsp; - &nbsp; const assignment fetch
+```js
+const ${2|data,{ data }|} = await fetch('$1').then(res => res.json())
+```
+
+#### `si` &nbsp; - &nbsp; set interval
+```js
+setInterval(() => {
+  $0
+}, ${1:delay})
+```
+
+#### `st` &nbsp; - &nbsp; set timeout
+```js
+setTimeout(() => {
+  $0
+}, ${1:delay})
+```
+
+### Imports
+
+#### `im` &nbsp; - &nbsp; import
+```js
+import { $2 } from '$1'
+```
+
+#### `imd` &nbsp; - &nbsp; import default
+```js
+import $2 from '$1'
+```
+
+#### `imda` &nbsp; - &nbsp; import all as
+```js
+import * as $2 from '$1'
+```
+
+#### `ex` &nbsp; - &nbsp; export from
+```js
+export { $2 } from '$1'
+```
+
+#### `exa` &nbsp; - &nbsp; export all from
+```js
+export * from '$1'
+```
+
+#### `exd` &nbsp; - &nbsp; export default
+```js
+export default $0
+```
+
+### Object
+
+#### `oe` &nbsp; - &nbsp; Object.entries
+```js
+Object.entries(${0:iterable})
+```
+
+#### `ofe` &nbsp; - &nbsp; Object.fromEntries
+```js
+Object.fromEntries(${0:iterable})
+```
+
+#### `ok` &nbsp; - &nbsp; Object.keys
+```js
+Object.keys(${0:iterable})
+```
+
+#### `ov` &nbsp; - &nbsp; Object.values
+```js
+Object.values(${0:iterable})
 ```
 
 *...and many more (evertyhing will be documented)*

@@ -37,28 +37,31 @@
   "interface extends ⚡": {
     "prefix": "inte",
     "body": [
-      "interface ${1:Model} extends {2:Base} {\n\t$0\n}"
+      "interface ${1:Model} extends ${2:Base} {\n\t$0\n}"
     ],
     "description": ""
   },
   "type ⚡": {
     "prefix": "tp",
     "body": [
-      "type ${1:Model} = $0"
+      "type ${1:Model} = $0",
+      ""
     ],
     "description": ""
   },
   "type union ⚡": {
     "prefix": "tpu",
     "body": [
-      "type ${1:Model} = $2 | $3"
+      "type ${1:Model} = ${2:first} | ${3:second}",
+      ""
     ],
     "description": ""
   },
   "type intersection ⚡": {
     "prefix": "tpi",
     "body": [
-      "type ${1:Model} = $2 & $3"
+      "type ${1:Model} = ${2:first} & ${3:second}",
+      ""
     ],
     "description": ""
   },

@@ -245,19 +245,19 @@
   "console.table ⚡": {
     "prefix": "ct",
     "body": [
-      "ckonsole.table($1)"
+      "console.table($1)"
     ],
     "description": ""
   },
   "native fetch ⚡": {
-    "prefix": "fetch",
+    "prefix": "fe",
     "body": [
       "fetch('$1').then(res => res.json())"
     ],
     "description": ""
   },
-  "const native fetch ⚡": {
-    "prefix": "cfetch",
+  "fetch assignment ⚡": {
+    "prefix": "fea",
     "body": [
       "const ${2|data,{ data }|} = await fetch('$1').then(res => res.json())"
     ],
@@ -265,12 +265,12 @@
   },
   "setInterval ⚡": {
     "prefix": "si",
-    "body": "setInterval(() => {\n\t${2}\n}, ${1:delay})",
+    "body": "setInterval(() => {\n\t${0}\n}, ${1:delay})",
     "description": "Executes the given function at specified intervals in ES6 syntax"
   },
   "setTimeout ⚡": {
     "prefix": "st",
-    "body": "setTimeout(() => {\n\t${2}\n}, ${1:delay})",
+    "body": "setTimeout(() => {\n\t${0}\n}, ${1:delay})",
     "description": "Executes the given function after the specified delay in ES6 syntax"
   },
   "import ⚡": {
@@ -288,14 +288,14 @@
     "body": "import * as $2 from '$1'",
     "description": ""
   },
+  "export from ⚡": {
+    "prefix": "ex",
+    "body": "export { $2 } from '$1'",
+    "description": ""
+  },
   "export all from ⚡": {
     "prefix": "exa",
     "body": "export * from '$1'",
-    "description": ""
-  },
-  "export from ⚡": {
-    "prefix": "exfr",
-    "body": "export { $2 } from '$1'",
     "description": ""
   },
   "export default ⚡": {
@@ -542,20 +542,6 @@
     ],
     "description": ""
   },
-  "is nil ⚡": {
-    "prefix": "nil",
-    "body": [
-      "${1:value} == null"
-    ],
-    "description": ""
-  },
-  "is not nil ⚡": {
-    "prefix": "nnil",
-    "body": [
-      "${1:value} != null"
-    ],
-    "description": ""
-  },
   "template literal string ⚡": {
     "prefix": "tls",
     "body": [
@@ -569,5 +555,83 @@
       "${$2}"
     ],
     "description": "template literal"
-  }
+  },
+  // Type
+  "is array ⚡": {
+    "prefix": "aia",
+    "body": [
+      "Array.isArray(${1:value})"
+    ],
+    "description": "is array"
+  },
+  "typeof ⚡": {
+    "prefix": "to",
+    "body": [
+      "typeof ${0:operand} === '${1|bigint,boolean,function,number,object,string,symbol,undefined|}'"
+    ],
+    "description": "is array"
+  },
+  "instanceof": {
+    "prefix": "io",
+    "body": [
+      "${1:object} instanceof ${0:constructor}"
+    ],
+    "description": "instanceof operator"
+  },
+  "is nil ⚡": {
+    "prefix": "isnil",
+    "body": [
+      "${1:value} == null"
+    ],
+    "description": ""
+  },
+  "is not nil ⚡": {
+    "prefix": "nnil",
+    "body": [
+      "${1:value} != null"
+    ],
+    "description": ""
+  },
+  "return": {
+    "prefix": "re",
+    "body": [
+      "return $0"
+    ],
+    "description": ""
+  },
+  "return object": {
+    "prefix": "reo",
+    "body": [
+      "return {\n\t$0\n}"
+    ],
+    "description": ""
+  },
+  "return object inline": {
+    "prefix": "rei",
+    "body": [
+      "return ({$0})"
+    ],
+    "description": ""
+  },
+  "uniq": {
+    "prefix": "uniq",
+    "body": [
+      "[...new Set(${0:array})]"
+    ],
+    "description": ""
+  },
+  "parse int": {
+    "prefix": "pi",
+    "body": [
+      "parseInt(${1:value}, ${2|10,2,8,16|})"
+    ],
+    "description": ""
+  },
+  "parse float": {
+    "prefix": "pf",
+    "body": [
+      "parseFloat(${1:value})"
+    ],
+    "description": ""
+  },
 }
