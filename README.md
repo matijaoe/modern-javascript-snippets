@@ -29,9 +29,6 @@ The following is not mandatory, but provides a nicer experience.
 
 Search for `editor.snippetSuggestions` and `editor.snippetSuggestions` in user settings, or edit the settings.json directly:
 ```jsonc
-// Show snippet suggestions on top of other suggestions.
-"editor.snippetSuggestions": "top",
-
 // Tab complete will insert the best matching suggestion when pressing tab.
 "editor.tabCompletion": "on"
 ```
@@ -242,12 +239,12 @@ console.warn('$1 ->', ${2:$1})
 
 ### Misc
 
-#### `ce` &nbsp; - &nbsp; fetch
+#### `fe` &nbsp; - &nbsp; fetch
 ```js
 fetch('$1').then(res => res.json())
 ```
 
-#### `fea` &nbsp; - &nbsp; const assignment fetch
+#### `fea` &nbsp; - &nbsp; fetch assign
 ```js
 const ${2|data,{ data }|} = await fetch('$1').then(res => res.json())
 ```

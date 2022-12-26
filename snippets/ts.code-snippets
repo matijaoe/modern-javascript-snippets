@@ -16,7 +16,7 @@
   "const array (typed) ⚡": {
     "prefix": "caat",
     "body": [
-      "const ${1:items}: ${2:string[]} = [$0]"
+      "const ${1:items}: ${2:string}[] = [$0]"
     ],
     "description": "array assignment"
   },

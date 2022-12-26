@@ -1,7 +1,7 @@
 {
   "name": "modern-js-snippets",
   "displayName": "Modern JavaScript Snippets ⚡",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Code snippets for modern JavaScript & TypeScript",
   "icon": "assets/icon.png",
@@ -30,8 +30,8 @@
     "snippet"
   ],
   "galleryBanner": {
-    "color": "#EFDB50",
-    "theme": "dark"
+    "color": "#FED703",
+    "theme": "light"
   },
   "engines": {
     "vscode": "^1.x.x"
