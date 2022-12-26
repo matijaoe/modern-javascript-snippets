@@ -1,0 +1,38 @@
+{
+  "const assignment (typed) ⚡": {
+    "prefix": "cat",
+    "body": "const ${1:name}: ${2:string} = ${3:value}"
+  },
+  "let assignment (typed) ⚡": {
+    "prefix": "lat",
+    "body": "let ${1:name}: ${2:string} = ${3:value}"
+  },
+  "const array (typed) ⚡": {
+    "prefix": "caat",
+    "body": "const ${1:items}: ${2:string}[] = [$0]"
+  },
+  "const object (typed) ⚡": {
+    "prefix": "caot",
+    "body": "const ${1:name}: ${2:object} = { $0 }"
+  },
+  "interface ⚡": {
+    "prefix": "int",
+    "body": "interface ${1:Model} {\n\t$0\n}"
+  },
+  "interface extends ⚡": {
+    "prefix": "inte",
+    "body": "interface ${1:Model} extends ${2:Base} {\n\t$0\n}"
+  },
+  "type ⚡": {
+    "prefix": "tp",
+    "body": "type ${1:Model} = $0"
+  },
+  "type union ⚡": {
+    "prefix": "tpu",
+    "body": "type ${1:Model} = ${2:first} | ${3:second}"
+  },
+  "type intersection ⚡": {
+    "prefix": "tpi",
+    "body": "type ${1:Model} = ${2:first} & ${3:second}"
+  }
+}

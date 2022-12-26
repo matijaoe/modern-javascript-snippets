@@ -27,7 +27,7 @@ Supported file extensions:
 ## Setup
 The following is not mandatory, but provides a nicer experience.
 
-Search for `editor.snippetSuggestions` and `editor.snippetSuggestions` in user settings, or edit the settings.json directly:
+Search for `editor.tabCompletion` in user settings, or edit the settings.json directly:
 ```jsonc
 // Tab complete will insert the best matching suggestion when pressing tab.
 "editor.tabCompletion": "on"
@@ -53,6 +53,17 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 
 
 ## Snippets
+
+### Declarations
+| Prefix     | Description           | Body                           |
+| ---------- | --------------------- | ------------------------------ |
+| `c`        | const                 | `const $0`                     |
+| `l`        | let                   | `let $0`                       |
+| `ca`       | const assignment      | `const $1 = $0`                |
+| `la`       | let assignment        | `let $1 = $0`                  |
+| `cas`      | const string          | `const $1 = '$0'`              |
+| `car`      | const array           | `const $1 = [$0]`              |
+| `cao`      | const object          | `const $1 = { $0 }`            |
 
 ### Declarations
 

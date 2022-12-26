@@ -37,7 +37,8 @@
     "vscode": "^1.x.x"
   },
   "scripts": {
-    "publish": "vsce package && vsce publish"
+    "publish": "vsce package && vsce publish",
+    "generate": "deno run --allow-write src/app.ts"
   },
   "contributes": {
     "snippets": [

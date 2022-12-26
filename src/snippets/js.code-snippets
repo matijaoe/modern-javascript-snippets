@@ -10,7 +10,7 @@
   },
   "const assignment ⚡": {
     "prefix": "ca",
-    "body": "const $1 = $0;"
+    "body": "const $1 = $0"
   },
   "let assignment ⚡": {
     "prefix": "la",
