@@ -40,7 +40,8 @@
     "publish": "vsce package && vsce publish",
     "generate": "deno run --allow-write --allow-read src/app.ts",
     "generate:table": "deno run --allow-write --allow-read src/app.ts --table --snippets=false",
-    "generate:all": "deno run --allow-write --allow-read src/app.ts --table --snippets"
+    "generate:all": "deno run --allow-write --allow-read src/app.ts --table --snippets",
+    "test": "deno run --allow-write --allow-read src/utils/table.ts"
   },
   "contributes": {
     "snippets": [
