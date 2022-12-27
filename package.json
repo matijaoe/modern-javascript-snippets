@@ -1,17 +1,17 @@
 {
   "name": "modern-js-snippets",
   "displayName": "Modern JavaScript Snippets ⚡",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "description": "Code snippets for modern JavaScript & TypeScript",
   "icon": "assets/icon.png",
-  "bugs": "https://github.com/mat2ja/modern-javascript-snippets/issues",
   "author": {
     "name": "Matija Osrečki",
     "email": "matija.osrecki@gmail.com"
   },
   "publisher": "matijao",
   "repository": "https://github.com/mat2ja/modern-javascript-snippets",
+  "bugs": "https://github.com/mat2ja/modern-javascript-snippets/issues",
   "categories": [
     "Snippets"
   ],

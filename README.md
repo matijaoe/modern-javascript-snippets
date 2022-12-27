@@ -3,7 +3,6 @@
     🚧 Work in progress
 
 
-
 > Short and memorable JavaScript & TypeScript snippets for the modern-day developer.
 
 <br>
@@ -90,19 +89,19 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 
 ### Promises
 
-| Prefix  | Description        | Body                                                                    |
-| ------- | ------------------ | ----------------------------------------------------------------------- |
-| `fet`   | native fetch       | `fetch('$1').then(res => res.json())`                                   |
+| Prefix  | Description        | Body                                                                      |
+| ------- | ------------------ | ------------------------------------------------------------------------- |
+| `fet`   | native fetch       | `fetch('$1').then(res => res.json())`                                     |
 | `feta`  | fetch assignment   | `const ${2\|data,{ data }\|} = await fetch('$1').then(res => res.json())` |
-| `pr`    | promise            | `new Promise((resolve, reject) => { $0 })`                              |
-| `prs`   | promise resolve    | `Promise.resolve($1)$0`                                                 |
-| `prj`   | promise reject     | `Promise.reject($1)$0`                                                  |
-| `then`  | promise.then       | `$1.then((${2:value}) => $0`                                            |
-| `catch` | promise.catch      | `$1.catch((${2:err}) => $0`                                             |
-| `thenc` | promise.then.catch | `$1.then((${2:value}) => $3.catch((${4:err}) => $5`                     |
-| `pra`   | promise.all        | `Promise.all($1)$0`                                                     |
-| `prsa`  | promise.allSettled | `Promise.allSettled($1)$0`                                              |
-| `pran`  | promise.any        | `Promise.any($1)$0`                                                     |
+| `pr`    | promise            | `new Promise((resolve, reject) => { $0 })`                                |
+| `prs`   | promise resolve    | `Promise.resolve($1)$0`                                                   |
+| `prj`   | promise reject     | `Promise.reject($1)$0`                                                    |
+| `then`  | promise.then       | `$1.then((${2:value}) => $0`                                              |
+| `catch` | promise.catch      | `$1.catch((${2:err}) => $0`                                               |
+| `thenc` | promise.then.catch | `$1.then((${2:value}) => $3.catch((${4:err}) => $5`                       |
+| `pra`   | promise.all        | `Promise.all($1)$0`                                                       |
+| `prsa`  | promise.allSettled | `Promise.allSettled($1)$0`                                                |
+| `pran`  | promise.any        | `Promise.any($1)$0`                                                       |
 
 
 ### Modules
@@ -123,22 +122,23 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 
 
 ### Array methods
-| Prefix         | Description                      | Body                                                             |
-| -------------- | -------------------------------- | ---------------------------------------------------------------- |
-| `fe`           | Array.forEach()                  | `$1.forEach((${2:item}) => { $0 })`                              |
-| `map`          | Array.map()                      | `$1.map((${2:item}) => ${3})$0`                                  |
-| `reduce`       | Array.reduce()                   | `$1.reduce((${2:acc}, ${3:curr}) => { $0 }, ${4:initial})`       |
-| `reduce-right` | Array.reduceRight()              | `$1.reduceRight((${2:acc}, ${3:curr}) => { $0 }, ${4:initial})`  |
-| `filter`       | Array.filter()                   | `$1.filter((${2:item}) => ${3})$0`                               |
-| `find`         | Array.find()                     | `$1.find((${2:item}) => ${3})$0`                                 |
-| `every`        | Array.every()                    | `$1.every((${2:item}) => ${3})$0`                                |
-| `some`         | Array.some()                     | `$1.some((${2:item}) => ${3})$0`                                 |
-| `reverse`      | Array.reverse()                  | `$1.reverse()$0`                                                 |
-| `map-string`   | Array.map() as string            | `$1.map(String)$0`                                               |
-| `map-number`   | Array.map() as number            | `$1.map(Number)$0`                                               |
-| `filter-true`  | Array.filter() for truthy values | `$1.filter(Boolean)$0`                                           |
 
-## Obkects
+| Prefix         | Description                      | Body                                                            |
+| -------------- | -------------------------------- | --------------------------------------------------------------- |
+| `fe`           | Array.forEach()                  | `$1.forEach((${2:item}) => { $0 })`                             |
+| `map`          | Array.map()                      | `$1.map((${2:item}) => ${3})$0`                                 |
+| `reduce`       | Array.reduce()                   | `$1.reduce((${2:acc}, ${3:curr}) => { $0 }, ${4:initial})`      |
+| `reduce-right` | Array.reduceRight()              | `$1.reduceRight((${2:acc}, ${3:curr}) => { $0 }, ${4:initial})` |
+| `filter`       | Array.filter()                   | `$1.filter((${2:item}) => ${3})$0`                              |
+| `find`         | Array.find()                     | `$1.find((${2:item}) => ${3})$0`                                |
+| `every`        | Array.every()                    | `$1.every((${2:item}) => ${3})$0`                               |
+| `some`         | Array.some()                     | `$1.some((${2:item}) => ${3})$0`                                |
+| `reverse`      | Array.reverse()                  | `$1.reverse()$0`                                                |
+| `map-string`   | Array.map() as string            | `$1.map(String)$0`                                              |
+| `map-number`   | Array.map() as number            | `$1.map(Number)$0`                                              |
+| `filter-true`  | Array.filter() for truthy values | `$1.filter(Boolean)$0`                                          |
+
+## Objects
 
 | Prefix | Description        | Body                     |
 | ------ | ------------------ | ------------------------ |
@@ -149,38 +149,40 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 
 ### Returns
 
-| Prefix | Description          | Body             |
-| ------ | -------------------- | ---------------- |
-| `re`   | return               | `return $0`      |
-| `reo`  | return object        | `return { $0 }`  |
-| `rei`  | return object inline | `return ({$0})`  |
+| Prefix | Description          | Body            |
+| ------ | -------------------- | --------------- |
+| `re`   | return               | `return $0`     |
+| `reo`  | return object        | `return { $0 }` |
+| `rei`  | return object inline | `return ({$0})` |
 
 
 ### Operators, expressions, literals
 *will be better categorized*
 
-| Prefix | Description                         | Body                         |
-| ------ | ----------------------------------- | ---------------------------- |
-| `or`   | OR (\|\|)                             | `\|\| $0`                      |
-| `and`  | AND (&&)                            | `&& $0`                      |
-| `nc`   | Nullish coalescing (??)             | `?? $0`                      |
-| `eq`   | strict equality (===)               | `=== $0`                     |
+| Prefix | Description                         | Body                           |
+| ------ | ----------------------------------- | ------------------------------ |
+| `or`   | OR (\|\|)                           | `\|\| $0`                      |
+| `and`  | AND (&&)                            | `&& $0`                        |
+| `nc`   | Nullish coalescing (??)             | `?? $0`                        |
+| `eq`   | strict equality (===)               | `=== $0`                       |
 | `ore`  | logical OR expression               | `${1:value} \|\| ${0:value}`   |
-| `ande` | logical AND expression              | `${1:value} && ${0:value}`   |
-| `nce`  | Nullish coalescing expression (??)  | `${1:item} ?? ${0:default}`  |
-| `eqe`  | strict equality expression          | `${1:value} === ${2:value}`  |
-| `ora`  | Logical OR assignment (\|\|=)         | `${1:name} \|\|= ${0:default}` |
-| `nca`  | Nullish coalescing assignment (??=) | `${1:name} ??= ${0:default}` |
-| `inc`  | addition assignment                 | `$1 += ${0:1}`               |
-| `sub`  | subtraction assignment              | `$1 -= ${0:1}`               |
-| `mul`  | multiplication assignment           | `$1 *= ${0:1}`               |
-| `div`  | division assignment                 | `$1 /= ${0:1}`               |
-| `ol`   | object literal                      | `{ $1: $0 }`                 |
-| `al`   | array literal                       | `[$0]`                       |
-| `tl`   | template literal                    | ``$0``                       |
-| `tlo`  | template literal operation          | `${$1}$0`                    |
-| `tle`  | template literal expression         | ``$1${$2}$0``                |
+| `ande` | logical AND expression              | `${1:value} && ${0:value}`     |
+| `nce`  | Nullish coalescing expression (??)  | `${1:item} ?? ${0:default}`    |
+| `eqe`  | strict equality expression          | `${1:value} === ${2:value}`    |
+| `ora`  | Logical OR assignment (\|\|=)       | `${1:name} \|\|= ${0:default}` |
+| `nca`  | Nullish coalescing assignment (??=) | `${1:name} ??= ${0:default}`   |
+| `inc`  | addition assignment                 | `$1 += ${0:1}`                 |
+| `sub`  | subtraction assignment              | `$1 -= ${0:1}`                 |
+| `mul`  | multiplication assignment           | `$1 *= ${0:1}`                 |
+| `div`  | division assignment                 | `$1 /= ${0:1}`                 |
+| `ol`   | object literal                      | `{ $1: $0 }`                   |
+| `al`   | array literal                       | `[$0]`                         |
+| `tl`   | template literal                    | ``$0``                         |
+| `tlo`  | template literal operation          | `${$1}$0`                      |
+| `tle`  | template literal expression         | ``$1${$2}$0``                  |
 
+
+### Console
 
 | Prefix | Description                | Body                                          |
 | ------ | -------------------------- | --------------------------------------------- |
@@ -199,14 +201,16 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 | `cel`  | console.error labeled      | `console.error('$1 ->', $1$2)`                |
 | `cwl`  | console.warn labeled       | `console.warn('$1 ->', ${2:$1})`              |
 
+### Timers
 
-| Prefix | Description      | Body                                     |
-| ------ | ---------------- | ---------------------------------------- |
-| `si`   | setInterval      | `setInterval(() => { $0 }, ${1:delay})`  |
-| `st`   | setTimeout       | `setTimeout(() => { $0 }, ${1:delay})`   |
-| `sim`  | setImmediate     | `setImmediate(() => { $0 })`             |
-| `nt`   | process nextTick | `process.nextTick(() => { $0 })`         |
+| Prefix | Description      | Body                                    |
+| ------ | ---------------- | --------------------------------------- |
+| `si`   | setInterval      | `setInterval(() => { $0 }, ${1:delay})` |
+| `st`   | setTimeout       | `setTimeout(() => { $0 }, ${1:delay})`  |
+| `sim`  | setImmediate     | `setImmediate(() => { $0 })`            |
+| `nt`   | process nextTick | `process.nextTick(() => { $0 })`        |
 
+### JSON
 
 | Prefix | Description                  | Body                                                          |
 | ------ | ---------------------------- | ------------------------------------------------------------- |
@@ -215,6 +219,7 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 | `jsp`  | JSON.stringify pretty        | `JSON.stringify(${1:value}, null, 2)`                         |
 | `jss`  | JSON.stringify if not string | `typeof ${1:value} === 'string' ? value : JSON.stringify($1)` |
 
+### DOM
 
 | Prefix | Description                   | Body                                                                             |
 | ------ | ----------------------------- | -------------------------------------------------------------------------------- |
@@ -226,15 +231,17 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 | `gid`  | get element by id             | `${1:document}.getElementById('$2')`                                             |
 | `on`   | event handler                 | `${1:emitter}.on('${2:event}', (${3:arguments}) => { $0 })`                      |
 
+### Dates
 
 | Prefix | Description | Body             |
 | ------ | ----------- | ---------------- |
 | `nd`   | new date    | `new Date($1)$0` |
 | `now`  | Date.now()  | `Date.now()`     |
 
+### Testing
 
-| Prefix | Description         | Body                                                |
-| ------ | ------------------- | --------------------------------------------------- |
+| Prefix | Description         | Body                                               |
+| ------ | ------------------- | -------------------------------------------------- |
 | `desc` | describe            | `describe('${1:description}', () => { $0 })`       |
 | `cont` | context             | `context('${1:description}', () => { $0 })`        |
 | `it`   | test (synchronous)  | `it('${1:description}', () => { $0 })`             |
@@ -248,15 +255,15 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 
 ### Types
 
-| Prefix  | Description | Body                                                                                     |
-| ------- | ----------- | ---------------------------------------------------------------------------------------- |
-| `aia`   | is array    | `Array.isArray($0)`                                                                      |
-| `tof`   | typeof      | `typeof ${1:value} === '${1}'$0` |
-| `iof`   | instanceof  | `${1:object} instanceof ${0:Class`                                                      |
-| `isnil` | is nil      | `${1:value} == null`                                                                     |
-| `nnil`  | is not nil  | `${1:value} != null`                                                                     |
-| `isnan` | is NaN      | `isNan($0)`                                                                              |
-| `nnan`  | is not NaN  | `!isNan($0)`                                                                             |
+| Prefix  | Description | Body                               |
+| ------- | ----------- | ---------------------------------- |
+| `aia`   | is array    | `Array.isArray($0)`                |
+| `tof`   | typeof      | `typeof ${1:value} === '${1}'$0`   |
+| `iof`   | instanceof  | `${1:object} instanceof ${0:Class` |
+| `isnil` | is nil      | `${1:value} == null`               |
+| `nnil`  | is not nil  | `${1:value} != null`               |
+| `isnan` | is NaN      | `isNan($0)`                        |
+| `nnan`  | is not NaN  | `!isNan($0)`                       |
 
 
 ### Miscellaneous
@@ -273,15 +280,15 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 ## Uncategorized 
 
 ⚠️ *working on it*
-| Prefix | Description      | Body                                    |
-| ------ | ---------------- | --------------------------------------- |
-| `uniq` | uniq             | `[...new Set(${0:array})]`              |
+| Prefix | Description      | Body                                      |
+| ------ | ---------------- | ----------------------------------------- |
+| `uniq` | uniq             | `[...new Set(${0:array})]`                |
 | `pi`   | parse int        | `parseInt(${1:value}, ${2\|10,2,8,16\|})` |
-| `pf`   | parse float      | `parseFloat(${1:value})`                |
-| `am`   | array me         | `[...${1:arr}$2]$0`                     |
-| `om`   | object merge     | `[...${1:arr}$2]$0`                     |
-| `aat`  | array at         | `${1:items}.at(${2:0})`                 |
-| `seq`  | sequence of 0..n | `[...Array(${1:length}).keys()]$0`      |
+| `pf`   | parse float      | `parseFloat(${1:value})`                  |
+| `am`   | array me         | `[...${1:arr}$2]$0`                       |
+| `om`   | object merge     | `[...${1:arr}$2]$0`                       |
+| `aat`  | array at         | `${1:items}.at(${2:0})`                   |
+| `seq`  | sequence of 0..n | `[...Array(${1:length}).keys()]$0`        |
 
 
 ## TypeScript snippets
@@ -298,13 +305,13 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 
 ### Types
 
-| Prefix | Description       | Body                                             |
-| ------ | ----------------- | ------------------------------------------------ |
-| `int`  | interface         | `interface ${1:Model} { $0 }`                    |
-| `inte` | interface extends | `interface ${1:Model} extends ${2:Base} { $0  }` |
-| `tp`   | type              | `type ${1:Model} = $0`                           |
-| `tpu`  | type union        | `type ${1:Model} = ${2:first} \| ${3:second}`     |
-| `tpi`  | type intersection | `type ${1:Model} = ${2:first} & ${3:second}`     |
+| Prefix | Description       | Body                                            |
+| ------ | ----------------- | ----------------------------------------------- |
+| `int`  | interface         | `interface ${1:Model} { $0 }`                   |
+| `inte` | interface extends | `interface ${1:Model} extends ${2:Base} { $0 }` |
+| `tp`   | type              | `type ${1:Model} = $0`                          |
+| `tpu`  | type union        | `type ${1:Model} = ${2:first} \| ${3:second}`   |
+| `tpi`  | type intersection | `type ${1:Model} = ${2:first} & ${3:second}`    |
 
 *...and many more (evertyhing will be documented)*
 
