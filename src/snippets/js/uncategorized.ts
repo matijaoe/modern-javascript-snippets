@@ -17,7 +17,7 @@ export const uncategorized = {
   },
   om: {
     name: "object merge",
-    body: "[...${1:arr}$2]$0",
+    body: "{ ...${1:object}$2 }$0",
   },
   aat: {
     name: "array at",

@@ -290,7 +290,7 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 | `pi`   | parse int        | `parseInt(${1:value}, ${2\|10,2,8,16\|})` |
 | `pf`   | parse float      | `parseFloat(${1:value})`                  |
 | `am`   | array me         | `[...${1:arr}$2]$0`                       |
-| `om`   | object merge     | `[...${1:arr}$2]$0`                       |
+| `om`   | object merge     | `{ ...${1:object}$2 }$0`                  |
 | `aat`  | array at         | `${1:items}.at(${2:0})`                   |
 | `seq`  | sequence of 0..n | `[...Array(${1:length}).keys()]$0`        |
 
