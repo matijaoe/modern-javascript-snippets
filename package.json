@@ -1,7 +1,7 @@
 {
   "name": "modern-js-snippets",
   "displayName": "Modern JavaScript Snippets ⚡",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Code snippets for modern JavaScript & TypeScript",
   "icon": "assets/icon.png",
@@ -37,33 +37,36 @@
     "vscode": "^1.x.x"
   },
   "scripts": {
-    "publish": "vsce package && vsce publish"
+    "publish": "vsce package && vsce publish",
+    "generate": "deno run --allow-write --allow-read src/app.ts",
+    "generate:table": "deno run --allow-write --allow-read src/app.ts --table --snippets=false",
+    "generate:all": "deno run --allow-write --allow-read src/app.ts --table --snippets"
   },
   "contributes": {
     "snippets": [
       {
         "language": "javascript",
-        "path": "./snippets/js.code-snippets"
+        "path": "./dist/js.code-snippets"
       },
       {
         "language": "typescript",
-        "path": "./snippets/js.code-snippets"
+        "path": "./dist/js.code-snippets"
       },
       {
         "language": "typescriptreact",
-        "path": "./snippets/js.code-snippets"
+        "path": "./dist/js.code-snippets"
       },
       {
         "language": "typescriptreact",
-        "path": "./snippets/js.code-snippets"
+        "path": "./dist/js.code-snippets"
       },
       {
         "language": "typescript",
-        "path": "./snippets/ts.code-snippets"
+        "path": "./dist/ts.code-snippets"
       },
       {
         "language": "typescriptreact",
-        "path": "./snippets/ts.code-snippets"
+        "path": "./dist/ts.code-snippets"
       }
     ]
   }
