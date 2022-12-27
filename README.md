@@ -358,9 +358,9 @@ Will be sorted into appropriate categories in the future.
 npm run generate
 ```
 
+---
 
-## Experimental docs
-
+## 🚧 Experimenting with formatting
 <table>
 <tr>
   <td>Prefix</td><td>Description</td><td>Body</td>
@@ -378,7 +378,7 @@ npm run generate
   </td>
   <td>
 
-  ```ts
+  ```javascript
   const $0
   ```
 
@@ -394,7 +394,7 @@ npm run generate
   <td>let</td>
   <td>
 
-  ```ts
+  ```javascript
   let $0
   ```
 
@@ -410,7 +410,7 @@ npm run generate
   <td>const assignment</td>
   <td>
 
-  ```ts
+  ```javascript
   const $1 = $0
   ```
 
@@ -426,7 +426,7 @@ npm run generate
   <td>let assignment</td>
   <td>
 
-  ```ts
+  ```javascript
   let $1 = $0
   ```
 
@@ -442,7 +442,7 @@ npm run generate
   <td>const string assignment</td>
   <td>
 
-  ```ts
+  ```javascript
   const $1 = '$0'
   ```
 
@@ -459,7 +459,7 @@ npm run generate
   <td>const array assignment</td>
   <td>
 
-  ```ts
+  ```javascript
   const $1 = [$0]
   ```
 
@@ -475,7 +475,7 @@ npm run generate
   <td>const object assignment</td>
   <td>
 
-  ```ts
+  ```javascript
   const $1 = { $0 }
   ```
 
@@ -491,7 +491,7 @@ npm run generate
   <td>object destructuring</td>
   <td>
 
-  ```ts
+  ```javascript
   const { $0 } = ${1:object}
   ```
 
@@ -507,7 +507,7 @@ npm run generate
   <td>array destructuring</td>
   <td>
 
-  ```ts
+  ```javascript
   const [$0] = ${1:array}
   ```
 
@@ -535,7 +535,7 @@ npm run generate
   </td>
   <td>
 
-  ```ts
+  ```javascript
   if ($1) {
     $2
   }
@@ -553,7 +553,7 @@ npm run generate
   <td>if/else statement</td>
   <td>
 
-  ```ts
+  ```javascript
   if ($1) {
     $2
   } else {
@@ -573,7 +573,7 @@ npm run generate
   <td>if/else-if statement</td>
   <td>
 
-  ```ts
+  ```javascript
   if ($1) {
     $2
   } else if ($3) {
@@ -593,7 +593,7 @@ npm run generate
   <td>else statement</td>
   <td>
 
-  ```ts
+  ```javascript
   else {
     $3
   }
@@ -611,7 +611,7 @@ npm run generate
   <td>else if statement</td>
   <td>
 
-  ```ts
+  ```javascript
   else if ($1) {
     $2
   }
@@ -629,7 +629,7 @@ npm run generate
   <td>ternary operator</td>
   <td>
 
-  ```ts
+  ```javascript
   $1 ? $2 : $3
   ```
 
@@ -645,7 +645,7 @@ npm run generate
   <td>ternary expression assignment</td>
   <td>
 
-  ```ts
+  ```javascript
   const ${1:name} = $2 ? $3 : $4
   ```
 
@@ -661,7 +661,7 @@ npm run generate
   <td>switch</td>
   <td>
 
-  ```ts
+  ```javascript
   switch ($1) {
     case $2 : $3
     default: $0
@@ -680,7 +680,7 @@ npm run generate
   <td>case</td>
   <td>
 
-  ```ts
+  ```javascript
   case ${1:value}:
     $0
     break;
@@ -697,7 +697,7 @@ npm run generate
   <td>try/catch</td>
   <td>
 
-  ```ts
+  ```javascript
   try {
     $1
   } catch (error) {
@@ -716,7 +716,7 @@ npm run generate
   <td>try/catch/finally</td>
   <td>
 
-  ```ts
+  ```javascript
   try {
     $1
   } catch (error) {
@@ -737,7 +737,7 @@ npm run generate
   <td>try/finally</td>
   <td>
 
-  ```ts
+  ```javascript
   try {
     $1
   } finally {
@@ -748,4 +748,3 @@ npm run generate
   </td>
 </tr>
 </table>
-
