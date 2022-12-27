@@ -44,7 +44,7 @@ export const arrayMethods = {
     body: "$1.map(Number)$0",
   },
   "filter-true": {
-    name: "Array.filter() for truthy values",
+    name: "Array.filter() truthy",
     body: "$1.filter(Boolean)$0",
   },
 };

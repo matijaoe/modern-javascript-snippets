@@ -16,23 +16,23 @@ export const declarations = {
     body: "let $1 = $0",
   },
   cas: {
-    name: "const string",
+    name: "const string assignment",
     body: "const $1 = '$0'",
   },
   car: {
-    name: "const array",
+    name: "const array assignment",
     body: "const $1 = [$0]",
   },
   cao: {
-    name: "const object",
+    name: "const object assignment",
     body: "const $1 = { $0 }",
   },
   dob: {
-    name: "destructure object",
+    name: "object destructuring",
     body: "const { $0 } = ${1:object}",
   },
   dar: {
-    name: "destructure array",
+    name: "array destructuring",
     body: "const [$0] = ${1:array}",
   },
 };

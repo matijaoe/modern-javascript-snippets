@@ -9,7 +9,7 @@ export const operatorsExpressionsLiterals = {
     body: "&& $0",
   },
   nc: {
-    name: "Nullish coalescing (??)",
+    name: "nullish coalescing (??)",
     body: "?? $0",
   },
   eq: {
@@ -25,7 +25,7 @@ export const operatorsExpressionsLiterals = {
     body: "${1:value} && ${0:value}",
   },
   nce: {
-    name: "Nullish coalescing expression (??)",
+    name: "nullish coalescing expression (??)",
     body: "${1:item} ?? ${0:default}",
   },
   eqe: {
@@ -33,11 +33,11 @@ export const operatorsExpressionsLiterals = {
     body: "${1:value} === ${2:value}",
   },
   ora: {
-    name: "Logical OR assignment (||=)",
+    name: "logical OR assignment (||=)",
     body: "${1:name} ||= ${0:default}",
   },
   nca: {
-    name: "Nullish coalescing assignment (??=)",
+    name: "nullish coalescing assignment (??=)",
     body: "${1:name} ??= ${0:default}",
   },
   inc: {

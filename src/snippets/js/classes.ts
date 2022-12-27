@@ -8,7 +8,7 @@ export const classes = {
     body: "class $1 extends ${2:Base} {\n\t$0\n}",
   },
   csc: {
-    name: "class with constructior",
+    name: "class with constructor",
     body: [
       "class $1 {",
       "\tconstructor($2) {",
@@ -49,7 +49,7 @@ export const classes = {
     body: "${1:name}($2) {\n\t$0\n}",
   },
   meta: {
-    name: "method async",
+    name: "async method",
     body: "async ${1:name}($2) {\n\t$0\n}",
   },
 };

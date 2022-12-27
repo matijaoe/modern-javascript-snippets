@@ -26,5 +26,3 @@ if (!flags.table && !flags.snippets) {
     }
   });
 }
-
-

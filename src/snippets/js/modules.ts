@@ -1,6 +1,6 @@
 export const modules = {
   im: {
-    name: "import",
+    name: "import from module",
     body: "import { $2 } from '$1'$0",
   },
   imf: {

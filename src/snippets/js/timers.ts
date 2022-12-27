@@ -1,18 +1,18 @@
 export const timers = {
   si: {
-    name: "setInterval",
+    name: "set interval",
     body: "setInterval(() => {\n\t$0\n}, ${1:delay})",
   },
   st: {
-    name: "setTimeout",
+    name: "set timeout",
     body: "setTimeout(() => {\n\t$0\n}, ${1:delay})",
   },
   sim: {
-    name: "setImmediate",
+    name: "set immediate",
     body: "setImmediate(() => {\n\t$0\n})",
   },
   nt: {
-    name: "process nextTick",
+    name: "process next tick",
     body: "process.nextTick(() => {\n\t$0\n})",
   },
 };

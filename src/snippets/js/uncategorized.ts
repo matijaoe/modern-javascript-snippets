@@ -1,6 +1,6 @@
 export const uncategorized = {
   uniq: {
-    name: "uniq",
+    name: "array of unique values",
     body: "[...new Set(${0:array})]",
   },
   pi: {
@@ -12,7 +12,7 @@ export const uncategorized = {
     body: "parseFloat(${1:value})",
   },
   am: {
-    name: "array me",
+    name: "array merge",
     body: "[...${1:arr}$2]$0",
   },
   om: {
@@ -20,7 +20,7 @@ export const uncategorized = {
     body: "{ ...${1:object}$2 }$0",
   },
   aat: {
-    name: "array at",
+    name: "array.at",
     body: "${1:items}.at(${2:0})",
   },
   seq: {

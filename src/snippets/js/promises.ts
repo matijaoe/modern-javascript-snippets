@@ -1,6 +1,6 @@
 export const promises = {
   fet: {
-    name: "native fetch",
+    name: "fetch",
     body: "fetch('$1').then(res => res.json())",
   },
   feta: {
@@ -13,35 +13,35 @@ export const promises = {
     body: "new Promise((resolve, reject) => {\n\t$0\n})",
   },
   prs: {
-    name: "promise resolve",
+    name: "Promise.resolve",
     body: "Promise.resolve($1)$0",
   },
   prj: {
-    name: "promise reject",
+    name: "Promise.reject",
     body: "Promise.reject($1)$0",
   },
   then: {
-    name: "promise.then",
+    name: "promise .then",
     body: "$1.then((${2:value}) => $0",
   },
   catch: {
-    name: "promise.catch",
+    name: "promise .catch",
     body: "$1.catch((${2:err}) => $0",
   },
   thenc: {
-    name: "promise.then.catch",
+    name: "promise .then.catch",
     body: "$1.then((${2:value}) => $3.catch((${4:err}) => $5",
   },
   pra: {
-    name: "promise.all",
+    name: "Promise.all",
     body: "Promise.all($1)$0",
   },
   prsa: {
-    name: "promise.allSettled",
+    name: "Promise.allSettled",
     body: "Promise.allSettled($1)$0",
   },
   pran: {
-    name: "promise.any",
+    name: "Promise.any",
     body: "Promise.any($1)$0",
   },
 };

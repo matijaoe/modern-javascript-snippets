@@ -1,14 +1,14 @@
 export const json = {
   jp: {
-    name: "JSON.parse",
+    name: "JSON parse",
     body: "JSON.parse(${1:json})",
   },
   js: {
-    name: "JSON.stringify",
+    name: "JSON stringify",
     body: "JSON.stringify(${1:value})",
   },
   jsp: {
-    name: "JSON.stringify pretty",
+    name: "JSON stringify (pretty)",
     body: "JSON.stringify(${1:value}, null, 2)",
   },
   jss: {

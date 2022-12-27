@@ -44,19 +44,19 @@ export const console = {
     body: "console.log({ $0 })",
   },
   clc: {
-    name: "console.log from clipboard",
+    name: "console.log clipboard",
     body: "console.log({ $CLIPBOARD })",
   },
   cll: {
-    name: "console.log labeled",
+    name: "console.log (labeled)",
     body: "console.log('$1 ->', $1$2)",
   },
   cel: {
-    name: "console.error labeled",
+    name: "console.error (labeled)",
     body: "console.error('$1 ->', $1$2)",
   },
   cwl: {
-    name: "console.warn labeled",
+    name: "console.warn (labeled)",
     body: "console.warn('$1 ->', ${2:$1})",
   },
 };

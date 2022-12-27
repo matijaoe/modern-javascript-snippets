@@ -1,6 +1,6 @@
 export const dates = {
   nd: {
-    name: "new date",
+    name: "new Date()",
     body: "new Date($1)$0",
   },
   now: {

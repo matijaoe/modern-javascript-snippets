@@ -1,32 +1,33 @@
 export const flowControl = {
   if: {
-    name: "if",
+    name: "if statement",
     body: "if (${1}) {\n\t${2}\n}$0",
   },
   ifel: {
-    name: "if-else",
+    name: "if/else statement",
     body: "if (${1}) {\n\t${2}\n} else {\n\t${3}\n}",
   },
   ifei: {
-    name: "if-else-if",
+    name: "if/else-if statement",
     body: "if (${1}) {\n\t${2}\n} else if (${3}) {\n\t${4}\n}",
   },
   el: {
-    name: "else",
+    name: "else statement",
     body: "else {\n\t${3}\n}",
   },
   ei: {
-    name: "else if",
+    name: "else if statement",
     body: "else if (${1}) {\n\t${2}\n}",
   },
   ter: {
-    name: "Ternary expression",
+    name: "ternary operator",
     body: "${1} ? ${2} : ${3}",
   },
   tera: {
-    name: "Ternary expression assignment",
+    name: "ternary expression assignment",
     body: "const ${1:name} = ${2} ? ${3} : ${4}",
   },
+  // TODO: better implementation
   switch: {
     name: "switch",
     body: [
@@ -42,7 +43,7 @@ export const flowControl = {
     ],
   },
   tc: {
-    name: "try-catch",
+    name: "try/catch",
     body: [
       "try {",
       "\t$1",
@@ -52,7 +53,7 @@ export const flowControl = {
     ],
   },
   tcf: {
-    name: "try-catch-finally",
+    name: "try/catch/finally",
     body: [
       "try {",
       "\t$1",
@@ -64,7 +65,7 @@ export const flowControl = {
     ],
   },
   tf: {
-    name: "try-finally",
+    name: "try/finally",
     body: [
       "try {",
       "\t$1",

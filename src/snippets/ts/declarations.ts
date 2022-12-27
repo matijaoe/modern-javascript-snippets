@@ -8,11 +8,11 @@ export const declarations = {
     body: "let ${1:name}: ${2:string} = ${3:value}",
   },
   caat: {
-    name: "const array (typed)",
+    name: "array assignment (typed)",
     body: "const ${1:items}: ${2:string}[] = [$0]",
   },
   caot: {
-    name: "const object (typed)",
+    name: "object assignment (typed)",
     body: "const ${1:name}: ${2:object} = { $0 }",
   },
 };

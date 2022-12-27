@@ -1,6 +1,6 @@
 export const misc = {
   us: {
-    name: "insert 'use strict' statement",
+    name: "'use strict' statement",
     body: "'use strict'",
   },
   pse: {
@@ -16,7 +16,7 @@ export const misc = {
     body: "process.env.$0",
   },
   envv: {
-    name: "env variable vite",
+    name: "env variable (vite)",
     body: "import.meta.env.$0",
   },
 };

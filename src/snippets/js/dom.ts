@@ -8,15 +8,15 @@ export const dom = {
     body: "${1:document}.querySelectorAll('$2')",
   },
   qsaa: {
-    name: "query selector all array",
+    name: "query selector all as array",
     body: "[...${1:document}.querySelectorAll('$2')]",
   },
   ael: {
-    name: "add event listener",
+    name: "event listener",
     body: "${1:document}.addEventListener('${2:click}', (e$3) => $0)",
   },
   qsae: {
-    name: "query selector event listener",
+    name: "query selector with event listener",
     body:
       "${1:document}.querySelector('$2')?.addEventListener('${3:click}', (e$4) => $0)",
   },
