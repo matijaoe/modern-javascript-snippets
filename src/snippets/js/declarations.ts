@@ -27,4 +27,12 @@ export const declarations = {
     name: "const object",
     body: "const $1 = { $0 }",
   },
+  dob: {
+    name: "destructure object",
+    body: "const { $0 } = ${1:object}",
+  },
+  dar: {
+    name: "destructure array",
+    body: "const [$0] = ${1:array}",
+  },
 };

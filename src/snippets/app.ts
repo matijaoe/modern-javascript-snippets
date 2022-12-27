@@ -3,11 +3,15 @@ import { typescript } from "./ts/app.ts";
 
 export const variants = [
   {
-    language: "JavaScript",
+    label: "JavaScript",
+    language: "javascript",
+    extension: "js",
     snippets: javascript,
   },
   {
-    language: "TypeScript",
+    label: "TypeScript",
+    language: "typescript",
+    extension: "ts",
     snippets: typescript,
   },
 ];

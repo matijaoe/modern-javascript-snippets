@@ -1,4 +1,13 @@
 export const promises = {
+  fet: {
+    name: "native fetch",
+    body: "fetch('$1').then(res => res.json())",
+  },
+  feta: {
+    name: "fetch assignment",
+    body:
+      "const ${2|data,{ data }|} = await fetch('$1').then(res => res.json())",
+  },
   pr: {
     name: "promise",
     body: "new Promise((resolve, reject) => {\n\t$0\n})",
