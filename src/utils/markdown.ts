@@ -5,7 +5,6 @@ import { replaceSymbol } from "./general.ts";
 export const code = (str: string) => `\`${str}\``;
 
 export const serializeForMarkdown = (str: string) => {
-  let clean = str;
   if (str.includes("\n")) {
     return str
       .replace(/`/, "<code>")
@@ -14,7 +13,7 @@ export const serializeForMarkdown = (str: string) => {
       .replace(/\t/g, "&nbsp;&nbsp;")
       .replace(/\|/g, "\\|");
   }
-  // TODO: remove $0 when it'
+  // TODO: dont remove | when it is in ``
   return str.replace(/\|/g, "\\|");
 };
 

@@ -4,11 +4,13 @@
 
 <br>
 
-    🚧 Work in progress
+  🚧 *Still a work in progress. Some snippets may be changed or removed, and many more will be added.*
 
-<br>
-
-Currently at **180+** snippets
+## Features
+- Contains over **180** snippets
+- Modern JavaScript syntax
+- Strategically placed tabstops
+- ... 
 
 <br>
 
@@ -51,6 +53,7 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 - Placeholders are tabstops with values, such as `${1:name}` 
 - Placeholder text will be inserted and selected such that it can be easily changed 
 - Can be nested, like `${1:another ${2:placeholder}}`
+
 
 ## Snippets
 ### Assignments
@@ -349,7 +352,7 @@ Will be sorted into appropriate categories in the future.
 
 ```bash
 # ensure Deno is installed
-# https://deno.land/manuk@v1.29.1/getting_started/installation
+# https://deno.land/manual@v1.29.1/getting_started/installation
 
 # generate .code-snippets
 npm run generate
