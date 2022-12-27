@@ -2,7 +2,7 @@ import { arrayMethods } from "./array-methods.ts";
 import { classes } from "./classes.ts";
 import { console } from "./console.ts";
 import { dates } from "./dates.ts";
-import { declarations } from "./declarations.ts";
+import { assignments } from "./assignments.ts";
 import { dom } from "./dom.ts";
 import { flowControl } from "./flow-control.ts";
 import { functions } from "./functions.ts";
@@ -20,7 +20,7 @@ import { types } from "./types.ts";
 import { uncategorized } from "./uncategorized.ts";
 
 export const javascript = [
-  declarations,
+  assignments,
   flowControl,
   functions,
   loops,

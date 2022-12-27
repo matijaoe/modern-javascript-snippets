@@ -1,17 +1,24 @@
+import { XSnippetDefinition } from "../models/app.ts";
 import { javascript } from "./js/app.ts";
 import { typescript } from "./ts/app.ts";
 
-export const variants = [
+type SnippetVariant = {
+  label: string;
+  language: string;
+  extension: string;
+  snippetsWithMeta: XSnippetDefinition[];
+};
+export const variants: SnippetVariant[] = [
   {
-    label: "JavaScript",
+    label: "Snippets",
     language: "javascript",
     extension: "js",
-    snippets: javascript,
+    snippetsWithMeta: javascript,
   },
   {
-    label: "TypeScript",
+    label: "TypeScript specific",
     language: "typescript",
     extension: "ts",
-    snippets: typescript,
+    snippetsWithMeta: typescript,
   },
 ];

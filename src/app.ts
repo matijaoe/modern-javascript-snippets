@@ -1,11 +1,12 @@
-import { parse } from "https://deno.land/std@0.168.0/flags/mod.ts";
+import { parse } from "./deps.ts";
+import { VscSnippetDefinition } from "./models/app.ts";
 import { variants } from "./snippets/app.ts";
+import { logTables } from "./utils/markdown.ts";
 import {
   convertToVscSnippet,
   generateSnippetsFile,
   groupSnippets,
-  logTables,
-} from "./utils/app.ts";
+} from "./utils/snippets.ts";
 
 const flags = parse(Deno.args, {
   boolean: ["table", "snippets"],
@@ -16,12 +17,21 @@ if (!flags.table && !flags.snippets) {
   console.log("Please specify at least one flag: --table or --snippets");
 } else {
   variants.forEach((variant) => {
-    const categorizedVscSnippets = variant.snippets.map(convertToVscSnippet);
+    const categorizedVscSnippets: VscSnippetDefinition[] = variant
+      .snippetsWithMeta.map(
+        (item) => ({
+          ...item,
+          snippets: convertToVscSnippet(item.snippets),
+        }),
+      );
+
     if (flags.table) {
       logTables(variant.label, categorizedVscSnippets);
     }
     if (flags.snippets) {
-      const variantVscSnippet = groupSnippets(categorizedVscSnippets);
+      const variantVscSnippet = groupSnippets(
+        categorizedVscSnippets.map((item) => item.snippets),
+      );
       generateSnippetsFile(variant.extension, variantVscSnippet);
     }
   });
