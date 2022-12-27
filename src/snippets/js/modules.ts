@@ -7,7 +7,7 @@ export const modules: XSnippetDefinition = {
   snippets: {
     im: {
       name: "import from module",
-      body: "import { $2 } from '$1'$0",
+      body: "import { $2 } from '$1'",
     },
     imf: {
       name: "import file",
@@ -19,7 +19,7 @@ export const modules: XSnippetDefinition = {
     },
     imd: {
       name: "import default",
-      body: "import $2 from '$1'$3;$0",
+      body: "import $2 from '$1'$3;",
     },
     ima: {
       name: "import as",

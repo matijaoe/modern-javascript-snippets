@@ -28,15 +28,15 @@ export const promises: XSnippetDefinition = {
     },
     then: {
       name: "promise .then",
-      body: "$1.then((${2:value}) => $0",
+      body: "$1.then((${2:value}) => $0)",
     },
     catch: {
       name: "promise .catch",
-      body: "$1.catch((${2:err}) => $0",
+      body: "$1.catch((${2:err}) => $0)",
     },
     thenc: {
       name: "promise .then.catch",
-      body: "$1.then((${2:value}) => $3.catch((${4:err}) => $5",
+      body: "$1.then((${2:value}) => $3).catch((${4:err}) => $5)",
     },
     pra: {
       name: "Promise.all",

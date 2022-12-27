@@ -34,13 +34,13 @@ export const flowControl: XSnippetDefinition = {
       body: "const ${1:name} = $2 ? $3 : $4",
     },
     // TODO: better implementation
-    switch: {
+    sw: {
       name: "switch",
       body: [
         "switch ($1) {\n\tcase $2 : $3\n\tdefault: $0\n}",
       ],
     },
-    case: {
+    cas: {
       name: "case",
       body: [
         "case ${1:value}:",

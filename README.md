@@ -357,3 +357,395 @@ Will be sorted into appropriate categories in the future.
 # generate .code-snippets
 npm run generate
 ```
+
+
+## Experimental docs
+
+<table>
+<tr>
+  <td>Prefix</td><td>Description</td><td>Body</td>
+</tr>
+<tr>
+
+<tr>
+  <td>
+
+  `c`
+
+  </td>
+  <td>
+    const
+  </td>
+  <td>
+
+  ```ts
+  const $0
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `l`
+
+  </td>
+  <td>let</td>
+  <td>
+
+  ```ts
+  let $0
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `ca`
+
+  </td>
+  <td>const assignment</td>
+  <td>
+
+  ```ts
+  const $1 = $0
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `la`
+
+  </td>
+  <td>let assignment</td>
+  <td>
+
+  ```ts
+  let $1 = $0
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `cas`
+
+  </td>
+  <td>const string assignment</td>
+  <td>
+
+  ```ts
+  const $1 = '$0'
+  ```
+
+  </td>
+
+<tr>
+
+<tr>
+  <td>
+
+  `car`
+
+  </td>
+  <td>const array assignment</td>
+  <td>
+
+  ```ts
+  const $1 = [$0]
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `cao`
+
+  </td>
+  <td>const object assignment</td>
+  <td>
+
+  ```ts
+  const $1 = { $0 }
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `dob`
+
+  </td>
+  <td>object destructuring</td>
+  <td>
+
+  ```ts
+  const { $0 } = ${1:object}
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `dar`
+
+  </td>
+  <td>array destructuring</td>
+  <td>
+
+  ```ts
+  const [$0] = ${1:array}
+  ```
+
+  </td>
+</tr>
+
+
+</table>
+
+
+<table>
+<tr>
+  <td>Prefix</td><td>Description</td><td>Body</td>
+</tr>
+<tr>
+
+<tr>
+  <td>
+
+  `if`
+
+  </td>
+  <td>
+    if statement
+  </td>
+  <td>
+
+  ```ts
+  if ($1) {
+    $2
+  }
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `ifel`
+
+  </td>
+  <td>if/else statement</td>
+  <td>
+
+  ```ts
+  if ($1) {
+    $2
+  } else {
+    $3
+  }
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `ifei`
+
+  </td>
+  <td>if/else-if statement</td>
+  <td>
+
+  ```ts
+  if ($1) {
+    $2
+  } else if ($3) {
+    $4
+  }
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `el`
+
+  </td>
+  <td>else statement</td>
+  <td>
+
+  ```ts
+  else {
+    $3
+  }
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `ei`
+
+  </td>
+  <td>else if statement</td>
+  <td>
+
+  ```ts
+  else if ($1) {
+    $2
+  }
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `ter`
+
+  </td>
+  <td>ternary operator</td>
+  <td>
+
+  ```ts
+  $1 ? $2 : $3
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `tera`
+
+  </td>
+  <td>ternary expression assignment</td>
+  <td>
+
+  ```ts
+  const ${1:name} = $2 ? $3 : $4
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `sw`
+
+  </td>
+  <td>switch</td>
+  <td>
+
+  ```ts
+  switch ($1) {
+    case $2 : $3
+    default: $0
+  }
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `sw`
+
+  </td>
+  <td>case</td>
+  <td>
+
+  ```ts
+  case ${1:value}:
+    $0
+    break;
+  ```
+  </td>
+</tr>
+
+<tr>
+  <td>
+  
+  `try/catch`
+
+  </td>
+  <td>try/catch</td>
+  <td>
+
+  ```ts
+  try {
+    $1
+  } catch (error) {
+    $0
+  }
+  ```
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `try/catch/finally`
+
+  </td>
+  <td>try/catch/finally</td>
+  <td>
+
+  ```ts
+  try {
+    $1
+  } catch (error) {
+    $2
+  } finally {
+    $3
+  }
+  ```
+  </td>
+</tr>
+
+<tr>
+  <td>
+
+  `try/finally`
+
+  </td>
+  <td>try/finally</td>
+  <td>
+
+  ```ts
+  try {
+    $1
+  } finally {
+    $2
+  }
+  ```
+  
+  </td>
+</tr>
+</table>
+

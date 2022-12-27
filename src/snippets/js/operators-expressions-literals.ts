@@ -79,7 +79,7 @@ export const operatorsExpressionsLiterals = {
     },
     tle: {
       name: "template literal expression",
-      body: "`$1${$2}$0`",
+      body: "`$1${$2}$3`",
     },
   },
 };
