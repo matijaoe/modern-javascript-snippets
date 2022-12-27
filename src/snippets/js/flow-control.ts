@@ -37,7 +37,7 @@ export const flowControl = {
     name: "case",
     body: [
       "case ${1:value}:",
-      "\tt$0",
+      "\t$0",
       "\tbreak;",
     ],
   },

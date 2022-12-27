@@ -1,16 +1,19 @@
 # Modern JavaScript Snippets ⚡
 
+> Short and memorable JavaScript & TypeScript snippets for the modern-day developer. 
+
+<br>
+
     🚧 Work in progress
 
+<br>
 
-> Short and memorable JavaScript & TypeScript snippets for the modern-day developer.
+Currently at **180+** snippets
 
 <br>
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1C.svg?style=for-the-badge&logo=javascript&logoColor=%23323330)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-
-
 
 ## Support
 Only JavaScript and TypeScript will be supported. 
@@ -22,9 +25,8 @@ Supported file extensions:
 - `.jsx`
 - `.tsx`
 
-
 ## Setup
-The following is not mandatory, but provides a nicer experience.
+The following is not mandatory, but could provide a nicer experience.
 
 Search for `editor.tabCompletion` in user settings, or edit the settings.json directly:
 ```jsonc
@@ -280,6 +282,8 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 ## Uncategorized 
 
 ⚠️ *working on it*
+
+
 | Prefix | Description      | Body                                      |
 | ------ | ---------------- | ----------------------------------------- |
 | `uniq` | uniq             | `[...new Set(${0:array})]`                |
@@ -313,9 +317,7 @@ You can use these snippets along with Prettier/ESLint to have your code automati
 | `tpu`  | type union        | `type ${1:Model} = ${2:first} \| ${3:second}`   |
 | `tpi`  | type intersection | `type ${1:Model} = ${2:first} & ${3:second}`    |
 
-*...and many more (evertyhing will be documented)*
-
-Running locally
+## Running locally
 
 ```bash
 # ensure Deno is installed
