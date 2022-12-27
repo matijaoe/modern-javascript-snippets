@@ -1,2 +1,13 @@
-export * from "./js/app.ts";
-export * from "./ts/app.ts";
+import { javascript } from "./js/app.ts";
+import { typescript } from "./ts/app.ts";
+
+export const variants = [
+  {
+    language: "JavaScript",
+    snippets: javascript,
+  },
+  {
+    language: "TypeScript",
+    snippets: typescript,
+  },
+];

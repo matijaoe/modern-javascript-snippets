@@ -8,23 +8,23 @@ export const declarations = {
     body: "let $0",
   },
   ca: {
-    name: "const assignment ⚡",
+    name: "const assignment",
     body: "const $1 = $0",
   },
   la: {
-    name: "let assignment ⚡",
+    name: "let assignment",
     body: "let $1 = $0",
   },
   cas: {
-    name: "const string ⚡",
+    name: "const string",
     body: "const $1 = '$0'",
   },
   car: {
-    name: "const array ⚡",
+    name: "const array",
     body: "const $1 = [$0]",
   },
   cao: {
-    name: "const object ⚡",
+    name: "const object",
     body: "const $1 = { $0 }",
   },
 };

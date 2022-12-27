@@ -38,7 +38,8 @@
   },
   "scripts": {
     "publish": "vsce package && vsce publish",
-    "generate": "deno run --allow-write src/app.ts"
+    "generate": "deno run --allow-write --allow-read src/app.ts",
+    "docs": "deno run --allow-write --allow-read src/docs-gen.ts"
   },
   "contributes": {
     "snippets": [
