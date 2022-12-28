@@ -23,27 +23,27 @@ export const operatorsExpressionsLiterals = {
     },
     ore: {
       name: "logical OR expression",
-      body: "${1:value} || ${0:value}",
+      body: "$1 || $0",
     },
     ande: {
       name: "logical AND expression",
-      body: "${1:value} && ${0:value}",
+      body: "$1 && $0",
     },
     nce: {
       name: "nullish coalescing expression (??)",
-      body: "${1:item} ?? ${0:default}",
+      body: "$1 ?? $0",
     },
     eqe: {
       name: "strict equality expression",
-      body: "${1:value} === ${2:value}",
+      body: "$1 === $0",
     },
     ora: {
       name: "logical OR assignment (||=)",
-      body: "${1:name} ||= ${0:default}",
+      body: "$1 ||= $0",
     },
     nca: {
       name: "nullish coalescing assignment (??=)",
-      body: "${1:name} ??= ${0:default}",
+      body: "$1 ??= $0",
     },
     inc: {
       name: "addition assignment",

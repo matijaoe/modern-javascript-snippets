@@ -19,11 +19,11 @@ export const types: XSnippetDefinition = {
     },
     tpu: {
       name: "type union",
-      body: "type ${1:Model} = ${2:first} | ${3:second}",
+      body: "type ${1:Model} = $2 | $3",
     },
     tpi: {
       name: "type intersection",
-      body: "type ${1:Model} = ${2:first} & ${3:second}",
+      body: "type ${1:Model} = $2 & $3",
     },
   },
 };

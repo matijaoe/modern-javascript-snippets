@@ -7,12 +7,12 @@ export const promises: XSnippetDefinition = {
   snippets: {
     fet: {
       name: "fetch",
-      body: "fetch('$1').then(res => res.json())",
+      body: "fetch('$1'$2).then(res => res.json())",
     },
     feta: {
       name: "fetch assignment",
       body:
-        "const ${2|data,{ data }|} = await fetch('$1').then(res => res.json())",
+        "const ${1|data,{ data }|} = await fetch('$2'$3).then(res => res.json())",
     },
     pr: {
       name: "promise",
@@ -27,15 +27,15 @@ export const promises: XSnippetDefinition = {
       body: "Promise.reject($1)",
     },
     then: {
-      name: "promise .then",
+      name: "promise then()",
       body: "$1.then((${2:value}) => $0)",
     },
     catch: {
-      name: "promise .catch",
+      name: "promise catch()",
       body: "$1.catch((${2:err}) => $0)",
     },
     thenc: {
-      name: "promise .then.catch",
+      name: "promise then().catch()",
       body: "$1.then((${2:value}) => $3).catch((${4:err}) => $5)",
     },
     pra: {

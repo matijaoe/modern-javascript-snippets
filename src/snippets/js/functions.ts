@@ -15,7 +15,7 @@ export const functions: XSnippetDefinition = {
     },
     nfn: {
       name: "named arrow function",
-      body: "const ${1:name} = ($2) => {$0}",
+      body: "const ${1} = ($2) => {$0}",
     },
     nfna: {
       name: "async named arrow function",
@@ -37,25 +37,9 @@ export const functions: XSnippetDefinition = {
       name: "async arrow function with body",
       body: "async ($1) => {\n\t$0\n}",
     },
-    efn: {
-      name: "export function",
-      body: [
-        "export function ${1:name}($2) {",
-        "\t$0",
-        "}",
-      ],
-    },
-    edfn: {
-      name: "export default function",
-      body: "export default function ${1:name}($2) {\n\t$0\n}",
-    },
-    enfn: {
-      name: "export named arrow function",
-      body: "export const ${1:name} = ($2) => {$0}",
-    },
     iife: {
       name: "immediately-invoked function expression",
-      body: "((${1:arguments}) => {\n\t$0\n})($2)",
+      body: "(($1) => {\n\t$0\n})($2)",
     },
   },
 };

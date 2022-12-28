@@ -1,6 +1,6 @@
 import { XSnippetDefinition } from "../../models/app.ts";
 
-export const misc: XSnippetDefinitionk = {
+export const misc: XSnippetDefinition = {
   meta: {
     title: "Misc",
   },

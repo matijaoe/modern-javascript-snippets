@@ -37,7 +37,7 @@ Search for `editor.tabCompletion` in user settings, or edit the settings.json di
 ```
 
 ## Style
-All code snippets are without semicolons (`;`). 
+Most of the code snippets are without semicolons (`;`), except where it allows for better tabstop management.
 
 You can use these snippets along with Prettier/ESLint to have your code automatically formatted to your preference.
 
@@ -416,7 +416,7 @@ let $0
 <td>
 
   ```javascript
-const $1 = $0
+const $1 = $2;
   ```
 
 </td>
@@ -432,7 +432,7 @@ const $1 = $0
 <td>
 
   ```javascript
-let $1 = $0
+let $1 = $2;
   ```
 
 </td>
@@ -448,7 +448,7 @@ let $1 = $0
 <td>
 
   ```javascript
-const $1 = '$0'
+const $1 = '$2';
   ```
 
 </td>
@@ -811,7 +811,7 @@ async function ${1:name}($2) {
 <td>
 
   ```javascript
-const ${1:name} = ($2) => {$0}
+const ${1} = ($2) => {$0}
   ```
 
 </td>
@@ -904,58 +904,6 @@ async ($1) => {
 <tr>
 <td>
 
-`efn`
-
-</td>
-<td>export function</td>
-<td>
-
-  ```javascript
-export function ${1:name}($2) {
-	$0
-}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-`edfn`
-
-</td>
-<td>export default function</td>
-<td>
-
-  ```javascript
-export default function ${1:name}($2) {
-	$0
-}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-`enfn`
-
-</td>
-<td>export named arrow function</td>
-<td>
-
-  ```javascript
-export const ${1:name} = ($2) => {$0}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td>
-
 `iife`
 
 </td>
@@ -963,7 +911,7 @@ export const ${1:name} = ($2) => {$0}
 <td>
 
   ```javascript
-((${1:arguments}) => {
+(($1) => {
 	$0
 })($2)
   ```
@@ -1325,7 +1273,7 @@ async ${1:name}($2) {
 <td>
 
   ```javascript
-fetch('$1').then(res => res.json())
+fetch('$1'$2).then(res => res.json())
   ```
 
 </td>
@@ -1341,7 +1289,7 @@ fetch('$1').then(res => res.json())
 <td>
 
   ```javascript
-const ${2|data,{ data }|} = await fetch('$1').then(res => res.json())
+const ${1|data,{ data }|} = await fetch('$2'$3).then(res => res.json())
   ```
 
 </td>
@@ -1403,7 +1351,7 @@ Promise.reject($1)
 `then`
 
 </td>
-<td>promise .then</td>
+<td>promise then()</td>
 <td>
 
   ```javascript
@@ -1419,7 +1367,7 @@ $1.then((${2:value}) => $0)
 `catch`
 
 </td>
-<td>promise .catch</td>
+<td>promise catch()</td>
 <td>
 
   ```javascript
@@ -1435,7 +1383,7 @@ $1.catch((${2:err}) => $0)
 `thenc`
 
 </td>
-<td>promise .then.catch</td>
+<td>promise then().catch()</td>
 <td>
 
   ```javascript
@@ -1514,39 +1462,7 @@ Promise.any($1)
 <td>
 
   ```javascript
-import { $2 } from '$1'
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-`imf`
-
-</td>
-<td>import file</td>
-<td>
-
-  ```javascript
-import '$1'
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-`imp`
-
-</td>
-<td>import dynamic</td>
-<td>
-
-  ```javascript
-import($0)
+import { $2 } from '${1:module}';
   ```
 
 </td>
@@ -1562,7 +1478,7 @@ import($0)
 <td>
 
   ```javascript
-import $2 from '$1'$3;
+import $2 from '${1:module}';
   ```
 
 </td>
@@ -1578,7 +1494,55 @@ import $2 from '$1'$3;
 <td>
 
   ```javascript
-import ${2:*} as {3:name} from '$1'
+import ${2:*} as ${3:name} from '${1:module}';
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`imf`
+
+</td>
+<td>import file</td>
+<td>
+
+  ```javascript
+import '$1';
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`imp`
+
+</td>
+<td>import dynamic</td>
+<td>
+
+  ```javascript
+import('$0')
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`impa`
+
+</td>
+<td>await import dynamic</td>
+<td>
+
+  ```javascript
+await import('$0')
   ```
 
 </td>
@@ -1642,7 +1606,7 @@ export default $0
 <td>
 
   ```javascript
-export { $2 } from '$1'
+export { $0 } from '${1:module}';
   ```
 
 </td>
@@ -1658,7 +1622,7 @@ export { $2 } from '$1'
 <td>
 
   ```javascript
-export * from '$1'
+export * from '${1:module}';
   ```
 
 </td>
@@ -1675,6 +1639,58 @@ export * from '$1'
 
   ```javascript
 export const ${1:name} = { $0 }
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`efn`
+
+</td>
+<td>export function</td>
+<td>
+
+  ```javascript
+export function ${1:name}($2) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`edfn`
+
+</td>
+<td>export default function</td>
+<td>
+
+  ```javascript
+export default function ${1:name}($2) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`enfn`
+
+</td>
+<td>export named arrow function</td>
+<td>
+
+  ```javascript
+export const ${1:name} = ($2) => {$0}
   ```
 
 </td>
@@ -2110,7 +2126,7 @@ Grouping them all together for now
 <td>
 
   ```javascript
-${1:value} || ${0:value}
+$1 || $0
   ```
 
 </td>
@@ -2126,7 +2142,7 @@ ${1:value} || ${0:value}
 <td>
 
   ```javascript
-${1:value} && ${0:value}
+$1 && $0
   ```
 
 </td>
@@ -2142,7 +2158,7 @@ ${1:value} && ${0:value}
 <td>
 
   ```javascript
-${1:item} ?? ${0:default}
+$1 ?? $0
   ```
 
 </td>
@@ -2158,7 +2174,7 @@ ${1:item} ?? ${0:default}
 <td>
 
   ```javascript
-${1:value} === ${2:value}
+$1 === $0
   ```
 
 </td>
@@ -2174,7 +2190,7 @@ ${1:value} === ${2:value}
 <td>
 
   ```javascript
-${1:name} ||= ${0:default}
+$1 ||= $0
   ```
 
 </td>
@@ -2190,7 +2206,7 @@ ${1:name} ||= ${0:default}
 <td>
 
   ```javascript
-${1:name} ??= ${0:default}
+$1 ??= $0
   ```
 
 </td>
@@ -3312,7 +3328,7 @@ Will be sorted into appropriate categories in the future.
 <td>
 
   ```javascript
-[...new Set(${0:array})]
+[...new Set($0)]
   ```
 
 </td>
@@ -3328,7 +3344,7 @@ Will be sorted into appropriate categories in the future.
 <td>
 
   ```javascript
-parseInt(${1:value}, ${2|10,2,8,16|})
+parseInt($1, ${2|10,2,8,16|})
   ```
 
 </td>
@@ -3344,7 +3360,7 @@ parseInt(${1:value}, ${2|10,2,8,16|})
 <td>
 
   ```javascript
-parseFloat(${1:value})
+parseFloat($1)
   ```
 
 </td>
@@ -3360,7 +3376,7 @@ parseFloat(${1:value})
 <td>
 
   ```javascript
-[...${1:arr}$2]
+[...$1]
   ```
 
 </td>
@@ -3376,7 +3392,7 @@ parseFloat(${1:value})
 <td>
 
   ```javascript
-{ ...${1:object}$2 }
+{ ...$1 }
   ```
 
 </td>
@@ -3392,7 +3408,7 @@ parseFloat(${1:value})
 <td>
 
   ```javascript
-${1:items}.at(${2:0})
+$1.at(${2:0})
   ```
 
 </td>
@@ -3439,7 +3455,7 @@ Only applied to .ts and .tsx files
 <td>
 
   ```javascript
-const ${1:name}: ${2:string} = ${3:value}
+const $1: ${2:string} = $3
   ```
 
 </td>
@@ -3455,7 +3471,7 @@ const ${1:name}: ${2:string} = ${3:value}
 <td>
 
   ```javascript
-let ${1:name}: ${2:string} = ${3:value}
+let $1: ${2:string} = $3
   ```
 
 </td>
@@ -3471,7 +3487,7 @@ let ${1:name}: ${2:string} = ${3:value}
 <td>
 
   ```javascript
-const ${1:items}: ${2:string}[] = [$0]
+const $1: ${2:string}[] = [$0]
   ```
 
 </td>
@@ -3487,7 +3503,7 @@ const ${1:items}: ${2:string}[] = [$0]
 <td>
 
   ```javascript
-const ${1:name}: ${2:object} = { $0 }
+const $1: ${2:object} = { $0 }
   ```
 
 </td>
@@ -3566,7 +3582,7 @@ type ${1:Model} = $0
 <td>
 
   ```javascript
-type ${1:Model} = ${2:first} | ${3:second}
+type ${1:Model} = $2 | $3
   ```
 
 </td>
@@ -3582,7 +3598,7 @@ type ${1:Model} = ${2:first} | ${3:second}
 <td>
 
   ```javascript
-type ${1:Model} = ${2:first} & ${3:second}
+type ${1:Model} = $2 & $3
   ```
 
 </td>

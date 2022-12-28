@@ -15,15 +15,15 @@ export const assignments: XSnippetDefinition = {
     },
     ca: {
       name: "const assignment",
-      body: "const $1 = $0",
+      body: "const $1 = $2;",
     },
     la: {
       name: "let assignment",
-      body: "let $1 = $0",
+      body: "let $1 = $2;",
     },
     cas: {
       name: "const string assignment",
-      body: "const $1 = '$0'",
+      body: "const $1 = '$2';",
     },
     car: {
       name: "const array assignment",
