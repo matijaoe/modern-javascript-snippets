@@ -16,6 +16,7 @@ if (!flags.snippets && !flags.docs) {
   console.log("Please specify at least one flag: --snippets or --docs");
 } else {
   if (flags.snippets) {
+    console.log("\nGenerating snippets...");
     languages.forEach((language) => {
       const categorizedVscSnippets = language
         .snippetDefinitions.map(
@@ -35,6 +36,7 @@ if (!flags.snippets && !flags.docs) {
   // TODO: probably better to make it generate from vsc json
   // pass in meta, and snippets converted to vsc format
   if (flags.docs) {
+    console.log("\nGenerating docs...");
     const docs = generateDocs(languages);
     populateDocsBlock(docs);
   }

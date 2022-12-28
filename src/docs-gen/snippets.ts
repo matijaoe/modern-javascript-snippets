@@ -78,16 +78,23 @@ export const populateDocsBlock = async (input: string) => {
     "g",
   );
 
+  const file = "./README.md";
   const options = {
-    files: "./README.md",
+    files: file,
     from: regex,
     to: docsBlock(input),
   };
 
   try {
     const results = await replaceInFile(options);
-    console.log("Replacement results:", results);
+    const readmeResult = results.find((r) => r.file === file);
+
+    if (readmeResult?.hasChanged) {
+      console.log("✅ README updated");
+    } else {
+      console.log("👍 README already up to date");
+    }
   } catch (error) {
-    console.error("Error occurred:", error);
+    console.error("Error while updating README:", error);
   }
 };
