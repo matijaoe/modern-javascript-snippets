@@ -1,7 +1,10 @@
 import { parse } from "./deps.ts";
-import { VscSnippetDefinition } from "./models/app.ts";
-import { variants } from "./snippets/app.ts";
-import { logTables } from "./utils/markdown.ts";
+import {
+  generateSnippetDocs,
+  generateVariantSections,
+} from "./docs-gen/snippets.ts";
+// import { logMdTables } from "./docs-gen/table-md.ts";
+import { languages } from "./snippets/app.ts";
 import {
   convertToVscSnippet,
   generateSnippetsFile,
@@ -16,23 +19,26 @@ const flags = parse(Deno.args, {
 if (!flags.table && !flags.snippets) {
   console.log("Please specify at least one flag: --table or --snippets");
 } else {
-  variants.forEach((variant) => {
-    const categorizedVscSnippets: VscSnippetDefinition[] = variant
-      .snippetsWithMeta.map(
-        (item) => ({
-          ...item,
-          snippets: convertToVscSnippet(item.snippets),
-        }),
-      );
+  if (flags.snippets) {
+    // Snippets generation
+    languages.forEach((language) => {
+      const categorizedVscSnippets = language
+        .snippetDefinitions.map(
+          (item) => ({
+            ...item,
+            snippets: convertToVscSnippet(item.snippets),
+          }),
+        );
 
-    if (flags.table) {
-      logTables(variant.label, categorizedVscSnippets);
-    }
-    if (flags.snippets) {
       const variantVscSnippet = groupSnippets(
         categorizedVscSnippets.map((item) => item.snippets),
       );
-      generateSnippetsFile(variant.extension, variantVscSnippet);
-    }
-  });
+      generateSnippetsFile(language.fileExtension, variantVscSnippet);
+    });
+  }
+
+  if (flags.table) {
+    const sections = generateVariantSections(languages);
+    generateSnippetDocs(sections);
+  }
 }

@@ -360,391 +360,3232 @@ npm run generate
 
 ---
 
-## 🚧 Experimenting with formatting
+## 🚧 Experimental documentation
+
+## Snippets
+
+
+### Assignments
+
 <table>
-<tr>
-  <td>Prefix</td><td>Description</td><td>Body</td>
-</tr>
-<tr>
 
 <tr>
-  <td>
-
-  `c`
-
-  </td>
-  <td>
-    const
-  </td>
-  <td>
-
-  ```javascript
-  const $0
-  ```
-
-  </td>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `l`
+`c`
 
-  </td>
-  <td>let</td>
-  <td>
+</td>
+<td>const</td>
+<td>
 
   ```javascript
-  let $0
+const $0
   ```
 
-  </td>
+</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `ca`
+`l`
 
-  </td>
-  <td>const assignment</td>
-  <td>
+</td>
+<td>let</td>
+<td>
 
   ```javascript
-  const $1 = $0
+let $0
   ```
 
-  </td>
+</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `la`
+`ca`
 
-  </td>
-  <td>let assignment</td>
-  <td>
+</td>
+<td>const assignment</td>
+<td>
 
   ```javascript
-  let $1 = $0
+const $1 = $0
   ```
 
-  </td>
+</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `cas`
+`la`
 
-  </td>
-  <td>const string assignment</td>
-  <td>
-
-  ```javascript
-  const $1 = '$0'
-  ```
-
-  </td>
-
-<tr>
-
-<tr>
-  <td>
-
-  `car`
-
-  </td>
-  <td>const array assignment</td>
-  <td>
+</td>
+<td>let assignment</td>
+<td>
 
   ```javascript
-  const $1 = [$0]
+let $1 = $0
   ```
 
-  </td>
+</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `cao`
+`cas`
 
-  </td>
-  <td>const object assignment</td>
-  <td>
+</td>
+<td>const string assignment</td>
+<td>
 
   ```javascript
-  const $1 = { $0 }
+const $1 = '$0'
   ```
 
-  </td>
+</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `dob`
+`car`
 
-  </td>
-  <td>object destructuring</td>
-  <td>
+</td>
+<td>const array assignment</td>
+<td>
 
   ```javascript
-  const { $0 } = ${1:object}
+const $1 = [$0]
   ```
 
-  </td>
+</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `dar`
+`cao`
 
-  </td>
-  <td>array destructuring</td>
-  <td>
+</td>
+<td>const object assignment</td>
+<td>
 
   ```javascript
-  const [$0] = ${1:array}
+const $1 = { $0 }
   ```
 
-  </td>
+</td>
 </tr>
 
+<tr>
+<td>
 
+`dob`
+
+</td>
+<td>object destructuring</td>
+<td>
+
+  ```javascript
+const { $0 } = ${1:object}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`dar`
+
+</td>
+<td>array destructuring</td>
+<td>
+
+  ```javascript
+const [$0] = ${1:array}
+  ```
+
+</td>
+</tr>
+</table>
+
+### Flow control
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`if`
+
+</td>
+<td>if statement</td>
+<td>
+
+  ```javascript
+if ($1) {
+	$2
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ifel`
+
+</td>
+<td>if/else statement</td>
+<td>
+
+  ```javascript
+if ($1) {
+	$2
+} else {
+	$3
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ifei`
+
+</td>
+<td>if/else-if statement</td>
+<td>
+
+  ```javascript
+if ($1) {
+	$2
+} else if ($3) {
+	$4
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`el`
+
+</td>
+<td>else statement</td>
+<td>
+
+  ```javascript
+else {
+	$3
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ei`
+
+</td>
+<td>else if statement</td>
+<td>
+
+  ```javascript
+else if ($1) {
+	$2
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ter`
+
+</td>
+<td>ternary operator</td>
+<td>
+
+  ```javascript
+$1 ? $2 : $3
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`tera`
+
+</td>
+<td>ternary expression assignment</td>
+<td>
+
+  ```javascript
+const ${1:name} = $2 ? $3 : $4
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`sw`
+
+</td>
+<td>switch</td>
+<td>
+
+  ```javascript
+switch ($1) {
+	case $2 : $3
+	default: $0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`cas`
+
+</td>
+<td>case</td>
+<td>
+
+  ```javascript
+case ${1:value}:
+	$0
+	break;
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`tc`
+
+</td>
+<td>try/catch</td>
+<td>
+
+  ```javascript
+try {
+	$1
+} catch (error) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`tcf`
+
+</td>
+<td>try/catch/finally</td>
+<td>
+
+  ```javascript
+try {
+	$1
+} catch (error) {
+	$2
+} finally {
+	$3
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`tf`
+
+</td>
+<td>try/finally</td>
+<td>
+
+  ```javascript
+try {
+	$1
+} finally {
+	$2
+}
+  ```
+
+</td>
+</tr>
+</table>
+
+### Functions
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`fn`
+
+</td>
+<td>function</td>
+<td>
+
+  ```javascript
+function ${1:name}($2) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`fna`
+
+</td>
+<td>async function</td>
+<td>
+
+  ```javascript
+async function ${1:name}($2) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`nfn`
+
+</td>
+<td>named arrow function</td>
+<td>
+
+  ```javascript
+const ${1:name} = ($2) => {$0}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`nfna`
+
+</td>
+<td>async named arrow function</td>
+<td>
+
+  ```javascript
+const ${1:name} = async ($2) => {$0}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`af`
+
+</td>
+<td>arrow function</td>
+<td>
+
+  ```javascript
+($1) => $0
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`afa`
+
+</td>
+<td>async arrow function</td>
+<td>
+
+  ```javascript
+async ($1) => $0
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`afb`
+
+</td>
+<td>arrow function with body</td>
+<td>
+
+  ```javascript
+($1) => {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`afba`
+
+</td>
+<td>async arrow function with body</td>
+<td>
+
+  ```javascript
+async ($1) => {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`efn`
+
+</td>
+<td>export function</td>
+<td>
+
+  ```javascript
+export function ${1:name}($2) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`edfn`
+
+</td>
+<td>export default function</td>
+<td>
+
+  ```javascript
+export default function ${1:name}($2) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`enfn`
+
+</td>
+<td>export named arrow function</td>
+<td>
+
+  ```javascript
+export const ${1:name} = ($2) => {$0}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`iife`
+
+</td>
+<td>immediately-invoked function expression</td>
+<td>
+
+  ```javascript
+((${1:arguments}) => {
+	$0
+})($2)
+  ```
+
+</td>
+</tr>
+</table>
+
+### Loops
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`fl`
+
+</td>
+<td>for loop</td>
+<td>
+
+  ```javascript
+for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`rfl`
+
+</td>
+<td>reverse for loop</td>
+<td>
+
+  ```javascript
+for (let ${1:i} = ${2:iterable}.length - 1; ${1:i} >= 0; ${1:i}--) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`flr`
+
+</td>
+<td>for loop (range)</td>
+<td>
+
+  ```javascript
+for (let ${1:i} = 0; ${1:i} < ${2:5}; ${1:i}++) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`fin`
+
+</td>
+<td>for...in loop</td>
+<td>
+
+  ```javascript
+for (let ${1:key} in ${2:array}) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`fof`
+
+</td>
+<td>for...of loop</td>
+<td>
+
+  ```javascript
+for (let ${1:item} of ${2:items}) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`fofa`
+
+</td>
+<td>for await...of loop</td>
+<td>
+
+  ```javascript
+for await (let ${1:item} of ${2:items}) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`wl`
+
+</td>
+<td>while loop</td>
+<td>
+
+  ```javascript
+while (${1:true}) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+</table>
+
+### Classes
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`cs`
+
+</td>
+<td>class</td>
+<td>
+
+  ```javascript
+class $1 {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`cse`
+
+</td>
+<td>class extends</td>
+<td>
+
+  ```javascript
+class $1 extends ${2:Base} {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`csc`
+
+</td>
+<td>class with constructor</td>
+<td>
+
+  ```javascript
+class $1 {
+	constructor($2) {
+		$0
+	}
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`csec`
+
+</td>
+<td>class extends with constructor</td>
+<td>
+
+  ```javascript
+class $1 extends ${2:Base} {
+	constructor($3) {
+		$0
+	}
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ctor`
+
+</td>
+<td>class constructor</td>
+<td>
+
+  ```javascript
+constructor($1) {$0}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`get`
+
+</td>
+<td>getter</td>
+<td>
+
+  ```javascript
+get ${1:property}() {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`set`
+
+</td>
+<td>setter</td>
+<td>
+
+  ```javascript
+set ${1:property}(${2:value}) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`gs`
+
+</td>
+<td>getter and setter</td>
+<td>
+
+  ```javascript
+get ${1:property}() {
+	$0
+}
+set ${1:property}(${2:value}) {
+	
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`met`
+
+</td>
+<td>method</td>
+<td>
+
+  ```javascript
+${1:name}($2) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`meta`
+
+</td>
+<td>async method</td>
+<td>
+
+  ```javascript
+async ${1:name}($2) {
+	$0
+}
+  ```
+
+</td>
+</tr>
+</table>
+
+### Promises
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`fet`
+
+</td>
+<td>fetch</td>
+<td>
+
+  ```javascript
+fetch('$1').then(res => res.json())
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`feta`
+
+</td>
+<td>fetch assignment</td>
+<td>
+
+  ```javascript
+const ${2|data,{ data }|} = await fetch('$1').then(res => res.json())
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`pr`
+
+</td>
+<td>promise</td>
+<td>
+
+  ```javascript
+new Promise((resolve, reject) => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`prs`
+
+</td>
+<td>Promise.resolve</td>
+<td>
+
+  ```javascript
+Promise.resolve($1)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`prj`
+
+</td>
+<td>Promise.reject</td>
+<td>
+
+  ```javascript
+Promise.reject($1)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`then`
+
+</td>
+<td>promise .then</td>
+<td>
+
+  ```javascript
+$1.then((${2:value}) => $0)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`catch`
+
+</td>
+<td>promise .catch</td>
+<td>
+
+  ```javascript
+$1.catch((${2:err}) => $0)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`thenc`
+
+</td>
+<td>promise .then.catch</td>
+<td>
+
+  ```javascript
+$1.then((${2:value}) => $3).catch((${4:err}) => $5)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`pra`
+
+</td>
+<td>Promise.all</td>
+<td>
+
+  ```javascript
+Promise.all($1)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`prsa`
+
+</td>
+<td>Promise.allSettled</td>
+<td>
+
+  ```javascript
+Promise.allSettled($1)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`pran`
+
+</td>
+<td>Promise.any</td>
+<td>
+
+  ```javascript
+Promise.any($1)
+  ```
+
+</td>
+</tr>
+</table>
+
+### Modules
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`im`
+
+</td>
+<td>import from module</td>
+<td>
+
+  ```javascript
+import { $2 } from '$1'
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`imf`
+
+</td>
+<td>import file</td>
+<td>
+
+  ```javascript
+import '$1'
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`imp`
+
+</td>
+<td>import dynamic</td>
+<td>
+
+  ```javascript
+import($0)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`imd`
+
+</td>
+<td>import default</td>
+<td>
+
+  ```javascript
+import $2 from '$1'$3;
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ima`
+
+</td>
+<td>import as</td>
+<td>
+
+  ```javascript
+import ${2:*} as {3:name} from '$1'
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ime`
+
+</td>
+<td>import meta env</td>
+<td>
+
+  ```javascript
+import.meta.env.$0
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ex`
+
+</td>
+<td>export</td>
+<td>
+
+  ```javascript
+export $0
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`exd`
+
+</td>
+<td>export default</td>
+<td>
+
+  ```javascript
+export default $0
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`exf`
+
+</td>
+<td>export from</td>
+<td>
+
+  ```javascript
+export { $2 } from '$1'
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`exa`
+
+</td>
+<td>export all from</td>
+<td>
+
+  ```javascript
+export * from '$1'
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`exo`
+
+</td>
+<td>export object</td>
+<td>
+
+  ```javascript
+export const ${1:name} = { $0 }
+  ```
+
+</td>
+</tr>
+</table>
+
+### Array methods
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`fe`
+
+</td>
+<td>Array.forEach()</td>
+<td>
+
+  ```javascript
+$1.forEach((${2:item}) => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`map`
+
+</td>
+<td>Array.map()</td>
+<td>
+
+  ```javascript
+$1.map((${2:item}) => ${3})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`reduce`
+
+</td>
+<td>Array.reduce()</td>
+<td>
+
+  ```javascript
+$1.reduce((${2:acc}, ${3:curr}) => {
+	$0
+}, ${4:initial})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`reduce-right`
+
+</td>
+<td>Array.reduceRight()</td>
+<td>
+
+  ```javascript
+$1.reduceRight((${2:acc}, ${3:curr}) => {
+	$0
+}, ${4:initial})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`filter`
+
+</td>
+<td>Array.filter()</td>
+<td>
+
+  ```javascript
+$1.filter((${2:item}) => ${3})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`find`
+
+</td>
+<td>Array.find()</td>
+<td>
+
+  ```javascript
+$1.find((${2:item}) => ${3})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`every`
+
+</td>
+<td>Array.every()</td>
+<td>
+
+  ```javascript
+$1.every((${2:item}) => ${3})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`some`
+
+</td>
+<td>Array.some()</td>
+<td>
+
+  ```javascript
+$1.some((${2:item}) => ${3})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`reverse`
+
+</td>
+<td>Array.reverse()</td>
+<td>
+
+  ```javascript
+$1.reverse()
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`map-string`
+
+</td>
+<td>Array.map() as string</td>
+<td>
+
+  ```javascript
+$1.map(String)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`map-number`
+
+</td>
+<td>Array.map() as number</td>
+<td>
+
+  ```javascript
+$1.map(Number)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`filter-true`
+
+</td>
+<td>Array.filter() truthy</td>
+<td>
+
+  ```javascript
+$1.filter(Boolean)
+  ```
+
+</td>
+</tr>
+</table>
+
+### Objects
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`oe`
+
+</td>
+<td>Object.entries</td>
+<td>
+
+  ```javascript
+Object.entries($0)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ofe`
+
+</td>
+<td>Object.fromEntries</td>
+<td>
+
+  ```javascript
+Object.fromEntries($0)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ok`
+
+</td>
+<td>Object.keys</td>
+<td>
+
+  ```javascript
+Object.keys($0)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ov`
+
+</td>
+<td>Object.values</td>
+<td>
+
+  ```javascript
+Object.values($0)
+  ```
+
+</td>
+</tr>
+</table>
+
+### Returns
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`re`
+
+</td>
+<td>return</td>
+<td>
+
+  ```javascript
+return $0
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`reo`
+
+</td>
+<td>return object</td>
+<td>
+
+  ```javascript
+return {
+	$0
+}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`rei`
+
+</td>
+<td>return object inline</td>
+<td>
+
+  ```javascript
+return ({$0})
+  ```
+
+</td>
+</tr>
+</table>
+
+### Operators, Expressions, Literals
+Grouping them all together for now
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`or`
+
+</td>
+<td>OR (||)</td>
+<td>
+
+  ```javascript
+|| $0
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`and`
+
+</td>
+<td>AND (&&)</td>
+<td>
+
+  ```javascript
+&& $0
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`nc`
+
+</td>
+<td>nullish coalescing (??)</td>
+<td>
+
+  ```javascript
+?? $0
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`eq`
+
+</td>
+<td>strict equality (===)</td>
+<td>
+
+  ```javascript
+=== $0
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ore`
+
+</td>
+<td>logical OR expression</td>
+<td>
+
+  ```javascript
+${1:value} || ${0:value}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ande`
+
+</td>
+<td>logical AND expression</td>
+<td>
+
+  ```javascript
+${1:value} && ${0:value}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`nce`
+
+</td>
+<td>nullish coalescing expression (??)</td>
+<td>
+
+  ```javascript
+${1:item} ?? ${0:default}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`eqe`
+
+</td>
+<td>strict equality expression</td>
+<td>
+
+  ```javascript
+${1:value} === ${2:value}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ora`
+
+</td>
+<td>logical OR assignment (||=)</td>
+<td>
+
+  ```javascript
+${1:name} ||= ${0:default}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`nca`
+
+</td>
+<td>nullish coalescing assignment (??=)</td>
+<td>
+
+  ```javascript
+${1:name} ??= ${0:default}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`inc`
+
+</td>
+<td>addition assignment</td>
+<td>
+
+  ```javascript
+$1 += ${0:1}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`sub`
+
+</td>
+<td>subtraction assignment</td>
+<td>
+
+  ```javascript
+$1 -= ${0:1}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`mul`
+
+</td>
+<td>multiplication assignment</td>
+<td>
+
+  ```javascript
+$1 *= ${0:1}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`div`
+
+</td>
+<td>division assignment</td>
+<td>
+
+  ```javascript
+$1 /= ${0:1}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ol`
+
+</td>
+<td>object literal</td>
+<td>
+
+  ```javascript
+{ $1: $0 }
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`al`
+
+</td>
+<td>array literal</td>
+<td>
+
+  ```javascript
+[$0]
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`tl`
+
+</td>
+<td>template literal</td>
+<td>
+
+  ```javascript
+`$0`
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`tlo`
+
+</td>
+<td>template literal operation</td>
+<td>
+
+  ```javascript
+${$1}$0
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`tle`
+
+</td>
+<td>template literal expression</td>
+<td>
+
+  ```javascript
+`$1${$2}$3`
+  ```
+
+</td>
+</tr>
+</table>
+
+### Console
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`cl`
+
+</td>
+<td>console.log</td>
+<td>
+
+  ```javascript
+console.log($0)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ci`
+
+</td>
+<td>console.info</td>
+<td>
+
+  ```javascript
+console.info($1)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`cdi`
+
+</td>
+<td>console.dir</td>
+<td>
+
+  ```javascript
+console.dir($1)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ce`
+
+</td>
+<td>console.error</td>
+<td>
+
+  ```javascript
+console.error($1)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`cw`
+
+</td>
+<td>console.warn</td>
+<td>
+
+  ```javascript
+console.warn($1)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ct`
+
+</td>
+<td>console.time</td>
+<td>
+
+  ```javascript
+console.time('$1')
+$0
+console.timeEnd('$1')
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ctb`
+
+</td>
+<td>console.table</td>
+<td>
+
+  ```javascript
+console.table($1)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`clr`
+
+</td>
+<td>console.clear</td>
+<td>
+
+  ```javascript
+console.clear()
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`clm`
+
+</td>
+<td>console.log message</td>
+<td>
+
+  ```javascript
+console.log('$0')
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`clo`
+
+</td>
+<td>console.log object</td>
+<td>
+
+  ```javascript
+console.log({ $0 })
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`clc`
+
+</td>
+<td>console.log clipboard</td>
+<td>
+
+  ```javascript
+console.log({ $CLIPBOARD })
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`cll`
+
+</td>
+<td>console.log (labeled)</td>
+<td>
+
+  ```javascript
+console.log('$1 ->', $1$2)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`cel`
+
+</td>
+<td>console.error (labeled)</td>
+<td>
+
+  ```javascript
+console.error('$1 ->', $1$2)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`cwl`
+
+</td>
+<td>console.warn (labeled)</td>
+<td>
+
+  ```javascript
+console.warn('$1 ->', ${2:$1})
+  ```
+
+</td>
+</tr>
+</table>
+
+### Timers
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`si`
+
+</td>
+<td>set interval</td>
+<td>
+
+  ```javascript
+setInterval(() => {
+	$0
+}, ${1:delay})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`st`
+
+</td>
+<td>set timeout</td>
+<td>
+
+  ```javascript
+setTimeout(() => {
+	$0
+}, ${1:delay})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`sim`
+
+</td>
+<td>set immediate</td>
+<td>
+
+  ```javascript
+setImmediate(() => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`nt`
+
+</td>
+<td>process next tick</td>
+<td>
+
+  ```javascript
+process.nextTick(() => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+</table>
+
+### JSON
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`jp`
+
+</td>
+<td>JSON parse</td>
+<td>
+
+  ```javascript
+JSON.parse(${1:json})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`js`
+
+</td>
+<td>JSON stringify</td>
+<td>
+
+  ```javascript
+JSON.stringify(${1:value})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`jsp`
+
+</td>
+<td>JSON stringify (pretty)</td>
+<td>
+
+  ```javascript
+JSON.stringify(${1:value}, null, 2)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`jss`
+
+</td>
+<td>JSON.stringify if not string</td>
+<td>
+
+  ```javascript
+typeof ${1:value} === 'string' ? value : JSON.stringify($1)
+  ```
+
+</td>
+</tr>
+</table>
+
+### DOM
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`qs`
+
+</td>
+<td>query selector</td>
+<td>
+
+  ```javascript
+${1:document}.querySelector('$2')
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`qsa`
+
+</td>
+<td>query selector all</td>
+<td>
+
+  ```javascript
+${1:document}.querySelectorAll('$2')
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`qsaa`
+
+</td>
+<td>query selector all as array</td>
+<td>
+
+  ```javascript
+[...${1:document}.querySelectorAll('$2')]
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ael`
+
+</td>
+<td>event listener</td>
+<td>
+
+  ```javascript
+${1:document}.addEventListener('${2:click}', (e$3) => $0)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`qsae`
+
+</td>
+<td>query selector with event listener</td>
+<td>
+
+  ```javascript
+${1:document}.querySelector('$2')?.addEventListener('${3:click}', (e$4) => $0)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`gid`
+
+</td>
+<td>get element by id</td>
+<td>
+
+  ```javascript
+${1:document}.getElementById('$2')
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`on`
+
+</td>
+<td>event handler</td>
+<td>
+
+  ```javascript
+${1:emitter}.on('${2:event}', (${3:arguments}) => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+</table>
+
+### Dates
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`nd`
+
+</td>
+<td>new Date()</td>
+<td>
+
+  ```javascript
+new Date($1)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`now`
+
+</td>
+<td>Date.now()</td>
+<td>
+
+  ```javascript
+Date.now()
+  ```
+
+</td>
+</tr>
+</table>
+
+### Testing
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`desc`
+
+</td>
+<td>describe</td>
+<td>
+
+  ```javascript
+describe('${1:description}', () => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`cont`
+
+</td>
+<td>context</td>
+<td>
+
+  ```javascript
+context('${1:description}', () => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`it`
+
+</td>
+<td>test (synchronous)</td>
+<td>
+
+  ```javascript
+it('${1:description}', () => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`ita`
+
+</td>
+<td>test (asynchronous)</td>
+<td>
+
+  ```javascript
+it('${1:description}', async () => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`itc`
+
+</td>
+<td>test (callback)</td>
+<td>
+
+  ```javascript
+it('${1:description}', (done) => {
+	$0
+	done()
+})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`bf`
+
+</td>
+<td>before test suite</td>
+<td>
+
+  ```javascript
+before(() => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`bfe`
+
+</td>
+<td>before each test</td>
+<td>
+
+  ```javascript
+beforeEach(() => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`aft`
+
+</td>
+<td>after test suite</td>
+<td>
+
+  ```javascript
+after(() => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`afe`
+
+</td>
+<td>after each test</td>
+<td>
+
+  ```javascript
+afterEach(() => {
+	$0
+})
+  ```
+
+</td>
+</tr>
+</table>
+
+### Types
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`aia`
+
+</td>
+<td>is array</td>
+<td>
+
+  ```javascript
+Array.isArray($0)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`tof`
+
+</td>
+<td>typeof</td>
+<td>
+
+  ```javascript
+typeof ${1:value} === '${2|bigint,boolean,function,number,object,symbol,undefined|}'
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`iof`
+
+</td>
+<td>instanceof</td>
+<td>
+
+  ```javascript
+${1:object} instanceof ${0:Class}
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`isnil`
+
+</td>
+<td>is nil</td>
+<td>
+
+  ```javascript
+${1:value} == null
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`nnil`
+
+</td>
+<td>is not nil</td>
+<td>
+
+  ```javascript
+${1:value} != null
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`isnan`
+
+</td>
+<td>is NaN</td>
+<td>
+
+  ```javascript
+isNan($0)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`nnan`
+
+</td>
+<td>is not NaN</td>
+<td>
+
+  ```javascript
+!isNan($0)
+  ```
+
+</td>
+</tr>
+</table>
+
+### Misc
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`us`
+
+</td>
+<td>'use strict' statement</td>
+<td>
+
+  ```javascript
+'use strict'
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`pse`
+
+</td>
+<td>process.server</td>
+<td>
+
+  ```javascript
+process.server
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`pcl`
+
+</td>
+<td>process.client</td>
+<td>
+
+  ```javascript
+process.client
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`env`
+
+</td>
+<td>env variable</td>
+<td>
+
+  ```javascript
+process.env.$0
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`envv`
+
+</td>
+<td>env variable (vite)</td>
+<td>
+
+  ```javascript
+import.meta.env.$0
+  ```
+
+</td>
+</tr>
+</table>
+
+### Uncategorized
+Will be sorted into appropriate categories in the future.
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td>
+
+`uniq`
+
+</td>
+<td>array of unique values</td>
+<td>
+
+  ```javascript
+[...new Set(${0:array})]
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`pi`
+
+</td>
+<td>parse int</td>
+<td>
+
+  ```javascript
+parseInt(${1:value}, ${2|10,2,8,16|})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`pf`
+
+</td>
+<td>parse float</td>
+<td>
+
+  ```javascript
+parseFloat(${1:value})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`am`
+
+</td>
+<td>array merge</td>
+<td>
+
+  ```javascript
+[...${1:arr}$2]
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`om`
+
+</td>
+<td>object merge</td>
+<td>
+
+  ```javascript
+{ ...${1:object}$2 }
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`aat`
+
+</td>
+<td>array.at</td>
+<td>
+
+  ```javascript
+${1:items}.at(${2:0})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`seq`
+
+</td>
+<td>sequence of 0..n</td>
+<td>
+
+  ```javascript
+[...Array(${1:length}).keys()]
+  ```
+
+</td>
+</tr>
 </table>
 
 
+## TypeScript specific
+Only applied to .ts and .tsx files
+
+### Declarations
+
 <table>
-<tr>
-  <td>Prefix</td><td>Description</td><td>Body</td>
-</tr>
-<tr>
 
 <tr>
-  <td>
-
-  `if`
-
-  </td>
-  <td>
-    if statement
-  </td>
-  <td>
-
-  ```javascript
-  if ($1) {
-    $2
-  }
-  ```
-
-  </td>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `ifel`
+`cat`
 
-  </td>
-  <td>if/else statement</td>
-  <td>
+</td>
+<td>const assignment (typed)</td>
+<td>
 
   ```javascript
-  if ($1) {
-    $2
-  } else {
-    $3
-  }
+const ${1:name}: ${2:string} = ${3:value}
   ```
 
-  </td>
+</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `ifei`
+`lat`
 
-  </td>
-  <td>if/else-if statement</td>
-  <td>
+</td>
+<td>let assignment (typed)</td>
+<td>
 
   ```javascript
-  if ($1) {
-    $2
-  } else if ($3) {
-    $4
-  }
+let ${1:name}: ${2:string} = ${3:value}
   ```
 
-  </td>
+</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `el`
+`caat`
 
-  </td>
-  <td>else statement</td>
-  <td>
+</td>
+<td>array assignment (typed)</td>
+<td>
 
   ```javascript
-  else {
-    $3
-  }
+const ${1:items}: ${2:string}[] = [$0]
   ```
 
-  </td>
+</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `ei`
+`caot`
 
-  </td>
-  <td>else if statement</td>
-  <td>
+</td>
+<td>object assignment (typed)</td>
+<td>
 
   ```javascript
-  else if ($1) {
-    $2
-  }
+const ${1:name}: ${2:object} = { $0 }
   ```
 
-  </td>
+</td>
+</tr>
+</table>
+
+### Types
+
+<table>
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `ter`
+`int`
 
-  </td>
-  <td>ternary operator</td>
-  <td>
+</td>
+<td>interface</td>
+<td>
 
   ```javascript
-  $1 ? $2 : $3
+interface ${1:Model} {
+	$0
+}
   ```
 
-  </td>
+</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `tera`
+`inte`
 
-  </td>
-  <td>ternary expression assignment</td>
-  <td>
+</td>
+<td>interface extends</td>
+<td>
 
   ```javascript
-  const ${1:name} = $2 ? $3 : $4
+interface ${1:Model} extends ${2:Base} {
+	$0
+}
   ```
 
-  </td>
+</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `sw`
+`tp`
 
-  </td>
-  <td>switch</td>
-  <td>
+</td>
+<td>type</td>
+<td>
 
   ```javascript
-  switch ($1) {
-    case $2 : $3
-    default: $0
-  }
+type ${1:Model} = $0
   ```
 
-  </td>
+</td>
 </tr>
 
 <tr>
-  <td>
+<td>
 
-  `sw`
+`tpu`
 
-  </td>
-  <td>case</td>
-  <td>
+</td>
+<td>type union</td>
+<td>
 
   ```javascript
-  case ${1:value}:
-    $0
-    break;
+type ${1:Model} = ${2:first} | ${3:second}
   ```
-  </td>
+
+</td>
 </tr>
 
 <tr>
-  <td>
-  
-  `try/catch`
+<td>
 
-  </td>
-  <td>try/catch</td>
-  <td>
+`tpi`
 
-  ```javascript
-  try {
-    $1
-  } catch (error) {
-    $0
-  }
-  ```
-  </td>
-</tr>
-
-<tr>
-  <td>
-
-  `try/catch/finally`
-
-  </td>
-  <td>try/catch/finally</td>
-  <td>
+</td>
+<td>type intersection</td>
+<td>
 
   ```javascript
-  try {
-    $1
-  } catch (error) {
-    $2
-  } finally {
-    $3
-  }
+type ${1:Model} = ${2:first} & ${3:second}
   ```
-  </td>
-</tr>
 
-<tr>
-  <td>
-
-  `try/finally`
-
-  </td>
-  <td>try/finally</td>
-  <td>
-
-  ```javascript
-  try {
-    $1
-  } finally {
-    $2
-  }
-  ```
-  
-  </td>
+</td>
 </tr>
 </table>
