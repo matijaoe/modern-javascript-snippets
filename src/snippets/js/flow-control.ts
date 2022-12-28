@@ -19,7 +19,7 @@ export const flowControl: XSnippetDefinition = {
     },
     el: {
       name: "else statement",
-      body: "else {\n\t$3\n}",
+      body: "else {\n\t$0\n}",
     },
     ei: {
       name: "else if statement",

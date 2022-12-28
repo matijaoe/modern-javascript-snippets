@@ -33,9 +33,9 @@ export const classes: XSnippetDefinition = {
         "}",
       ],
     },
-    ctor: {
+    cst: {
       name: "class constructor",
-      body: "constructor($1) {$0}",
+      body: "constructor($1) {\n\t$0\n}",
     },
     get: {
       name: "getter",
@@ -48,7 +48,7 @@ export const classes: XSnippetDefinition = {
     gs: {
       name: "getter and setter",
       body:
-        "get ${1:property}() {\n\t$0\n}\nset ${1:property}(${2:value}) {\n\t\n}",
+        "get ${1:property}() {\n\t$0\n}\nset ${1:property}(${2:value}) {\n\t$0\n}",
     },
     met: {
       name: "method",

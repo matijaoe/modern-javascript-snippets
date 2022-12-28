@@ -8,12 +8,12 @@ export const loops: XSnippetDefinition = {
     fl: {
       name: "for loop",
       body:
-        "for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {\n\t$0\n}",
+        "for (let ${1:i} = 0, ${2:len} = ${3:iter}.length; ${1:i} < ${2:len}; ${1:i}++) {\n\t$0\n}",
     },
     rfl: {
       name: "reverse for loop",
       body:
-        "for (let ${1:i} = ${2:iterable}.length - 1; ${1:i} >= 0; ${1:i}--) {\n\t$0\n}",
+        "for (let ${1:i} = ${2:iter}.length - 1; ${1:i} >= 0; ${1:i}--) {\n\t$0\n}",
     },
     flr: {
       name: "for loop (range)",
@@ -34,6 +34,10 @@ export const loops: XSnippetDefinition = {
     wl: {
       name: "while loop",
       body: "while (${1:true}) {\n\t$0\n}",
+    },
+    dwl: {
+      name: "do while loop",
+      body: "do {\n\t$0\n} while ($1)",
     },
   },
 };

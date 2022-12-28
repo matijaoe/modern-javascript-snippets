@@ -13,13 +13,13 @@ export const json: XSnippetDefinition = {
       name: "JSON stringify",
       body: "JSON.stringify(${1:value})",
     },
-    jsp: {
-      name: "JSON stringify (pretty)",
+    jsf: {
+      name: "JSON stringify (formatted)",
       body: "JSON.stringify(${1:value}, null, 2)",
     },
     jss: {
       name: "JSON.stringify if not string",
-      body: "typeof ${1:value} === 'string' ? value : JSON.stringify($1)",
+      body: "typeof $1 === 'string' ? $1 : JSON.stringify($1)",
     },
   },
 };

@@ -12,7 +12,7 @@ export const types: XSnippetDefinition = {
     tof: {
       name: "typeof",
       body:
-        "typeof ${1:value} === '${2|bigint,boolean,function,number,object,symbol,undefined|}'",
+        "typeof ${1:value} === '${2|undefined,string,number,object,function,boolean,symbol,bigint|}'",
     },
     iof: {
       name: "instanceof",

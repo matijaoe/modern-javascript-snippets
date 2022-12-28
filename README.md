@@ -130,6 +130,18 @@ const $1 = '$2';
 </tr>
 
 <tr>
+<td><code>las</code></td>
+<td>let string assignment</td>
+<td>
+
+  ```javascript
+let $1 = '$2';
+  ```
+
+</td>
+</tr>
+
+<tr>
 <td><code>car</code></td>
 <td>const array assignment</td>
 <td>
@@ -159,7 +171,7 @@ const $1 = { $0 }
 <td>
 
   ```javascript
-const { $0 } = ${1:object}
+const { $0 } = ${1:object};
   ```
 
 </td>
@@ -171,7 +183,7 @@ const { $0 } = ${1:object}
 <td>
 
   ```javascript
-const [$0] = ${1:array}
+const [$0] = ${1:array};
   ```
 
 </td>
@@ -241,7 +253,7 @@ if ($1) {
 
   ```javascript
 else {
-	$3
+	$0
 }
   ```
 
@@ -511,7 +523,7 @@ async ($1) => {
 <td>
 
   ```javascript
-for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {
+for (let ${1:i} = 0, ${2:len} = ${3:iter}.length; ${1:i} < ${2:len}; ${1:i}++) {
 	$0
 }
   ```
@@ -525,7 +537,7 @@ for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}+
 <td>
 
   ```javascript
-for (let ${1:i} = ${2:iterable}.length - 1; ${1:i} >= 0; ${1:i}--) {
+for (let ${1:i} = ${2:iter}.length - 1; ${1:i} >= 0; ${1:i}--) {
 	$0
 }
   ```
@@ -598,6 +610,20 @@ for await (let ${1:item} of ${2:items}) {
 while (${1:true}) {
 	$0
 }
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>dwl</code></td>
+<td>do while loop</td>
+<td>
+
+  ```javascript
+do {
+	$0
+} while ($1)
   ```
 
 </td>
@@ -675,12 +701,14 @@ class $1 extends ${2:Base} {
 </tr>
 
 <tr>
-<td><code>ctor</code></td>
+<td><code>cst</code></td>
 <td>class constructor</td>
 <td>
 
   ```javascript
-constructor($1) {$0}
+constructor($1) {
+	$0
+}
   ```
 
 </td>
@@ -724,7 +752,7 @@ get ${1:property}() {
 	$0
 }
 set ${1:property}(${2:value}) {
-	
+	$0
 }
   ```
 
@@ -788,7 +816,7 @@ fetch('$1'$2).then(res => res.json())
 <td>
 
   ```javascript
-const ${1|data,{ data }|} = await fetch('$2'$3).then(res => res.json())
+const ${1|data,...|} = await fetch('$2'$3).then(res => res.json())
   ```
 
 </td>
@@ -1151,7 +1179,7 @@ $1.reduce((${2:acc}, ${3:curr}) => {
 </tr>
 
 <tr>
-<td><code>reduce-right</code></td>
+<td><code>reduceRight</code></td>
 <td>Array.reduceRight()</td>
 <td>
 
@@ -1225,7 +1253,7 @@ $1.reverse()
 </tr>
 
 <tr>
-<td><code>map-string</code></td>
+<td><code>mapStr</code></td>
 <td>Array.map() as string</td>
 <td>
 
@@ -1237,7 +1265,7 @@ $1.map(String)
 </tr>
 
 <tr>
-<td><code>map-number</code></td>
+<td><code>mapNum</code></td>
 <td>Array.map() as number</td>
 <td>
 
@@ -1249,7 +1277,7 @@ $1.map(Number)
 </tr>
 
 <tr>
-<td><code>filter-true</code></td>
+<td><code>filterTrue</code></td>
 <td>Array.filter() truthy</td>
 <td>
 
@@ -1758,7 +1786,7 @@ console.log({ $CLIPBOARD })
 <td>
 
   ```javascript
-console.log('$1 ->', $1$2)
+console.log('$1 :', $1$2)
   ```
 
 </td>
@@ -1770,7 +1798,7 @@ console.log('$1 ->', $1$2)
 <td>
 
   ```javascript
-console.error('$1 ->', $1$2)
+console.error('$1 :', $1$2)
   ```
 
 </td>
@@ -1782,7 +1810,7 @@ console.error('$1 ->', $1$2)
 <td>
 
   ```javascript
-console.warn('$1 ->', ${2:$1})
+console.warn('$1 :', ${2:$1})
   ```
 
 </td>
@@ -1891,8 +1919,8 @@ JSON.stringify(${1:value})
 </tr>
 
 <tr>
-<td><code>jsp</code></td>
-<td>JSON stringify (pretty)</td>
+<td><code>jsf</code></td>
+<td>JSON stringify (formatted)</td>
 <td>
 
   ```javascript
@@ -1908,7 +1936,7 @@ JSON.stringify(${1:value}, null, 2)
 <td>
 
   ```javascript
-typeof ${1:value} === 'string' ? value : JSON.stringify($1)
+typeof $1 === 'string' ? $1 : JSON.stringify($1)
   ```
 
 </td>
@@ -2041,6 +2069,41 @@ new Date($1)
 
   ```javascript
 Date.now()
+  ```
+
+</td>
+</tr>
+</table>
+
+### Node
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>re</code></td>
+<td>require</td>
+<td>
+
+  ```javascript
+require('${1:module}')
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>req</code></td>
+<td>require assignment</td>
+<td>
+
+  ```javascript
+const ${1} = require('${1:module}');
   ```
 
 </td>
@@ -2213,7 +2276,7 @@ Array.isArray($0)
 <td>
 
   ```javascript
-typeof ${1:value} === '${2|bigint,boolean,function,number,object,symbol,undefined|}'
+typeof ${1:value} === '${2|undefined,...|}'
   ```
 
 </td>
@@ -2351,6 +2414,114 @@ import.meta.env.$0
 </tr>
 </table>
 
+### Intl
+Internationalization API
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>inf</code></td>
+<td>Intl.NumberFormat</td>
+<td>
+
+  ```javascript
+new Intl.NumberFormat('${1|en-US,...|}'$3).format($2);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>infs</code></td>
+<td>Intl.NumberFormat style</td>
+<td>
+
+  ```javascript
+new Intl.NumberFormat('${1|en-US,...|}', {
+	style: '${3|decimal,...|}',$4
+}).format($2);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>infc</code></td>
+<td>Intl.NumberFormat as currency</td>
+<td>
+
+  ```javascript
+new Intl.NumberFormat('${1|en-US,...|}', {
+	style: 'currency',
+	currency: '${3|USD,...|}',$4
+}).format($2);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>infp</code></td>
+<td>Intl.NumberFormat as percentage</td>
+<td>
+
+  ```javascript
+new Intl.NumberFormat('${1|en-US,...|}', {
+	style: 'percent',$3
+}).format($2);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>infu</code></td>
+<td>Intl.NumberFormat as unit</td>
+<td>
+
+  ```javascript
+new Intl.NumberFormat('${1|en-US,...|}', {
+	style: 'unit',
+	unit: '${3|acceleration-g-force,...|}',
+	unitDisplay: '${4|long,...|}',$0
+}).format($2);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>idtf</code></td>
+<td>Intl.DateTimeFormat</td>
+<td>
+
+  ```javascript
+new Intl.DateTimeFormat('${1|en-US,...|}'$3).format($2);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>idtfs</code></td>
+<td>Intl.DateTimeFormat with options</td>
+<td>
+
+  ```javascript
+new Intl.DateTimeFormat ('${1|en-US,...|}', {
+	dateStyle: '$3',$0
+}).format($2);
+  ```
+
+</td>
+</tr>
+</table>
+
 ### Uncategorized
 Will be sorted into appropriate categories in the future.
 <table width="100%">
@@ -2362,36 +2533,12 @@ Will be sorted into appropriate categories in the future.
 </tr>
 
 <tr>
-<td><code>uniq</code></td>
-<td>array of unique values</td>
+<td><code>aat</code></td>
+<td>array.at</td>
 <td>
 
   ```javascript
-[...new Set($0)]
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>pi</code></td>
-<td>parse int</td>
-<td>
-
-  ```javascript
-parseInt($1, ${2|10,2,8,16|})
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>pf</code></td>
-<td>parse float</td>
-<td>
-
-  ```javascript
-parseFloat($1)
+$1.at(${2:0})
   ```
 
 </td>
@@ -2422,12 +2569,36 @@ parseFloat($1)
 </tr>
 
 <tr>
-<td><code>aat</code></td>
-<td>array.at</td>
+<td><code>uniq</code></td>
+<td>array of unique values</td>
 <td>
 
   ```javascript
-$1.at(${2:0})
+[...new Set($0)]
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>pi</code></td>
+<td>parse int</td>
+<td>
+
+  ```javascript
+parseInt($1, ${2|10,...|})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>pf</code></td>
+<td>parse float</td>
+<td>
+
+  ```javascript
+parseFloat($1)
   ```
 
 </td>
@@ -2440,6 +2611,18 @@ $1.at(${2:0})
 
   ```javascript
 [...Array(${1:length}).keys()]
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>te</code></td>
+<td>throw error</td>
+<td>
+
+  ```javascript
+throw new ${1|Error,...|}($0);
   ```
 
 </td>
