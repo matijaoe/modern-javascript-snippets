@@ -4,7 +4,7 @@
 
 <br>
 
-  🚧 *Still a work in progress. Some snippets may be changed or removed, and more will be added.*
+  🚧 *Still a work in progress. Some snippets may be changed and more will be added.*
 
 ## Features
 - Contains over **180** snippets
