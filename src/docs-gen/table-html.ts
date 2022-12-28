@@ -25,7 +25,7 @@ export const $col = (s: string) => {
   return `<td>${s}</td>`;
 };
 export const $colCode = (s: string) => {
-  return joinByNewLine(["<td>", code(s), "</td>"]);
+  return joinInline(["<td>", code(s), "</td>"]);
 };
 export const $colCodeBlock = (s: string) => {
   return joinByDoubleNewLine(["<td>", codeBlock(s), "</td>"]);

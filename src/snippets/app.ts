@@ -10,8 +10,8 @@ export const languages: XSnippetVariant[] = [
     snippetDefinitions: javascript,
   },
   {
-    label: "TypeScript specific",
-    description: "Only applied to .ts and .tsx files",
+    label: "TypeScript",
+    description: "Available only in .ts and .tsx files",
     language: "typescript",
     fileExtension: "ts",
     snippetDefinitions: typescript,
