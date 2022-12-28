@@ -1,3 +1,5 @@
+import { VscSnippetDefinition } from "../models/app.ts";
+
 const joinByNewLine = (s: string[]) => s.join("\n");
 const joinByDoubleNewLine = (s: string[]) => s.join("\n\n");
 const indent = (s: string) => `  ${s}`;
@@ -16,7 +18,7 @@ const codeBlock = (s: string, lang = "javascript") => {
 };
 
 const $row = (s: string) => {
-  return joinByNewLine(["", "<!-- ROW -->", "<tr>", s, "</tr>"]);
+  return joinByNewLine(["", "<tr>", s, "</tr>"]);
 };
 
 const $colDoubleNewLine = (s: string, cb?: (input: string) => string) => {
@@ -33,72 +35,111 @@ const $colCodeBlock = (s: string) => {
   return $colDoubleNewLine(s, codeBlock);
 };
 
-const snippetRow = (
-  { prefix, name, body }: {
-    prefix: string;
-    name: string;
-    body: string | string[];
-  },
-) => {
-  const cols = joinByNewLine([
-    $colCode(prefix),
-    $col(name),
-    $colCodeBlock(Array.isArray(body) ? body.join("\n") : body),
-  ]);
-
+const $headerRow = (headers: string[]) => {
+  const cols = joinByNewLine(headers.map($col));
   return $row(cols);
 };
 
-const $table = (header: string, rows: string[]) => {
+const $table = (headings: string[], rows: string[]) => {
   return joinByNewLine([
     "<table>",
-    header,
+    $headerRow(headings),
     joinByNewLine(rows),
     "</table>",
   ]);
 };
 
-const headerRow = (headers: string[]) => {
-  const cols = joinByNewLine(headers.map((header) => $col(header)));
+// Snippet specific login
+
+type SnippetRow = {
+  prefix: string;
+  name: string;
+  body: string | string[];
+};
+
+const snippetRow = ({ prefix, name, body }: SnippetRow) => {
+  const parsedBody = Array.isArray(body) ? body.join("\n") : body;
+  const cols = joinByNewLine([
+    $colCode(prefix),
+    $col(name),
+    $colCodeBlock(parsedBody),
+  ]);
 
   return $row(cols);
 };
 
-// Custom for single snippet
-const testcase = [
-  {
-    prefix: "c",
-    name: "const",
-    body: "const $0",
-  },
-  {
-    prefix: "l",
-    name: "let",
-    body: "let $0",
-  },
-  {
-    prefix: "ifei",
-    name: "if/else-if statement",
-    body: "if ($1) {\n\t$2\n} else if ($3) {\n\t$4\n}",
-  },
-  {
-    prefix: "csc",
-    name: "class with constructor",
-    body: [
-      "class $1 {",
-      "\tconstructor($2) {",
-      "\t\t$0",
-      "\t}",
-      "}",
-    ],
-  },
-];
-const snippetTableHeader = headerRow(["Prefix", "Name", "Body"]);
-const snippetRows = testcase.map(snippetRow);
+export const generateSnippetTable = (items: SnippetRow[]) => {
+  const headings = ["Prefix", "Name", "Body"];
+  const rows = items.map(snippetRow);
 
-const singleSnippetTable = $table(snippetTableHeader, snippetRows);
+  return $table(headings, rows);
+};
 
-Deno.writeFileSync(
-  "./dist/test.md",
-  new TextEncoder().encode(singleSnippetTable),
-);
+export const generateSnippetSection = (
+  { meta, snippets }: VscSnippetDefinition,
+) => {
+  const title = `### ${meta.title}`;
+  const description = meta.description ? meta.description : "";
+  const table = generateSnippetTable(
+    Object.entries(snippets).map(([name, { prefix, body }]) => ({
+      name,
+      prefix: prefix as string,
+      body,
+    })),
+  );
+
+  return joinByNewLine([title, description, table]);
+};
+
+export const writeSectionToFile = (table: string) => {
+  Deno.writeFileSync(
+    "./dist/test.md",
+    new TextEncoder().encode(table),
+  );
+};
+
+// Testcase
+const section = generateSnippetSection({
+  meta: {
+    title: "Test",
+  },
+  snippets: {
+    "const": {
+      "prefix": "c",
+      "body": "const $0",
+    },
+    "let": {
+      "prefix": "l",
+      "body": "let $0",
+    },
+    "const assignment": {
+      "prefix": "ca",
+      "body": "const $1 = $0",
+    },
+    "let assignment": {
+      "prefix": "la",
+      "body": "let $1 = $0",
+    },
+    "const string assignment": {
+      "prefix": "cas",
+      "body": "const $1 = '$0'",
+    },
+    "const array assignment": {
+      "prefix": "car",
+      "body": "const $1 = [$0]",
+    },
+    "const object assignment": {
+      "prefix": "cao",
+      "body": "const $1 = { $0 }",
+    },
+    "object destructuring": {
+      "prefix": "dob",
+      "body": "const { $0 } = ${1:object}",
+    },
+    "array destructuring": {
+      "prefix": "dar",
+      "body": "const [$0] = ${1:array}",
+    },
+  },
+});
+writeSectionToFile(section);
