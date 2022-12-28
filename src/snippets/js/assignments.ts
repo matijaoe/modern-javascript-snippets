@@ -25,6 +25,10 @@ export const assignments: XSnippetDefinition = {
       name: "const string assignment",
       body: "const $1 = '$2';",
     },
+    las: {
+      name: "let string assignment",
+      body: "let $1 = '$2';",
+    },
     car: {
       name: "const array assignment",
       body: "const $1 = [$0]",
@@ -35,11 +39,11 @@ export const assignments: XSnippetDefinition = {
     },
     dob: {
       name: "object destructuring",
-      body: "const { $0 } = ${1:object}",
+      body: "const { $0 } = ${1:object};",
     },
     dar: {
       name: "array destructuring",
-      body: "const [$0] = ${1:array}",
+      body: "const [$0] = ${1:array};",
     },
   },
 };

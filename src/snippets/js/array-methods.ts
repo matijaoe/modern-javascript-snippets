@@ -17,7 +17,7 @@ export const arrayMethods: XSnippetDefinition = {
       name: "Array.reduce()",
       body: "$1.reduce((${2:acc}, ${3:curr}) => {\n\t$0\n}, ${4:initial})",
     },
-    "reduce-right": {
+    reduceRight: {
       name: "Array.reduceRight()",
       body: "$1.reduceRight((${2:acc}, ${3:curr}) => {\n\t$0\n}, ${4:initial})",
     },
@@ -41,15 +41,15 @@ export const arrayMethods: XSnippetDefinition = {
       name: "Array.reverse()",
       body: "$1.reverse()",
     },
-    "map-string": {
+    mapStr: {
       name: "Array.map() as string",
       body: "$1.map(String)",
     },
-    "map-number": {
+    mapNum: {
       name: "Array.map() as number",
       body: "$1.map(Number)",
     },
-    "filter-true": {
+    filterTrue: {
       name: "Array.filter() truthy",
       body: "$1.filter(Boolean)",
     },

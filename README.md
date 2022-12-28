@@ -130,6 +130,18 @@ const $1 = '$2';
 </tr>
 
 <tr>
+<td><code>las</code></td>
+<td>let string assignment</td>
+<td>
+
+  ```javascript
+let $1 = '$2';
+  ```
+
+</td>
+</tr>
+
+<tr>
 <td><code>car</code></td>
 <td>const array assignment</td>
 <td>
@@ -159,7 +171,7 @@ const $1 = { $0 }
 <td>
 
   ```javascript
-const { $0 } = ${1:object}
+const { $0 } = ${1:object};
   ```
 
 </td>
@@ -171,7 +183,7 @@ const { $0 } = ${1:object}
 <td>
 
   ```javascript
-const [$0] = ${1:array}
+const [$0] = ${1:array};
   ```
 
 </td>
@@ -241,7 +253,7 @@ if ($1) {
 
   ```javascript
 else {
-	$3
+	$0
 }
   ```
 
@@ -511,7 +523,7 @@ async ($1) => {
 <td>
 
   ```javascript
-for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {
+for (let ${1:i} = 0, ${2:len} = ${3:iter}.length; ${1:i} < ${2:len}; ${1:i}++) {
 	$0
 }
   ```
@@ -525,7 +537,7 @@ for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}+
 <td>
 
   ```javascript
-for (let ${1:i} = ${2:iterable}.length - 1; ${1:i} >= 0; ${1:i}--) {
+for (let ${1:i} = ${2:iter}.length - 1; ${1:i} >= 0; ${1:i}--) {
 	$0
 }
   ```
@@ -598,6 +610,20 @@ for await (let ${1:item} of ${2:items}) {
 while (${1:true}) {
 	$0
 }
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>dwl</code></td>
+<td>do while loop</td>
+<td>
+
+  ```javascript
+do {
+	$0
+} while ($1)
   ```
 
 </td>
@@ -675,12 +701,14 @@ class $1 extends ${2:Base} {
 </tr>
 
 <tr>
-<td><code>ctor</code></td>
+<td><code>cst</code></td>
 <td>class constructor</td>
 <td>
 
   ```javascript
-constructor($1) {$0}
+constructor($1) {
+	$0
+}
   ```
 
 </td>
@@ -724,7 +752,7 @@ get ${1:property}() {
 	$0
 }
 set ${1:property}(${2:value}) {
-	
+	$0
 }
   ```
 
@@ -1151,7 +1179,7 @@ $1.reduce((${2:acc}, ${3:curr}) => {
 </tr>
 
 <tr>
-<td><code>reduce-right</code></td>
+<td><code>reduceRight</code></td>
 <td>Array.reduceRight()</td>
 <td>
 
@@ -1225,7 +1253,7 @@ $1.reverse()
 </tr>
 
 <tr>
-<td><code>map-string</code></td>
+<td><code>mapStr</code></td>
 <td>Array.map() as string</td>
 <td>
 
@@ -1237,7 +1265,7 @@ $1.map(String)
 </tr>
 
 <tr>
-<td><code>map-number</code></td>
+<td><code>mapNum</code></td>
 <td>Array.map() as number</td>
 <td>
 
@@ -1249,7 +1277,7 @@ $1.map(Number)
 </tr>
 
 <tr>
-<td><code>filter-true</code></td>
+<td><code>filterTrue</code></td>
 <td>Array.filter() truthy</td>
 <td>
 
@@ -1758,7 +1786,7 @@ console.log({ $CLIPBOARD })
 <td>
 
   ```javascript
-console.log('$1 ->', $1$2)
+console.log('$1 :', $1$2)
   ```
 
 </td>
@@ -1770,7 +1798,7 @@ console.log('$1 ->', $1$2)
 <td>
 
   ```javascript
-console.error('$1 ->', $1$2)
+console.error('$1 :', $1$2)
   ```
 
 </td>
@@ -1782,7 +1810,7 @@ console.error('$1 ->', $1$2)
 <td>
 
   ```javascript
-console.warn('$1 ->', ${2:$1})
+console.warn('$1 :', ${2:$1})
   ```
 
 </td>
@@ -1891,8 +1919,8 @@ JSON.stringify(${1:value})
 </tr>
 
 <tr>
-<td><code>jsp</code></td>
-<td>JSON stringify (pretty)</td>
+<td><code>jsf</code></td>
+<td>JSON stringify (formatted)</td>
 <td>
 
   ```javascript
@@ -1908,7 +1936,7 @@ JSON.stringify(${1:value}, null, 2)
 <td>
 
   ```javascript
-typeof ${1:value} === 'string' ? value : JSON.stringify($1)
+typeof $1 === 'string' ? $1 : JSON.stringify($1)
   ```
 
 </td>
@@ -2041,6 +2069,41 @@ new Date($1)
 
   ```javascript
 Date.now()
+  ```
+
+</td>
+</tr>
+</table>
+
+### Node
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>re</code></td>
+<td>require</td>
+<td>
+
+  ```javascript
+require('${1:module}')
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>req</code></td>
+<td>require assignment</td>
+<td>
+
+  ```javascript
+const ${1} = require('${1:module}');
   ```
 
 </td>
@@ -2213,7 +2276,7 @@ Array.isArray($0)
 <td>
 
   ```javascript
-typeof ${1:value} === '${2|bigint,boolean,function,number,object,symbol,undefined|}'
+typeof ${1:value} === '${2|undefined,string,number,object,function,boolean,symbol,bigint|}'
   ```
 
 </td>
@@ -2351,6 +2414,114 @@ import.meta.env.$0
 </tr>
 </table>
 
+### Intl
+Internationalization API
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>inf</code></td>
+<td>Intl.NumberFormat</td>
+<td>
+
+  ```javascript
+new Intl.NumberFormat('${1|en-US,en-GB,en-CA,de-DE,fr-FR,es-ES,zh-CN,ru-RU,ja-JP|}'$3).format($2);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>infs</code></td>
+<td>Intl.NumberFormat style</td>
+<td>
+
+  ```javascript
+new Intl.NumberFormat('${1|en-US,en-GB,en-CA,de-DE,fr-FR,es-ES,zh-CN,ru-RU,ja-JP|}', {
+	style: '${3|decimal,currency,percent,unit|}',$4
+}).format($2);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>infc</code></td>
+<td>Intl.NumberFormat as currency</td>
+<td>
+
+  ```javascript
+new Intl.NumberFormat('${1|en-US,en-GB,en-CA,de-DE,fr-FR,es-ES,zh-CN,ru-RU,ja-JP|}', {
+	style: 'currency',
+	currency: '${3|USD,EUR,GBP,AUD,CAD,JPY|}',$4
+}).format($2);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>infp</code></td>
+<td>Intl.NumberFormat as percentage</td>
+<td>
+
+  ```javascript
+new Intl.NumberFormat('${1|en-US,en-GB,en-CA,de-DE,fr-FR,es-ES,zh-CN,ru-RU,ja-JP|}', {
+	style: 'percent',$3
+}).format($2);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>infu</code></td>
+<td>Intl.NumberFormat as unit</td>
+<td>
+
+  ```javascript
+new Intl.NumberFormat('${1|en-US,en-GB,en-CA,de-DE,fr-FR,es-ES,zh-CN,ru-RU,ja-JP|}', {
+	style: 'unit',
+	unit: '${3|acceleration-g-force,acceleration-meter-per-square-second,angle-arc-minute,angle-arc-second,angle-degree,angle-radian,angle-revolution,area-acre,area-hectare,area-square-centimeter,area-square-foot,area-square-inch,area-square-kilometer,area-square-meter,area-square-mile,area-square-yard,area-dunam,concentr-karat,concentr-milligram-ofglucose-per-deciliter,concentr-millimole-per-liter,concentr-percent,concentr-permille,concentr-permyriad,concentr-permillion,concentr-mole,concentr-item,concentr-portion,concentr-ofglucose,consumption-liter-per-100-kilometer,consumption-liter-per-kilometer,consumption-mile-per-gallon,consumption-mile-per-gallon-imperial,digital-bit,digital-byte,digital-gigabit,digital-gigabyte,digital-kilobit,digital-kilobyte,digital-megabit,digital-megabyte,digital-petabyte,digital-terabit,digital-terabyte,duration-century,duration-decade,duration-day,duration-day-person,duration-hour,duration-microsecond,duration-millisecond,duration-minute,duration-month,duration-month-person,duration-nanosecond,duration-quarter,duration-second,duration-week,duration-week-person,duration-year,duration-year-person,electric-ampere,electric-milliampere,electric-ohm,electric-volt,energy-calorie,energy-foodcalorie,energy-joule,energy-kilocalorie,energy-kilojoule,energy-kilowatt-hour,energy-electronvolt,energy-therm-us,energy-british-thermal-unit,force-pound-force,force-newton,force-kilowatt-hour-per-100-kilometer,frequency-gigahertz,frequency-hertz,frequency-kilohertz,frequency-megahertz,graphics-dot,graphics-dot-per-centimeter,graphics-dot-per-inch,graphics-em,graphics-megapixel,graphics-pixel,graphics-pixel-per-centimeter,graphics-pixel-per-inch,length-100-kilometer,length-astronomical-unit,length-centimeter,length-decimeter,length-fathom,length-foot,length-furlong,length-inch,length-kilometer,length-light-year,length-meter,length-micrometer,length-mile,length-mile-scandinavian,length-millimeter,length-nanometer,length-nautical-mile,length-parsec,length-picometer,length-point,length-yard,length-earth-radius,length-solar-radius,light-candela,light-lumen,light-lux,light-solar-luminosity,mass-carat,mass-grain,mass-gram,mass-kilogram,mass-tonne,mass-microgram,mass-milligram,mass-ounce,mass-ounce-troy,mass-pound,mass-stone,mass-ton,mass-dalton,mass-earth-mass,mass-solar-mass,power-gigawatt,power-horsepower,power-kilowatt,power-megawatt,power-milliwatt,power-watt,pressure-atmosphere,pressure-hectopascal,pressure-inch-ofhg,pressure-bar,pressure-millibar,pressure-millimeter-ofhg,pressure-pound-force-per-square-inch,pressure-pascal,pressure-kilopascal,pressure-megapascal,pressure-ofhg,speed-kilometer-per-hour,speed-knot,speed-meter-per-second,speed-mile-per-hour,temperature-celsius,temperature-fahrenheit,temperature-generic,temperature-kelvin,torque-pound-force-foot,torque-newton-meter,volume-acre-foot,volume-bushel,volume-centiliter,volume-cubic-centimeter,volume-cubic-foot,volume-cubic-inch,volume-cubic-kilometer,volume-cubic-meter,volume-cubic-mile,volume-cubic-yard,volume-cup,volume-cup-metric,volume-deciliter,volume-dessert-spoon,volume-dessert-spoon-imperial,volume-drop,volume-dram,volume-jigger,volume-pinch,volume-quart-imperial,volume-fluid-ounce,volume-fluid-ounce-imperial,volume-gallon,volume-gallon-imperial,volume-hectoliter,volume-liter,volume-megaliter,volume-milliliter,volume-pint,volume-pint-metric,volume-quart,volume-tablespoon,volume-teaspoon,volume-barrel|}',
+	unitDisplay: '${4|long,short,narrow|}',$0
+}).format($2);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>idtf</code></td>
+<td>Intl.DateTimeFormat</td>
+<td>
+
+  ```javascript
+new Intl.DateTimeFormat('${1|en-US,en-GB,en-CA,de-DE,fr-FR,es-ES,zh-CN,ru-RU,ja-JP|}'$3).format($2);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>idtfs</code></td>
+<td>Intl.DateTimeFormat with options</td>
+<td>
+
+  ```javascript
+new Intl.DateTimeFormat ('${1|en-US,en-GB,en-CA,de-DE,fr-FR,es-ES,zh-CN,ru-RU,ja-JP|}', {
+	dateStyle: '$3',$0
+}).format($2);
+  ```
+
+</td>
+</tr>
+</table>
+
 ### Uncategorized
 Will be sorted into appropriate categories in the future.
 <table width="100%">
@@ -2359,6 +2530,42 @@ Will be sorted into appropriate categories in the future.
 <td>Prefix</td>
 <td>Name</td>
 <td>Body</td>
+</tr>
+
+<tr>
+<td><code>aat</code></td>
+<td>array.at</td>
+<td>
+
+  ```javascript
+$1.at(${2:0})
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>am</code></td>
+<td>array merge</td>
+<td>
+
+  ```javascript
+[...$1]
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>om</code></td>
+<td>object merge</td>
+<td>
+
+  ```javascript
+{ ...$1 }
+  ```
+
+</td>
 </tr>
 
 <tr>
@@ -2398,48 +2605,24 @@ parseFloat($1)
 </tr>
 
 <tr>
-<td><code>am</code></td>
-<td>array merge</td>
-<td>
-
-  ```javascript
-[...$1]
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>om</code></td>
-<td>object merge</td>
-<td>
-
-  ```javascript
-{ ...$1 }
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>aat</code></td>
-<td>array.at</td>
-<td>
-
-  ```javascript
-$1.at(${2:0})
-  ```
-
-</td>
-</tr>
-
-<tr>
 <td><code>seq</code></td>
 <td>sequence of 0..n</td>
 <td>
 
   ```javascript
 [...Array(${1:length}).keys()]
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>te</code></td>
+<td>throw error</td>
+<td>
+
+  ```javascript
+throw new ${1|Error,TypeError,RangeError|}($0);
   ```
 
 </td>
