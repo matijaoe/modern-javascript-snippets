@@ -18,11 +18,19 @@ type SnippetRow = {
   body: string | string[];
 };
 
+const truncateOptions = (str: string) => {
+  const regex = /\|([^|]+)\|/g;
+  return str.replace(regex, (_match, p1) => {
+    const [first] = p1.split(",").map((o: string) => o.trim());
+    return `|${first},...|`;
+  });
+};
+
 const snippetRow = ({ prefix, name, body }: SnippetRow) => {
   const cols = joinByNewLine([
     $colCode(prefix),
     $col(name),
-    $colCodeBlock(parseMultiline(body)),
+    $colCodeBlock(truncateOptions(parseMultiline(body))),
   ]);
 
   return $row(cols);
