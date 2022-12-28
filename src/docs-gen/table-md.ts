@@ -1,6 +1,6 @@
-import { VscSnippetDefinition, VscSnippetDict } from "../models/app.ts";
 import { markdownTable } from "../deps.ts";
-import { replaceSymbol } from "./general.ts";
+import { VscSnippetDefinition, VscSnippetDict } from "../models/app.ts";
+import { replaceSymbol } from "../utils/general.ts";
 
 export const code = (str: string) => `\`${str}\``;
 
@@ -13,7 +13,8 @@ export const serializeForMarkdown = (str: string) => {
       .replace(/\t/g, "&nbsp;&nbsp;")
       .replace(/\|/g, "\\|");
   }
-  // TODO: dont remove | when it is in ``
+  // TODO: don't remove | when it is in code block
+  // but it differs for every .md implementation
   return str.replace(/\|/g, "\\|");
 };
 

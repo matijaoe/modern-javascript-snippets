@@ -1,38 +1,43 @@
 import { parse } from "./deps.ts";
-import { VscSnippetDefinition } from "./models/app.ts";
-import { variants } from "./snippets/app.ts";
-import { logTables } from "./utils/markdown.ts";
+import { generateDocs, populateDocsBlock } from "./docs-gen/snippets.ts";
+import { languages } from "./snippets/app.ts";
 import {
   convertToVscSnippet,
-  generateSnippetsFile,
+  generateSnippets,
   groupSnippets,
 } from "./utils/snippets.ts";
 
 const flags = parse(Deno.args, {
-  boolean: ["table", "snippets"],
-  default: { snippets: true },
+  boolean: ["snippets", "docs"],
+  default: { snippets: false, docs: false },
 });
 
-if (!flags.table && !flags.snippets) {
-  console.log("Please specify at least one flag: --table or --snippets");
+if (!flags.snippets && !flags.docs) {
+  console.log("Please specify at least one flag: --snippets or --docs");
 } else {
-  variants.forEach((variant) => {
-    const categorizedVscSnippets: VscSnippetDefinition[] = variant
-      .snippetsWithMeta.map(
-        (item) => ({
-          ...item,
-          snippets: convertToVscSnippet(item.snippets),
-        }),
-      );
+  if (flags.snippets) {
+    console.log("\nGenerating snippets...");
+    languages.forEach((language) => {
+      const categorizedVscSnippets = language
+        .snippetDefinitions.map(
+          (item) => {
+            const snippets = convertToVscSnippet(item.snippets);
+            return { ...item, snippets };
+          },
+        );
 
-    if (flags.table) {
-      logTables(variant.label, categorizedVscSnippets);
-    }
-    if (flags.snippets) {
       const variantVscSnippet = groupSnippets(
         categorizedVscSnippets.map((item) => item.snippets),
       );
-      generateSnippetsFile(variant.extension, variantVscSnippet);
-    }
-  });
+      generateSnippets(language.fileExtension, variantVscSnippet);
+    });
+  }
+
+  // TODO: probably better to make it generate from vsc json
+  // pass in meta, and snippets converted to vsc format
+  if (flags.docs) {
+    console.log("\nGenerating docs...");
+    const docs = generateDocs(languages);
+    populateDocsBlock(docs);
+  }
 }

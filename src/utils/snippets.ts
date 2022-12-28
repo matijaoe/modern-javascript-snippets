@@ -17,13 +17,21 @@ export const groupSnippets = (dicts: VscSnippetDict[]) => {
   }));
 };
 
-export const generateSnippetsFile = (name: string, data: VscSnippetDict) => {
+export const generateSnippets = (name: string, data: VscSnippetDict) => {
   const path = "./dist";
-  ensureDirSync(path);
-  const file = `${path}/${name}.code-snippets`;
+  const fileName = `${name}.code-snippets`;
+  try {
+    ensureDirSync(path);
+    const file = `${path}/${fileName}`;
 
-  Deno.writeTextFileSync(
-    file,
-    JSON.stringify(data, null, 2),
-  );
+    Deno.writeTextFileSync(
+      file,
+      JSON.stringify(data, null, 2),
+    );
+
+    console.log(`✅ ${fileName}`);
+  } catch (error) {
+    console.log(`❌ ${fileName}`);
+    console.error(error);
+  }
 };

@@ -19,3 +19,11 @@ export type GenericSnippetDictWithMeta<T> = {
 };
 export type XSnippetDefinition = GenericSnippetDictWithMeta<XSnippetDict>;
 export type VscSnippetDefinition = GenericSnippetDictWithMeta<VscSnippetDict>;
+
+export type XSnippetVariant = {
+  label: string;
+  description?: string;
+  language: string;
+  fileExtension: string;
+  snippetDefinitions: XSnippetDefinition[];
+};
