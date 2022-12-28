@@ -1,11 +1,11 @@
 import { ensureDirSync } from "../deps.ts";
-import { VscSnippet, VscSnippetDict, XSnippetDict } from "../models/app.ts";
+import { VscSnippetDict, XSnippetDict } from "../models/app.ts";
 import { addSymbol } from "./general.ts";
 
 export const convertToVscSnippet = (snippets: XSnippetDict) => {
   return Object.entries(snippets)
     .reduce((acc, [prefix, { name, body }]) => {
-      acc[addSymbol(name)] = { prefix, body } as VscSnippet;
+      acc[addSymbol(name)] = { prefix, body };
       return acc;
     }, {} as VscSnippetDict);
 };

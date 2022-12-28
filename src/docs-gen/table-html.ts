@@ -38,7 +38,7 @@ export const $headerRow = (headers: string[]) => {
 
 export const $table = (headings: string[], rows: string[]) => {
   return joinByNewLine([
-    "<table>",
+    '<table width="100%">',
     $headerRow(headings),
     joinByNewLine(rows),
     "</table>",

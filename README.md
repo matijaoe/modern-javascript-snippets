@@ -4,7 +4,7 @@
 
 <br>
 
-  🚧 *Still a work in progress. Some snippets may be changed or removed, and many more will be added.*
+  🚧 *Still a work in progress. Some snippets may be changed or removed, and more will be added.*
 
 ## Features
 - Contains over **180** snippets
@@ -61,7 +61,7 @@ It's highly recommended to use these snippets along with Prettier/ESLint to have
 
 ### Assignments
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -180,7 +180,7 @@ const [$0] = ${1:array}
 
 ### Flow control
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -368,7 +368,7 @@ try {
 
 ### Functions
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -497,7 +497,7 @@ async ($1) => {
 
 ### Loops
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -606,7 +606,7 @@ while (${1:true}) {
 
 ### Classes
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -762,7 +762,7 @@ async ${1:name}($2) {
 
 ### Promises
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -907,7 +907,7 @@ Promise.any($1)
 
 ### Modules
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -1102,7 +1102,7 @@ export const ${1:name} = ($2) => {$0}
 
 ### Array methods
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -1263,7 +1263,7 @@ $1.filter(Boolean)
 
 ### Objects
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -1322,7 +1322,7 @@ Object.values($0)
 
 ### Returns
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -1371,7 +1371,7 @@ return ({$0})
 
 ### Operators, Expressions, Literals
 Grouping them all together for now
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -1610,7 +1610,7 @@ ${$1}$0
 
 ### Console
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -1791,7 +1791,7 @@ console.warn('$1 ->', ${2:$1})
 
 ### Timers
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -1858,7 +1858,7 @@ process.nextTick(() => {
 
 ### JSON
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -1917,7 +1917,7 @@ typeof ${1:value} === 'string' ? value : JSON.stringify($1)
 
 ### DOM
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -2014,7 +2014,7 @@ ${1:emitter}.on('${2:event}', (${3:arguments}) => {
 
 ### Dates
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -2049,7 +2049,7 @@ Date.now()
 
 ### Testing
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -2187,7 +2187,7 @@ afterEach(() => {
 
 ### Types
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -2282,7 +2282,7 @@ isNan($0)
 
 ### Misc
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -2353,7 +2353,7 @@ import.meta.env.$0
 
 ### Uncategorized
 Will be sorted into appropriate categories in the future.
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -2452,7 +2452,7 @@ Available only in .ts and .tsx files
 
 ### Declarations
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
@@ -2511,7 +2511,7 @@ const $1: ${2:object} = { $0 }
 
 ### Types
 
-<table>
+<table width="100%">
 
 <tr>
 <td>Prefix</td>
