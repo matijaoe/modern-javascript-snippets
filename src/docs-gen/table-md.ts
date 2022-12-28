@@ -13,8 +13,8 @@ export const serializeForMarkdown = (str: string) => {
       .replace(/\t/g, "&nbsp;&nbsp;")
       .replace(/\|/g, "\\|");
   }
-  // TODO: dont remove | when it is in ``
-  // but it's different for every .md implementation
+  // TODO: don't remove | when it is in code block
+  // but it differs for every .md implementation
   return str.replace(/\|/g, "\\|");
 };
 

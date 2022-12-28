@@ -4,6 +4,7 @@ export const joinByDoubleNewLine = (s: string[]) => s.join("\n\n");
 export const indent = (s: string, size = 2) => `${" ".repeat(size)}${s}`;
 export const escapeBackticks = (s: string) => s.replace(/`/g, "\`");
 
+export const htmlComment = (s: string) => `<!-- ${s} -->`;
 export const code = (s: string) => {
   return escapeBackticks("`" + s + "`");
 };

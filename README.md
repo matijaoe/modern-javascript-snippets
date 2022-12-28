@@ -354,14 +354,13 @@ Will be sorted into appropriate categories in the future.
 # ensure Deno is installed
 # https://deno.land/manual@v1.29.1/getting_started/installation
 
-# generate .code-snippets
+# generate .code-snippets and documentation
 npm run generate
 ```
 
 ---
 
-## 🚧 Experimental documentation
-
+<!-- START:docs-gen -->
 ## Snippets
 
 
@@ -3589,3 +3588,5 @@ type ${1:Model} = ${2:first} & ${3:second}
 </td>
 </tr>
 </table>
+
+<!-- END:docs-gen -->

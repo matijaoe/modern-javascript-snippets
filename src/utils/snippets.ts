@@ -17,7 +17,7 @@ export const groupSnippets = (dicts: VscSnippetDict[]) => {
   }));
 };
 
-export const generateSnippetsFile = (name: string, data: VscSnippetDict) => {
+export const generateSnippets = (name: string, data: VscSnippetDict) => {
   const path = "./dist";
   ensureDirSync(path);
   const file = `${path}/${name}.code-snippets`;

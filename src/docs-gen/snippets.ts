@@ -1,4 +1,4 @@
-import { ensureDirSync } from "../deps.ts";
+import { replaceInFile } from "../deps.ts";
 import { XSnippetDefinition, XSnippetVariant } from "../models/app.ts";
 import {
   $col,
@@ -6,6 +6,7 @@ import {
   $colCodeBlock,
   $row,
   $table,
+  htmlComment,
   joinByDoubleNewLine,
   joinByNewLine,
 } from "./table-html.ts";
@@ -57,17 +58,36 @@ const generateVariantSection = (variant: XSnippetVariant) => {
   return joinByNewLine([title, description, "", ...sections]);
 };
 
-export const generateVariantSections = (variants: XSnippetVariant[]) => {
+export const generateDocs = (variants: XSnippetVariant[]) => {
   return joinByDoubleNewLine(variants.map(generateVariantSection));
 };
 
-export const generateSnippetDocs = (table: string) => {
-  const path = "./dist";
-  ensureDirSync(path);
-  const file = `${path}/docs.md`;
+const docsGenId = "docs-gen";
+const docsGen = {
+  start: htmlComment(`START:${docsGenId}`),
+  end: htmlComment(`END:${docsGenId}`),
+};
 
-  Deno.writeFileSync(
-    file,
-    new TextEncoder().encode(table),
+const docsBlock = (s: string) => {
+  return joinByNewLine([docsGen.start, s, docsGen.end]);
+};
+
+export const populateDocsBlock = async (input: string) => {
+  const regex = new RegExp(
+    `${docsGen.start}[\\s\\S]*?${docsGen.end}`,
+    "g",
   );
+
+  const options = {
+    files: "./README.md",
+    from: regex,
+    to: docsBlock(input),
+  };
+
+  try {
+    const results = await replaceInFile(options);
+    console.log("Replacement results:", results);
+  } catch (error) {
+    console.error("Error occurred:", error);
+  }
 };
