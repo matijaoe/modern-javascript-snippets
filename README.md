@@ -376,9 +376,7 @@ npm run generate
 
 <tr>
 <td>
-
-`c`
-
+<code align="right">c</code>
 </td>
 <td>const</td>
 <td>
@@ -392,9 +390,7 @@ const $0
 
 <tr>
 <td>
-
-`l`
-
+<code align="right">l</code>
 </td>
 <td>let</td>
 <td>
@@ -408,9 +404,7 @@ let $0
 
 <tr>
 <td>
-
-`ca`
-
+<code align="right">ca</code>
 </td>
 <td>const assignment</td>
 <td>
@@ -424,9 +418,7 @@ const $1 = $2;
 
 <tr>
 <td>
-
-`la`
-
+<code align="right">la</code>
 </td>
 <td>let assignment</td>
 <td>
@@ -440,9 +432,7 @@ let $1 = $2;
 
 <tr>
 <td>
-
-`cas`
-
+<code align="right">cas</code>
 </td>
 <td>const string assignment</td>
 <td>
@@ -456,9 +446,7 @@ const $1 = '$2';
 
 <tr>
 <td>
-
-`car`
-
+<code align="right">car</code>
 </td>
 <td>const array assignment</td>
 <td>
@@ -472,9 +460,7 @@ const $1 = [$0]
 
 <tr>
 <td>
-
-`cao`
-
+<code align="right">cao</code>
 </td>
 <td>const object assignment</td>
 <td>
@@ -488,9 +474,7 @@ const $1 = { $0 }
 
 <tr>
 <td>
-
-`dob`
-
+<code align="right">dob</code>
 </td>
 <td>object destructuring</td>
 <td>
@@ -504,9 +488,7 @@ const { $0 } = ${1:object}
 
 <tr>
 <td>
-
-`dar`
-
+<code align="right">dar</code>
 </td>
 <td>array destructuring</td>
 <td>
@@ -531,9 +513,7 @@ const [$0] = ${1:array}
 
 <tr>
 <td>
-
-`if`
-
+<code align="right">if</code>
 </td>
 <td>if statement</td>
 <td>
@@ -549,9 +529,7 @@ if ($1) {
 
 <tr>
 <td>
-
-`ifel`
-
+<code align="right">ifel</code>
 </td>
 <td>if/else statement</td>
 <td>
@@ -569,9 +547,7 @@ if ($1) {
 
 <tr>
 <td>
-
-`ifei`
-
+<code align="right">ifei</code>
 </td>
 <td>if/else-if statement</td>
 <td>
@@ -589,9 +565,7 @@ if ($1) {
 
 <tr>
 <td>
-
-`el`
-
+<code align="right">el</code>
 </td>
 <td>else statement</td>
 <td>
@@ -607,9 +581,7 @@ else {
 
 <tr>
 <td>
-
-`ei`
-
+<code align="right">ei</code>
 </td>
 <td>else if statement</td>
 <td>
@@ -625,9 +597,7 @@ else if ($1) {
 
 <tr>
 <td>
-
-`ter`
-
+<code align="right">ter</code>
 </td>
 <td>ternary operator</td>
 <td>
@@ -641,9 +611,7 @@ $1 ? $2 : $3
 
 <tr>
 <td>
-
-`tera`
-
+<code align="right">tera</code>
 </td>
 <td>ternary expression assignment</td>
 <td>
@@ -657,9 +625,7 @@ const ${1:name} = $2 ? $3 : $4
 
 <tr>
 <td>
-
-`sw`
-
+<code align="right">sw</code>
 </td>
 <td>switch</td>
 <td>
@@ -676,9 +642,7 @@ switch ($1) {
 
 <tr>
 <td>
-
-`cas`
-
+<code align="right">cas</code>
 </td>
 <td>case</td>
 <td>
@@ -694,9 +658,7 @@ case ${1:value}:
 
 <tr>
 <td>
-
-`tc`
-
+<code align="right">tc</code>
 </td>
 <td>try/catch</td>
 <td>
@@ -714,9 +676,7 @@ try {
 
 <tr>
 <td>
-
-`tcf`
-
+<code align="right">tcf</code>
 </td>
 <td>try/catch/finally</td>
 <td>
@@ -736,9 +696,7 @@ try {
 
 <tr>
 <td>
-
-`tf`
-
+<code align="right">tf</code>
 </td>
 <td>try/finally</td>
 <td>
@@ -767,9 +725,7 @@ try {
 
 <tr>
 <td>
-
-`fn`
-
+<code align="right">fn</code>
 </td>
 <td>function</td>
 <td>
@@ -785,9 +741,7 @@ function ${1:name}($2) {
 
 <tr>
 <td>
-
-`fna`
-
+<code align="right">fna</code>
 </td>
 <td>async function</td>
 <td>
@@ -803,9 +757,7 @@ async function ${1:name}($2) {
 
 <tr>
 <td>
-
-`nfn`
-
+<code align="right">nfn</code>
 </td>
 <td>named arrow function</td>
 <td>
@@ -819,9 +771,7 @@ const ${1} = ($2) => {$0}
 
 <tr>
 <td>
-
-`nfna`
-
+<code align="right">nfna</code>
 </td>
 <td>async named arrow function</td>
 <td>
@@ -835,9 +785,7 @@ const ${1:name} = async ($2) => {$0}
 
 <tr>
 <td>
-
-`af`
-
+<code align="right">af</code>
 </td>
 <td>arrow function</td>
 <td>
@@ -851,9 +799,7 @@ const ${1:name} = async ($2) => {$0}
 
 <tr>
 <td>
-
-`afa`
-
+<code align="right">afa</code>
 </td>
 <td>async arrow function</td>
 <td>
@@ -867,9 +813,7 @@ async ($1) => $0
 
 <tr>
 <td>
-
-`afb`
-
+<code align="right">afb</code>
 </td>
 <td>arrow function with body</td>
 <td>
@@ -885,9 +829,7 @@ async ($1) => $0
 
 <tr>
 <td>
-
-`afba`
-
+<code align="right">afba</code>
 </td>
 <td>async arrow function with body</td>
 <td>
@@ -903,9 +845,7 @@ async ($1) => {
 
 <tr>
 <td>
-
-`iife`
-
+<code align="right">iife</code>
 </td>
 <td>immediately-invoked function expression</td>
 <td>
@@ -932,9 +872,7 @@ async ($1) => {
 
 <tr>
 <td>
-
-`fl`
-
+<code align="right">fl</code>
 </td>
 <td>for loop</td>
 <td>
@@ -950,9 +888,7 @@ for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}+
 
 <tr>
 <td>
-
-`rfl`
-
+<code align="right">rfl</code>
 </td>
 <td>reverse for loop</td>
 <td>
@@ -968,9 +904,7 @@ for (let ${1:i} = ${2:iterable}.length - 1; ${1:i} >= 0; ${1:i}--) {
 
 <tr>
 <td>
-
-`flr`
-
+<code align="right">flr</code>
 </td>
 <td>for loop (range)</td>
 <td>
@@ -986,9 +920,7 @@ for (let ${1:i} = 0; ${1:i} < ${2:5}; ${1:i}++) {
 
 <tr>
 <td>
-
-`fin`
-
+<code align="right">fin</code>
 </td>
 <td>for...in loop</td>
 <td>
@@ -1004,9 +936,7 @@ for (let ${1:key} in ${2:array}) {
 
 <tr>
 <td>
-
-`fof`
-
+<code align="right">fof</code>
 </td>
 <td>for...of loop</td>
 <td>
@@ -1022,9 +952,7 @@ for (let ${1:item} of ${2:items}) {
 
 <tr>
 <td>
-
-`fofa`
-
+<code align="right">fofa</code>
 </td>
 <td>for await...of loop</td>
 <td>
@@ -1040,9 +968,7 @@ for await (let ${1:item} of ${2:items}) {
 
 <tr>
 <td>
-
-`wl`
-
+<code align="right">wl</code>
 </td>
 <td>while loop</td>
 <td>
@@ -1069,9 +995,7 @@ while (${1:true}) {
 
 <tr>
 <td>
-
-`cs`
-
+<code align="right">cs</code>
 </td>
 <td>class</td>
 <td>
@@ -1087,9 +1011,7 @@ class $1 {
 
 <tr>
 <td>
-
-`cse`
-
+<code align="right">cse</code>
 </td>
 <td>class extends</td>
 <td>
@@ -1105,9 +1027,7 @@ class $1 extends ${2:Base} {
 
 <tr>
 <td>
-
-`csc`
-
+<code align="right">csc</code>
 </td>
 <td>class with constructor</td>
 <td>
@@ -1125,9 +1045,7 @@ class $1 {
 
 <tr>
 <td>
-
-`csec`
-
+<code align="right">csec</code>
 </td>
 <td>class extends with constructor</td>
 <td>
@@ -1145,9 +1063,7 @@ class $1 extends ${2:Base} {
 
 <tr>
 <td>
-
-`ctor`
-
+<code align="right">ctor</code>
 </td>
 <td>class constructor</td>
 <td>
@@ -1161,9 +1077,7 @@ constructor($1) {$0}
 
 <tr>
 <td>
-
-`get`
-
+<code align="right">get</code>
 </td>
 <td>getter</td>
 <td>
@@ -1179,9 +1093,7 @@ get ${1:property}() {
 
 <tr>
 <td>
-
-`set`
-
+<code align="right">set</code>
 </td>
 <td>setter</td>
 <td>
@@ -1197,9 +1109,7 @@ set ${1:property}(${2:value}) {
 
 <tr>
 <td>
-
-`gs`
-
+<code align="right">gs</code>
 </td>
 <td>getter and setter</td>
 <td>
@@ -1218,9 +1128,7 @@ set ${1:property}(${2:value}) {
 
 <tr>
 <td>
-
-`met`
-
+<code align="right">met</code>
 </td>
 <td>method</td>
 <td>
@@ -1236,9 +1144,7 @@ ${1:name}($2) {
 
 <tr>
 <td>
-
-`meta`
-
+<code align="right">meta</code>
 </td>
 <td>async method</td>
 <td>
@@ -1265,9 +1171,7 @@ async ${1:name}($2) {
 
 <tr>
 <td>
-
-`fet`
-
+<code align="right">fet</code>
 </td>
 <td>fetch</td>
 <td>
@@ -1281,9 +1185,7 @@ fetch('$1'$2).then(res => res.json())
 
 <tr>
 <td>
-
-`feta`
-
+<code align="right">feta</code>
 </td>
 <td>fetch assignment</td>
 <td>
@@ -1297,9 +1199,7 @@ const ${1|data,{ data }|} = await fetch('$2'$3).then(res => res.json())
 
 <tr>
 <td>
-
-`pr`
-
+<code align="right">pr</code>
 </td>
 <td>promise</td>
 <td>
@@ -1315,9 +1215,7 @@ new Promise((resolve, reject) => {
 
 <tr>
 <td>
-
-`prs`
-
+<code align="right">prs</code>
 </td>
 <td>Promise.resolve</td>
 <td>
@@ -1331,9 +1229,7 @@ Promise.resolve($1)
 
 <tr>
 <td>
-
-`prj`
-
+<code align="right">prj</code>
 </td>
 <td>Promise.reject</td>
 <td>
@@ -1347,9 +1243,7 @@ Promise.reject($1)
 
 <tr>
 <td>
-
-`then`
-
+<code align="right">then</code>
 </td>
 <td>promise then()</td>
 <td>
@@ -1363,9 +1257,7 @@ $1.then((${2:value}) => $0)
 
 <tr>
 <td>
-
-`catch`
-
+<code align="right">catch</code>
 </td>
 <td>promise catch()</td>
 <td>
@@ -1379,9 +1271,7 @@ $1.catch((${2:err}) => $0)
 
 <tr>
 <td>
-
-`thenc`
-
+<code align="right">thenc</code>
 </td>
 <td>promise then().catch()</td>
 <td>
@@ -1395,9 +1285,7 @@ $1.then((${2:value}) => $3).catch((${4:err}) => $5)
 
 <tr>
 <td>
-
-`pra`
-
+<code align="right">pra</code>
 </td>
 <td>Promise.all</td>
 <td>
@@ -1411,9 +1299,7 @@ Promise.all($1)
 
 <tr>
 <td>
-
-`prsa`
-
+<code align="right">prsa</code>
 </td>
 <td>Promise.allSettled</td>
 <td>
@@ -1427,9 +1313,7 @@ Promise.allSettled($1)
 
 <tr>
 <td>
-
-`pran`
-
+<code align="right">pran</code>
 </td>
 <td>Promise.any</td>
 <td>
@@ -1454,9 +1338,7 @@ Promise.any($1)
 
 <tr>
 <td>
-
-`im`
-
+<code align="right">im</code>
 </td>
 <td>import from module</td>
 <td>
@@ -1470,9 +1352,7 @@ import { $2 } from '${1:module}';
 
 <tr>
 <td>
-
-`imd`
-
+<code align="right">imd</code>
 </td>
 <td>import default</td>
 <td>
@@ -1486,9 +1366,7 @@ import $2 from '${1:module}';
 
 <tr>
 <td>
-
-`ima`
-
+<code align="right">ima</code>
 </td>
 <td>import as</td>
 <td>
@@ -1502,9 +1380,7 @@ import ${2:*} as ${3:name} from '${1:module}';
 
 <tr>
 <td>
-
-`imf`
-
+<code align="right">imf</code>
 </td>
 <td>import file</td>
 <td>
@@ -1518,9 +1394,7 @@ import '$1';
 
 <tr>
 <td>
-
-`imp`
-
+<code align="right">imp</code>
 </td>
 <td>import dynamic</td>
 <td>
@@ -1534,9 +1408,7 @@ import('$0')
 
 <tr>
 <td>
-
-`impa`
-
+<code align="right">impa</code>
 </td>
 <td>await import dynamic</td>
 <td>
@@ -1550,9 +1422,7 @@ await import('$0')
 
 <tr>
 <td>
-
-`ime`
-
+<code align="right">ime</code>
 </td>
 <td>import meta env</td>
 <td>
@@ -1566,9 +1436,7 @@ import.meta.env.$0
 
 <tr>
 <td>
-
-`ex`
-
+<code align="right">ex</code>
 </td>
 <td>export</td>
 <td>
@@ -1582,9 +1450,7 @@ export $0
 
 <tr>
 <td>
-
-`exd`
-
+<code align="right">exd</code>
 </td>
 <td>export default</td>
 <td>
@@ -1598,9 +1464,7 @@ export default $0
 
 <tr>
 <td>
-
-`exf`
-
+<code align="right">exf</code>
 </td>
 <td>export from</td>
 <td>
@@ -1614,9 +1478,7 @@ export { $0 } from '${1:module}';
 
 <tr>
 <td>
-
-`exa`
-
+<code align="right">exa</code>
 </td>
 <td>export all from</td>
 <td>
@@ -1630,9 +1492,7 @@ export * from '${1:module}';
 
 <tr>
 <td>
-
-`exo`
-
+<code align="right">exo</code>
 </td>
 <td>export object</td>
 <td>
@@ -1646,9 +1506,7 @@ export const ${1:name} = { $0 }
 
 <tr>
 <td>
-
-`efn`
-
+<code align="right">efn</code>
 </td>
 <td>export function</td>
 <td>
@@ -1664,9 +1522,7 @@ export function ${1:name}($2) {
 
 <tr>
 <td>
-
-`edfn`
-
+<code align="right">edfn</code>
 </td>
 <td>export default function</td>
 <td>
@@ -1682,9 +1538,7 @@ export default function ${1:name}($2) {
 
 <tr>
 <td>
-
-`enfn`
-
+<code align="right">enfn</code>
 </td>
 <td>export named arrow function</td>
 <td>
@@ -1709,9 +1563,7 @@ export const ${1:name} = ($2) => {$0}
 
 <tr>
 <td>
-
-`fe`
-
+<code align="right">fe</code>
 </td>
 <td>Array.forEach()</td>
 <td>
@@ -1727,9 +1579,7 @@ $1.forEach((${2:item}) => {
 
 <tr>
 <td>
-
-`map`
-
+<code align="right">map</code>
 </td>
 <td>Array.map()</td>
 <td>
@@ -1743,9 +1593,7 @@ $1.map((${2:item}) => ${3})
 
 <tr>
 <td>
-
-`reduce`
-
+<code align="right">reduce</code>
 </td>
 <td>Array.reduce()</td>
 <td>
@@ -1761,9 +1609,7 @@ $1.reduce((${2:acc}, ${3:curr}) => {
 
 <tr>
 <td>
-
-`reduce-right`
-
+<code align="right">reduce-right</code>
 </td>
 <td>Array.reduceRight()</td>
 <td>
@@ -1779,9 +1625,7 @@ $1.reduceRight((${2:acc}, ${3:curr}) => {
 
 <tr>
 <td>
-
-`filter`
-
+<code align="right">filter</code>
 </td>
 <td>Array.filter()</td>
 <td>
@@ -1795,9 +1639,7 @@ $1.filter((${2:item}) => ${3})
 
 <tr>
 <td>
-
-`find`
-
+<code align="right">find</code>
 </td>
 <td>Array.find()</td>
 <td>
@@ -1811,9 +1653,7 @@ $1.find((${2:item}) => ${3})
 
 <tr>
 <td>
-
-`every`
-
+<code align="right">every</code>
 </td>
 <td>Array.every()</td>
 <td>
@@ -1827,9 +1667,7 @@ $1.every((${2:item}) => ${3})
 
 <tr>
 <td>
-
-`some`
-
+<code align="right">some</code>
 </td>
 <td>Array.some()</td>
 <td>
@@ -1843,9 +1681,7 @@ $1.some((${2:item}) => ${3})
 
 <tr>
 <td>
-
-`reverse`
-
+<code align="right">reverse</code>
 </td>
 <td>Array.reverse()</td>
 <td>
@@ -1859,9 +1695,7 @@ $1.reverse()
 
 <tr>
 <td>
-
-`map-string`
-
+<code align="right">map-string</code>
 </td>
 <td>Array.map() as string</td>
 <td>
@@ -1875,9 +1709,7 @@ $1.map(String)
 
 <tr>
 <td>
-
-`map-number`
-
+<code align="right">map-number</code>
 </td>
 <td>Array.map() as number</td>
 <td>
@@ -1891,9 +1723,7 @@ $1.map(Number)
 
 <tr>
 <td>
-
-`filter-true`
-
+<code align="right">filter-true</code>
 </td>
 <td>Array.filter() truthy</td>
 <td>
@@ -1918,9 +1748,7 @@ $1.filter(Boolean)
 
 <tr>
 <td>
-
-`oe`
-
+<code align="right">oe</code>
 </td>
 <td>Object.entries</td>
 <td>
@@ -1934,9 +1762,7 @@ Object.entries($0)
 
 <tr>
 <td>
-
-`ofe`
-
+<code align="right">ofe</code>
 </td>
 <td>Object.fromEntries</td>
 <td>
@@ -1950,9 +1776,7 @@ Object.fromEntries($0)
 
 <tr>
 <td>
-
-`ok`
-
+<code align="right">ok</code>
 </td>
 <td>Object.keys</td>
 <td>
@@ -1966,9 +1790,7 @@ Object.keys($0)
 
 <tr>
 <td>
-
-`ov`
-
+<code align="right">ov</code>
 </td>
 <td>Object.values</td>
 <td>
@@ -1993,9 +1815,7 @@ Object.values($0)
 
 <tr>
 <td>
-
-`re`
-
+<code align="right">re</code>
 </td>
 <td>return</td>
 <td>
@@ -2009,9 +1829,7 @@ return $0
 
 <tr>
 <td>
-
-`reo`
-
+<code align="right">reo</code>
 </td>
 <td>return object</td>
 <td>
@@ -2027,9 +1845,7 @@ return {
 
 <tr>
 <td>
-
-`rei`
-
+<code align="right">rei</code>
 </td>
 <td>return object inline</td>
 <td>
@@ -2054,9 +1870,7 @@ Grouping them all together for now
 
 <tr>
 <td>
-
-`or`
-
+<code align="right">or</code>
 </td>
 <td>OR (||)</td>
 <td>
@@ -2070,9 +1884,7 @@ Grouping them all together for now
 
 <tr>
 <td>
-
-`and`
-
+<code align="right">and</code>
 </td>
 <td>AND (&&)</td>
 <td>
@@ -2086,9 +1898,7 @@ Grouping them all together for now
 
 <tr>
 <td>
-
-`nc`
-
+<code align="right">nc</code>
 </td>
 <td>nullish coalescing (??)</td>
 <td>
@@ -2102,9 +1912,7 @@ Grouping them all together for now
 
 <tr>
 <td>
-
-`eq`
-
+<code align="right">eq</code>
 </td>
 <td>strict equality (===)</td>
 <td>
@@ -2118,9 +1926,7 @@ Grouping them all together for now
 
 <tr>
 <td>
-
-`ore`
-
+<code align="right">ore</code>
 </td>
 <td>logical OR expression</td>
 <td>
@@ -2134,9 +1940,7 @@ $1 || $0
 
 <tr>
 <td>
-
-`ande`
-
+<code align="right">ande</code>
 </td>
 <td>logical AND expression</td>
 <td>
@@ -2150,9 +1954,7 @@ $1 && $0
 
 <tr>
 <td>
-
-`nce`
-
+<code align="right">nce</code>
 </td>
 <td>nullish coalescing expression (??)</td>
 <td>
@@ -2166,9 +1968,7 @@ $1 ?? $0
 
 <tr>
 <td>
-
-`eqe`
-
+<code align="right">eqe</code>
 </td>
 <td>strict equality expression</td>
 <td>
@@ -2182,9 +1982,7 @@ $1 === $0
 
 <tr>
 <td>
-
-`ora`
-
+<code align="right">ora</code>
 </td>
 <td>logical OR assignment (||=)</td>
 <td>
@@ -2198,9 +1996,7 @@ $1 ||= $0
 
 <tr>
 <td>
-
-`nca`
-
+<code align="right">nca</code>
 </td>
 <td>nullish coalescing assignment (??=)</td>
 <td>
@@ -2214,9 +2010,7 @@ $1 ??= $0
 
 <tr>
 <td>
-
-`inc`
-
+<code align="right">inc</code>
 </td>
 <td>addition assignment</td>
 <td>
@@ -2230,9 +2024,7 @@ $1 += ${0:1}
 
 <tr>
 <td>
-
-`sub`
-
+<code align="right">sub</code>
 </td>
 <td>subtraction assignment</td>
 <td>
@@ -2246,9 +2038,7 @@ $1 -= ${0:1}
 
 <tr>
 <td>
-
-`mul`
-
+<code align="right">mul</code>
 </td>
 <td>multiplication assignment</td>
 <td>
@@ -2262,9 +2052,7 @@ $1 *= ${0:1}
 
 <tr>
 <td>
-
-`div`
-
+<code align="right">div</code>
 </td>
 <td>division assignment</td>
 <td>
@@ -2278,9 +2066,7 @@ $1 /= ${0:1}
 
 <tr>
 <td>
-
-`ol`
-
+<code align="right">ol</code>
 </td>
 <td>object literal</td>
 <td>
@@ -2294,9 +2080,7 @@ $1 /= ${0:1}
 
 <tr>
 <td>
-
-`al`
-
+<code align="right">al</code>
 </td>
 <td>array literal</td>
 <td>
@@ -2310,9 +2094,7 @@ $1 /= ${0:1}
 
 <tr>
 <td>
-
-`tl`
-
+<code align="right">tl</code>
 </td>
 <td>template literal</td>
 <td>
@@ -2326,9 +2108,7 @@ $1 /= ${0:1}
 
 <tr>
 <td>
-
-`tlo`
-
+<code align="right">tlo</code>
 </td>
 <td>template literal operation</td>
 <td>
@@ -2342,9 +2122,7 @@ ${$1}$0
 
 <tr>
 <td>
-
-`tle`
-
+<code align="right">tle</code>
 </td>
 <td>template literal expression</td>
 <td>
@@ -2369,9 +2147,7 @@ ${$1}$0
 
 <tr>
 <td>
-
-`cl`
-
+<code align="right">cl</code>
 </td>
 <td>console.log</td>
 <td>
@@ -2385,9 +2161,7 @@ console.log($0)
 
 <tr>
 <td>
-
-`ci`
-
+<code align="right">ci</code>
 </td>
 <td>console.info</td>
 <td>
@@ -2401,9 +2175,7 @@ console.info($1)
 
 <tr>
 <td>
-
-`cdi`
-
+<code align="right">cdi</code>
 </td>
 <td>console.dir</td>
 <td>
@@ -2417,9 +2189,7 @@ console.dir($1)
 
 <tr>
 <td>
-
-`ce`
-
+<code align="right">ce</code>
 </td>
 <td>console.error</td>
 <td>
@@ -2433,9 +2203,7 @@ console.error($1)
 
 <tr>
 <td>
-
-`cw`
-
+<code align="right">cw</code>
 </td>
 <td>console.warn</td>
 <td>
@@ -2449,9 +2217,7 @@ console.warn($1)
 
 <tr>
 <td>
-
-`ct`
-
+<code align="right">ct</code>
 </td>
 <td>console.time</td>
 <td>
@@ -2467,9 +2233,7 @@ console.timeEnd('$1')
 
 <tr>
 <td>
-
-`ctb`
-
+<code align="right">ctb</code>
 </td>
 <td>console.table</td>
 <td>
@@ -2483,9 +2247,7 @@ console.table($1)
 
 <tr>
 <td>
-
-`clr`
-
+<code align="right">clr</code>
 </td>
 <td>console.clear</td>
 <td>
@@ -2499,9 +2261,7 @@ console.clear()
 
 <tr>
 <td>
-
-`clm`
-
+<code align="right">clm</code>
 </td>
 <td>console.log message</td>
 <td>
@@ -2515,9 +2275,7 @@ console.log('$0')
 
 <tr>
 <td>
-
-`clo`
-
+<code align="right">clo</code>
 </td>
 <td>console.log object</td>
 <td>
@@ -2531,9 +2289,7 @@ console.log({ $0 })
 
 <tr>
 <td>
-
-`clc`
-
+<code align="right">clc</code>
 </td>
 <td>console.log clipboard</td>
 <td>
@@ -2547,9 +2303,7 @@ console.log({ $CLIPBOARD })
 
 <tr>
 <td>
-
-`cll`
-
+<code align="right">cll</code>
 </td>
 <td>console.log (labeled)</td>
 <td>
@@ -2563,9 +2317,7 @@ console.log('$1 ->', $1$2)
 
 <tr>
 <td>
-
-`cel`
-
+<code align="right">cel</code>
 </td>
 <td>console.error (labeled)</td>
 <td>
@@ -2579,9 +2331,7 @@ console.error('$1 ->', $1$2)
 
 <tr>
 <td>
-
-`cwl`
-
+<code align="right">cwl</code>
 </td>
 <td>console.warn (labeled)</td>
 <td>
@@ -2606,9 +2356,7 @@ console.warn('$1 ->', ${2:$1})
 
 <tr>
 <td>
-
-`si`
-
+<code align="right">si</code>
 </td>
 <td>set interval</td>
 <td>
@@ -2624,9 +2372,7 @@ setInterval(() => {
 
 <tr>
 <td>
-
-`st`
-
+<code align="right">st</code>
 </td>
 <td>set timeout</td>
 <td>
@@ -2642,9 +2388,7 @@ setTimeout(() => {
 
 <tr>
 <td>
-
-`sim`
-
+<code align="right">sim</code>
 </td>
 <td>set immediate</td>
 <td>
@@ -2660,9 +2404,7 @@ setImmediate(() => {
 
 <tr>
 <td>
-
-`nt`
-
+<code align="right">nt</code>
 </td>
 <td>process next tick</td>
 <td>
@@ -2689,9 +2431,7 @@ process.nextTick(() => {
 
 <tr>
 <td>
-
-`jp`
-
+<code align="right">jp</code>
 </td>
 <td>JSON parse</td>
 <td>
@@ -2705,9 +2445,7 @@ JSON.parse(${1:json})
 
 <tr>
 <td>
-
-`js`
-
+<code align="right">js</code>
 </td>
 <td>JSON stringify</td>
 <td>
@@ -2721,9 +2459,7 @@ JSON.stringify(${1:value})
 
 <tr>
 <td>
-
-`jsp`
-
+<code align="right">jsp</code>
 </td>
 <td>JSON stringify (pretty)</td>
 <td>
@@ -2737,9 +2473,7 @@ JSON.stringify(${1:value}, null, 2)
 
 <tr>
 <td>
-
-`jss`
-
+<code align="right">jss</code>
 </td>
 <td>JSON.stringify if not string</td>
 <td>
@@ -2764,9 +2498,7 @@ typeof ${1:value} === 'string' ? value : JSON.stringify($1)
 
 <tr>
 <td>
-
-`qs`
-
+<code align="right">qs</code>
 </td>
 <td>query selector</td>
 <td>
@@ -2780,9 +2512,7 @@ ${1:document}.querySelector('$2')
 
 <tr>
 <td>
-
-`qsa`
-
+<code align="right">qsa</code>
 </td>
 <td>query selector all</td>
 <td>
@@ -2796,9 +2526,7 @@ ${1:document}.querySelectorAll('$2')
 
 <tr>
 <td>
-
-`qsaa`
-
+<code align="right">qsaa</code>
 </td>
 <td>query selector all as array</td>
 <td>
@@ -2812,9 +2540,7 @@ ${1:document}.querySelectorAll('$2')
 
 <tr>
 <td>
-
-`ael`
-
+<code align="right">ael</code>
 </td>
 <td>event listener</td>
 <td>
@@ -2828,9 +2554,7 @@ ${1:document}.addEventListener('${2:click}', (e$3) => $0)
 
 <tr>
 <td>
-
-`qsae`
-
+<code align="right">qsae</code>
 </td>
 <td>query selector with event listener</td>
 <td>
@@ -2844,9 +2568,7 @@ ${1:document}.querySelector('$2')?.addEventListener('${3:click}', (e$4) => $0)
 
 <tr>
 <td>
-
-`gid`
-
+<code align="right">gid</code>
 </td>
 <td>get element by id</td>
 <td>
@@ -2860,9 +2582,7 @@ ${1:document}.getElementById('$2')
 
 <tr>
 <td>
-
-`on`
-
+<code align="right">on</code>
 </td>
 <td>event handler</td>
 <td>
@@ -2889,9 +2609,7 @@ ${1:emitter}.on('${2:event}', (${3:arguments}) => {
 
 <tr>
 <td>
-
-`nd`
-
+<code align="right">nd</code>
 </td>
 <td>new Date()</td>
 <td>
@@ -2905,9 +2623,7 @@ new Date($1)
 
 <tr>
 <td>
-
-`now`
-
+<code align="right">now</code>
 </td>
 <td>Date.now()</td>
 <td>
@@ -2932,9 +2648,7 @@ Date.now()
 
 <tr>
 <td>
-
-`desc`
-
+<code align="right">desc</code>
 </td>
 <td>describe</td>
 <td>
@@ -2950,9 +2664,7 @@ describe('${1:description}', () => {
 
 <tr>
 <td>
-
-`cont`
-
+<code align="right">cont</code>
 </td>
 <td>context</td>
 <td>
@@ -2968,9 +2680,7 @@ context('${1:description}', () => {
 
 <tr>
 <td>
-
-`it`
-
+<code align="right">it</code>
 </td>
 <td>test (synchronous)</td>
 <td>
@@ -2986,9 +2696,7 @@ it('${1:description}', () => {
 
 <tr>
 <td>
-
-`ita`
-
+<code align="right">ita</code>
 </td>
 <td>test (asynchronous)</td>
 <td>
@@ -3004,9 +2712,7 @@ it('${1:description}', async () => {
 
 <tr>
 <td>
-
-`itc`
-
+<code align="right">itc</code>
 </td>
 <td>test (callback)</td>
 <td>
@@ -3023,9 +2729,7 @@ it('${1:description}', (done) => {
 
 <tr>
 <td>
-
-`bf`
-
+<code align="right">bf</code>
 </td>
 <td>before test suite</td>
 <td>
@@ -3041,9 +2745,7 @@ before(() => {
 
 <tr>
 <td>
-
-`bfe`
-
+<code align="right">bfe</code>
 </td>
 <td>before each test</td>
 <td>
@@ -3059,9 +2761,7 @@ beforeEach(() => {
 
 <tr>
 <td>
-
-`aft`
-
+<code align="right">aft</code>
 </td>
 <td>after test suite</td>
 <td>
@@ -3077,9 +2777,7 @@ after(() => {
 
 <tr>
 <td>
-
-`afe`
-
+<code align="right">afe</code>
 </td>
 <td>after each test</td>
 <td>
@@ -3106,9 +2804,7 @@ afterEach(() => {
 
 <tr>
 <td>
-
-`aia`
-
+<code align="right">aia</code>
 </td>
 <td>is array</td>
 <td>
@@ -3122,9 +2818,7 @@ Array.isArray($0)
 
 <tr>
 <td>
-
-`tof`
-
+<code align="right">tof</code>
 </td>
 <td>typeof</td>
 <td>
@@ -3138,9 +2832,7 @@ typeof ${1:value} === '${2|bigint,boolean,function,number,object,symbol,undefine
 
 <tr>
 <td>
-
-`iof`
-
+<code align="right">iof</code>
 </td>
 <td>instanceof</td>
 <td>
@@ -3154,9 +2846,7 @@ ${1:object} instanceof ${0:Class}
 
 <tr>
 <td>
-
-`isnil`
-
+<code align="right">isnil</code>
 </td>
 <td>is nil</td>
 <td>
@@ -3170,9 +2860,7 @@ ${1:value} == null
 
 <tr>
 <td>
-
-`nnil`
-
+<code align="right">nnil</code>
 </td>
 <td>is not nil</td>
 <td>
@@ -3186,9 +2874,7 @@ ${1:value} != null
 
 <tr>
 <td>
-
-`isnan`
-
+<code align="right">isnan</code>
 </td>
 <td>is NaN</td>
 <td>
@@ -3202,9 +2888,7 @@ isNan($0)
 
 <tr>
 <td>
-
-`nnan`
-
+<code align="right">nnan</code>
 </td>
 <td>is not NaN</td>
 <td>
@@ -3229,9 +2913,7 @@ isNan($0)
 
 <tr>
 <td>
-
-`us`
-
+<code align="right">us</code>
 </td>
 <td>'use strict' statement</td>
 <td>
@@ -3245,9 +2927,7 @@ isNan($0)
 
 <tr>
 <td>
-
-`pse`
-
+<code align="right">pse</code>
 </td>
 <td>process.server</td>
 <td>
@@ -3261,9 +2941,7 @@ process.server
 
 <tr>
 <td>
-
-`pcl`
-
+<code align="right">pcl</code>
 </td>
 <td>process.client</td>
 <td>
@@ -3277,9 +2955,7 @@ process.client
 
 <tr>
 <td>
-
-`env`
-
+<code align="right">env</code>
 </td>
 <td>env variable</td>
 <td>
@@ -3293,9 +2969,7 @@ process.env.$0
 
 <tr>
 <td>
-
-`envv`
-
+<code align="right">envv</code>
 </td>
 <td>env variable (vite)</td>
 <td>
@@ -3320,9 +2994,7 @@ Will be sorted into appropriate categories in the future.
 
 <tr>
 <td>
-
-`uniq`
-
+<code align="right">uniq</code>
 </td>
 <td>array of unique values</td>
 <td>
@@ -3336,9 +3008,7 @@ Will be sorted into appropriate categories in the future.
 
 <tr>
 <td>
-
-`pi`
-
+<code align="right">pi</code>
 </td>
 <td>parse int</td>
 <td>
@@ -3352,9 +3022,7 @@ parseInt($1, ${2|10,2,8,16|})
 
 <tr>
 <td>
-
-`pf`
-
+<code align="right">pf</code>
 </td>
 <td>parse float</td>
 <td>
@@ -3368,9 +3036,7 @@ parseFloat($1)
 
 <tr>
 <td>
-
-`am`
-
+<code align="right">am</code>
 </td>
 <td>array merge</td>
 <td>
@@ -3384,9 +3050,7 @@ parseFloat($1)
 
 <tr>
 <td>
-
-`om`
-
+<code align="right">om</code>
 </td>
 <td>object merge</td>
 <td>
@@ -3400,9 +3064,7 @@ parseFloat($1)
 
 <tr>
 <td>
-
-`aat`
-
+<code align="right">aat</code>
 </td>
 <td>array.at</td>
 <td>
@@ -3416,9 +3078,7 @@ $1.at(${2:0})
 
 <tr>
 <td>
-
-`seq`
-
+<code align="right">seq</code>
 </td>
 <td>sequence of 0..n</td>
 <td>
@@ -3447,9 +3107,7 @@ Only applied to .ts and .tsx files
 
 <tr>
 <td>
-
-`cat`
-
+<code align="right">cat</code>
 </td>
 <td>const assignment (typed)</td>
 <td>
@@ -3463,9 +3121,7 @@ const $1: ${2:string} = $3
 
 <tr>
 <td>
-
-`lat`
-
+<code align="right">lat</code>
 </td>
 <td>let assignment (typed)</td>
 <td>
@@ -3479,9 +3135,7 @@ let $1: ${2:string} = $3
 
 <tr>
 <td>
-
-`caat`
-
+<code align="right">caat</code>
 </td>
 <td>array assignment (typed)</td>
 <td>
@@ -3495,9 +3149,7 @@ const $1: ${2:string}[] = [$0]
 
 <tr>
 <td>
-
-`caot`
-
+<code align="right">caot</code>
 </td>
 <td>object assignment (typed)</td>
 <td>
@@ -3522,9 +3174,7 @@ const $1: ${2:object} = { $0 }
 
 <tr>
 <td>
-
-`int`
-
+<code align="right">int</code>
 </td>
 <td>interface</td>
 <td>
@@ -3540,9 +3190,7 @@ interface ${1:Model} {
 
 <tr>
 <td>
-
-`inte`
-
+<code align="right">inte</code>
 </td>
 <td>interface extends</td>
 <td>
@@ -3558,9 +3206,7 @@ interface ${1:Model} extends ${2:Base} {
 
 <tr>
 <td>
-
-`tp`
-
+<code align="right">tp</code>
 </td>
 <td>type</td>
 <td>
@@ -3574,9 +3220,7 @@ type ${1:Model} = $0
 
 <tr>
 <td>
-
-`tpu`
-
+<code align="right">tpu</code>
 </td>
 <td>type union</td>
 <td>
@@ -3590,9 +3234,7 @@ type ${1:Model} = $2 | $3
 
 <tr>
 <td>
-
-`tpi`
-
+<code align="right">tpi</code>
 </td>
 <td>type intersection</td>
 <td>

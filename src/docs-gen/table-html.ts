@@ -6,7 +6,7 @@ export const escapeBackticks = (s: string) => s.replace(/`/g, "\`");
 
 export const htmlComment = (s: string) => `<!-- ${s} -->`;
 export const code = (s: string) => {
-  return escapeBackticks("`" + s + "`");
+  return `<code>${s}</code>`;
 };
 
 export const codeBlock = (s: string, lang = "javascript") => {
@@ -21,21 +21,14 @@ export const $row = (s: string) => {
   return joinByNewLine(["", "<tr>", s, "</tr>"]);
 };
 
-export const $colDoubleNewLine = (
-  s: string,
-  cb?: (input: string) => string,
-) => {
-  return joinByDoubleNewLine(["<td>", cb?.(s) ?? s, "</td>"]);
-};
-
 export const $col = (s: string) => {
   return `<td>${s}</td>`;
 };
 export const $colCode = (s: string) => {
-  return $colDoubleNewLine(s, code);
+  return joinByNewLine(["<td>", code(s), "</td>"]);
 };
 export const $colCodeBlock = (s: string) => {
-  return $colDoubleNewLine(s, codeBlock);
+  return joinByDoubleNewLine(["<td>", codeBlock(s), "</td>"]);
 };
 
 export const $headerRow = (headers: string[]) => {
