@@ -1,43 +1,53 @@
 import { parse } from "./deps.ts";
 import { generateDocs, populateDocsBlock } from "./docs-gen/snippets.ts";
-import { languages } from "./snippets/app.ts";
+import { variants } from "./snippets/app.ts";
 import {
   convertToVscSnippet,
   generateSnippets,
   groupSnippets,
 } from "./utils/snippets.ts";
 
-const flags = parse(Deno.args, {
-  boolean: ["snippets", "docs"],
-  default: { snippets: false, docs: false },
-});
+const main = () => {
+  const flags = parse(Deno.args, {
+    boolean: ["snippets", "docs"],
+    default: { snippets: false, docs: false },
+  });
 
-if (!flags.snippets && !flags.docs) {
-  console.log("Please specify at least one flag: --snippets or --docs");
-} else {
+  if (!flags.snippets && !flags.docs) {
+    return console.log(
+      "Please specify at least one flag: --snippets or --docs",
+    );
+  }
+
+  // Convert XDefinitions to VscDefinitions, for every variant
+  const variantsAsVsc = variants.map((variant) => {
+    const snippetDefinitions = variant.snippetDefinitions
+      .map((def) => ({
+        ...def,
+        snippets: convertToVscSnippet(def.snippets),
+      }));
+
+    return { ...variant, snippetDefinitions };
+  });
+
   if (flags.snippets) {
     console.log("\nGenerating snippets...");
-    languages.forEach((language) => {
-      const categorizedVscSnippets = language
-        .snippetDefinitions.map(
-          (item) => {
-            const snippets = convertToVscSnippet(item.snippets);
-            return { ...item, snippets };
-          },
-        );
 
-      const variantVscSnippet = groupSnippets(
-        categorizedVscSnippets.map((item) => item.snippets),
+    variantsAsVsc.forEach((variant) => {
+      const vscSnippetDict = groupSnippets(
+        variant.snippetDefinitions.map((def) => def.snippets),
       );
-      generateSnippets(language.fileExtension, variantVscSnippet);
+      generateSnippets(variant.fileExtension, vscSnippetDict);
     });
   }
 
-  // TODO: probably better to make it generate from vsc json
-  // pass in meta, and snippets converted to vsc format
+  // important to know it generates docs off of defined xSnippets
+  // so .code-snippets could be out of date if you haven't run --snippets
   if (flags.docs) {
     console.log("\nGenerating docs...");
-    const docs = generateDocs(languages);
+    const docs = generateDocs(variantsAsVsc);
     populateDocsBlock(docs);
   }
-}
+};
+
+main();

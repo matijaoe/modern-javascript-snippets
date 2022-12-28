@@ -1,5 +1,6 @@
 import { replaceInFile } from "../deps.ts";
-import { XSnippetDefinition, XSnippetVariant } from "../models/app.ts";
+import { VscSnippetDefinition, VscSnippetVariant } from "../models/app.ts";
+import { parseMultiline, replaceSymbol } from "../utils/general.ts";
 import {
   $col,
   $colCode,
@@ -18,11 +19,10 @@ type SnippetRow = {
 };
 
 const snippetRow = ({ prefix, name, body }: SnippetRow) => {
-  const parsedBody = Array.isArray(body) ? body.join("\n") : body;
   const cols = joinByNewLine([
     $colCode(prefix),
     $col(name),
-    $colCodeBlock(parsedBody),
+    $colCodeBlock(parseMultiline(body)),
   ]);
 
   return $row(cols);
@@ -35,22 +35,22 @@ const generateSnippetTable = (items: SnippetRow[]) => {
   return $table(headings, rows);
 };
 
-const generateSnippetSection = (
-  { meta, snippets }: XSnippetDefinition,
-) => {
+const generateSnippetSection = ({ meta, snippets }: VscSnippetDefinition) => {
   const title = `### ${meta.title}`;
   const description = meta.description ?? "";
   const table = generateSnippetTable(
-    Object.entries(snippets).map(([prefix, value]) => ({
-      ...value,
-      prefix,
+    Object.entries(snippets).map(([name, { body, prefix, description }]) => ({
+      name: replaceSymbol(name),
+      body,
+      prefix: parseMultiline(prefix),
+      description,
     })),
   );
 
   return joinByNewLine([title, description, table, ""]);
 };
 
-const generateVariantSection = (variant: XSnippetVariant) => {
+const generateVariantSection = (variant: VscSnippetVariant) => {
   const title = `## ${variant.label}`;
   const description = variant.description ?? "";
   const sections = variant.snippetDefinitions.map(generateSnippetSection);
@@ -58,7 +58,7 @@ const generateVariantSection = (variant: XSnippetVariant) => {
   return joinByNewLine([title, description, "", ...sections]);
 };
 
-export const generateDocs = (variants: XSnippetVariant[]) => {
+export const generateDocs = (variants: VscSnippetVariant[]) => {
   return joinByDoubleNewLine(variants.map(generateVariantSection));
 };
 
