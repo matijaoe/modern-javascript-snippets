@@ -11,7 +11,7 @@ export const variants: XSnippetVariant[] = [
   },
   {
     label: "TypeScript",
-    description: "Available only in .ts and .tsx files",
+    description: "Available only where TypeScript is supported",
     language: "typescript",
     fileExtension: "ts",
     snippetDefinitions: typescript,

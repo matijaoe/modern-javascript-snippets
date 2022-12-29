@@ -1,59 +1,56 @@
 # Modern JavaScript Snippets ⚡
 
-> Short and memorable JavaScript & TypeScript snippets for the modern-day developer. 
-
-<br>
-
-  🚧 *Still a work in progress. Some snippets may be changed and more will be added.*
-
-## Features
-- Contains over **180** snippets
-- Modern JavaScript syntax
-- Strategically placed tabstops
-- Auto-generated documentation
-- ... 
+> Short and memorable JavaScript & TypeScript snippets for the modern-day developer.
 
 <br>
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1C.svg?style=for-the-badge&logo=javascript&logoColor=%23323330)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
+
+## Features
+- Over **180** carefully crafted snippets
+- Modern JavaScript syntax
+- Modern JavaScript APIs (Intl, URL, Navigator...)
+- Strategically placed tabstops
+- Prefixes created with exact-match in mind 
+- (Mostly) GitHub Copilot compliant
+- Auto-generated documentation
+
 ## Support
 Only JavaScript and TypeScript will be supported. 
 Specific frameworks will get their own extensions. No bloat.
 
-Supported file extensions:
-- `.js`
-- `.ts`
-- `.jsx`
-- `.tsx`
-
 ## Setup
-The following is not mandatory, but could provide a nicer experience.
+The following is not mandatory, but could provide a nicer experience. Test them out and see what works best for you.
 
-Search for `editor.tabCompletion` in user settings, or edit the settings.json directly:
+Look for it in user settings, or edit the settings.json directly:
 ```jsonc
 // Tab complete snippets when their prefix match. Works best when 'quickSuggestions' aren't enabled.
 "editor.tabCompletion": "onlySnippets"
+
+// Controls whether an active snippet prevents quick suggestions.
+// "editor.suggest.snippetsPreventQuickSuggestions": false,
 ```
 
 ## Style
-Most of the code snippets are without semicolons (`;`), except for where it allows for better tabstop management.
+Most of the code snippets are without semicolons (`;`), except for where it allows for better tabstop management. String use single quotes (`'`).
 
 It's highly recommended to use these snippets along with Prettier/ESLint to have your code automatically formatted to your preference.
 
 ## Snippet syntax
 
 ### Tabstops
-- With tabstops you can make the editor cursor move inside a snippet
 - `$1`, `$2`, `$3` specify cursor locations, in order in which tabstops will be visited
 - `$0` denotes the final cursor position
 - Multiple occurrences of the same tabstop are linked and updated in sync
 
 ### Placeholders
-- Placeholders are tabstops with values, such as `${1:name}` 
-- Placeholder text will be inserted and selected such that it can be easily changed 
-- Can be nested, like `${1:another ${2:placeholder}}`
+- Tabstops with default values, such as `${1:name}` 
+
+### Choices
+- Tabstops with multiple values, such as `${1|one,two,three|}`. 
+- Truncated in documentation, for easier viewing.
 
 <!-- START:docs-gen -->
 ## Snippets
@@ -292,7 +289,7 @@ $1 ? $2 : $3
 <td>
 
   ```javascript
-const ${1:name} = $2 ? $3 : $4
+const $1 = $2 ? $3 : $4
   ```
 
 </td>
@@ -314,7 +311,7 @@ switch ($1) {
 </tr>
 
 <tr>
-<td><code>cas</code></td>
+<td><code>case</code></td>
 <td>case</td>
 <td>
 
@@ -1136,6 +1133,18 @@ export const ${1:name} = ($2) => {$0}
 <td>Prefix</td>
 <td>Name</td>
 <td>Body</td>
+</tr>
+
+<tr>
+<td><code>aat</code></td>
+<td>array.at</td>
+<td>
+
+  ```javascript
+$1.at(${2:0})
+  ```
+
+</td>
 </tr>
 
 <tr>
@@ -2126,7 +2135,7 @@ const ${1} = require('${1:module}');
 <td>
 
   ```javascript
-describe('${1:description}', () => {
+describe('$1', () => {
 	$0
 })
   ```
@@ -2140,7 +2149,7 @@ describe('${1:description}', () => {
 <td>
 
   ```javascript
-context('${1:description}', () => {
+context('$1', () => {
 	$0
 })
   ```
@@ -2154,7 +2163,7 @@ context('${1:description}', () => {
 <td>
 
   ```javascript
-it('${1:description}', () => {
+it('$1', () => {
 	$0
 })
   ```
@@ -2168,7 +2177,7 @@ it('${1:description}', () => {
 <td>
 
   ```javascript
-it('${1:description}', async () => {
+it('$1', async () => {
 	$0
 })
   ```
@@ -2182,7 +2191,7 @@ it('${1:description}', async () => {
 <td>
 
   ```javascript
-it('${1:description}', (done) => {
+it('$1', (done) => {
 	$0
 	done()
 })
@@ -2533,18 +2542,6 @@ Will be sorted into appropriate categories in the future.
 </tr>
 
 <tr>
-<td><code>aat</code></td>
-<td>array.at</td>
-<td>
-
-  ```javascript
-$1.at(${2:0})
-  ```
-
-</td>
-</tr>
-
-<tr>
 <td><code>am</code></td>
 <td>array merge</td>
 <td>
@@ -2622,7 +2619,67 @@ parseFloat($1)
 <td>
 
   ```javascript
-throw new ${1|Error,...|}($0);
+throw new ${1|Error,...|}($0)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>cp</code></td>
+<td>copy to clipboard</td>
+<td>
+
+  ```javascript
+navigator.clipboard.writeText($1);
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nur</code></td>
+<td>new URL</td>
+<td>
+
+  ```javascript
+new URL($1)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>usp</code></td>
+<td>url search params</td>
+<td>
+
+  ```javascript
+new URL($1).searchParams
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>spg</code></td>
+<td>get search param</td>
+<td>
+
+  ```javascript
+$1.searchParams.get($2)
+  ```
+
+</td>
+</tr>
+
+<tr>
+<td><code>sps</code></td>
+<td>set search param</td>
+<td>
+
+  ```javascript
+$1.searchParams.set($2, $3)
   ```
 
 </td>
@@ -2631,7 +2688,7 @@ throw new ${1|Error,...|}($0);
 
 
 ## TypeScript
-Available only in .ts and .tsx files
+Available only where TypeScript is supported
 
 ### Declarations
 
@@ -2649,7 +2706,7 @@ Available only in .ts and .tsx files
 <td>
 
   ```javascript
-const $1: ${2:string} = $3
+const $1: ${2:string} = $3;
   ```
 
 </td>
@@ -2661,7 +2718,7 @@ const $1: ${2:string} = $3
 <td>
 
   ```javascript
-let $1: ${2:string} = $3
+let $1: ${2:string} = $3;
   ```
 
 </td>
@@ -2673,7 +2730,7 @@ let $1: ${2:string} = $3
 <td>
 
   ```javascript
-const $1: ${2:string}[] = [$0]
+const $1: ${2:string}[] = [$0];
   ```
 
 </td>
@@ -2685,7 +2742,7 @@ const $1: ${2:string}[] = [$0]
 <td>
 
   ```javascript
-const $1: ${2:object} = { $0 }
+const $1: ${2:object} = { $0 };
   ```
 
 </td>
@@ -2769,7 +2826,6 @@ type ${1:Model} = $2 & $3
 
 <!-- END:docs-gen -->
 
---- 
 ## Running locally
 
 ```bash

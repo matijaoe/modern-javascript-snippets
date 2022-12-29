@@ -7,23 +7,23 @@ export const testing: XSnippetDefinition = {
   snippets: {
     desc: {
       name: "describe",
-      body: "describe('${1:description}', () => {\n\t$0\n})",
+      body: "describe('$1', () => {\n\t$0\n})",
     },
     cont: {
       name: "context",
-      body: "context('${1:description}', () => {\n\t$0\n})",
+      body: "context('$1', () => {\n\t$0\n})",
     },
     it: {
       name: "test (synchronous)",
-      body: "it('${1:description}', () => {\n\t$0\n})",
+      body: "it('$1', () => {\n\t$0\n})",
     },
     ita: {
       name: "test (asynchronous)",
-      body: "it('${1:description}', async () => {\n\t$0\n})",
+      body: "it('$1', async () => {\n\t$0\n})",
     },
     itc: {
       name: "test (callback)",
-      body: "it('${1:description}', (done) => {\n\t$0\n\tdone()\n})",
+      body: "it('$1', (done) => {\n\t$0\n\tdone()\n})",
     },
     bf: {
       name: "before test suite",
