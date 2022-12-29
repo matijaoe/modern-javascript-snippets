@@ -34,7 +34,7 @@ Look for it in user settings, or edit the settings.json directly:
 ```
 
 ## Style
-Most of the code snippets are without semicolons (`;`), except for where it allows for better tabstop management. String use single quotes (`'`).
+Most of the code snippets are without semicolons (`;`), except for where it allows for better tabstop management. Strings use single quotes (`'`).
 
 It's highly recommended to use these snippets along with Prettier/ESLint to have your code automatically formatted to your preference.
 
