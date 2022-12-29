@@ -5,17 +5,17 @@ export const flowControl: XSnippetDefinition = {
     title: "Flow control",
   },
   snippets: {
-    if: {
+    iff: {
       name: "if statement",
-      body: "if ($1) {\n\t$2\n}",
+      body: "if ($1) {$2}",
     },
     ifel: {
       name: "if/else statement",
-      body: "if ($1) {\n\t$2\n} else {\n\t$3\n}",
+      body: "if ($1) {$2} else {$3}",
     },
     ifei: {
       name: "if/else-if statement",
-      body: "if ($1) {\n\t$2\n} else if ($3) {\n\t$4\n}",
+      body: "if ($1) {$2} else if ($3) {$4}",
     },
     el: {
       name: "else statement",
@@ -23,7 +23,7 @@ export const flowControl: XSnippetDefinition = {
     },
     ei: {
       name: "else if statement",
-      body: "else if ($1) {\n\t$2\n}",
+      body: "else if ($1) {$2}",
     },
     ter: {
       name: "ternary operator",
@@ -40,13 +40,9 @@ export const flowControl: XSnippetDefinition = {
         "switch ($1) {\n\tcase $2 : $3\n\tdefault: $0\n}",
       ],
     },
-    case: {
-      name: "case",
-      body: [
-        "case ${1:value}:",
-        "\t$0",
-        "\tbreak;",
-      ],
+    scase: {
+      name: "switch case",
+      body: "case $1 : $2",
     },
     tc: {
       name: "try/catch",

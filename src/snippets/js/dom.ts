@@ -30,9 +30,5 @@ export const dom: XSnippetDefinition = {
       name: "get element by id",
       body: "${1:document}.getElementById('$2')",
     },
-    on: {
-      name: "event handler",
-      body: "${1:emitter}.on('${2:event}', (${3:arguments}) => {\n\t$0\n})",
-    },
   },
 };
