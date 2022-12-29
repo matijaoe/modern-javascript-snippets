@@ -5,6 +5,10 @@ export const arrayMethods: XSnippetDefinition = {
     title: "Array methods",
   },
   snippets: {
+    aat: {
+      name: "array.at",
+      body: "$1.at(${2:0})",
+    },
     fe: {
       name: "Array.forEach()",
       body: "$1.forEach((${2:item}) => {\n\t$0\n})",

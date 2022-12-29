@@ -6,10 +6,6 @@ export const uncategorized: XSnippetDefinition = {
     description: "Will be sorted into appropriate categories in the future.",
   },
   snippets: {
-    aat: {
-      name: "array.at",
-      body: "$1.at(${2:0})",
-    },
     am: {
       name: "array merge",
       body: "[...$1]",
@@ -36,7 +32,28 @@ export const uncategorized: XSnippetDefinition = {
     },
     te: {
       name: "throw error",
-      body: ["throw new ${1|Error,TypeError,RangeError|}($0);"],
+      body: "throw new ${1|Error,TypeError,RangeError|}($0)",
+    },
+    cp: {
+      name: "copy to clipboard",
+      body: "navigator.clipboard.writeText($1);",
+    },
+    // TODO: work in progress
+    nur: {
+      name: "new URL",
+      body: "new URL($1)",
+    },
+    usp: {
+      name: "url search params",
+      body: "new URL($1).searchParams",
+    },
+    spg: {
+      name: "get search param",
+      body: "$1.searchParams.get($2)",
+    },
+    sps: {
+      name: "set search param",
+      body: "$1.searchParams.set($2, $3)",
     },
   },
 };

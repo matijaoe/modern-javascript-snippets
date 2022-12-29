@@ -27,7 +27,8 @@
     "autocomplete",
     "vscode",
     "snippets",
-    "snippet"
+    "snippet",
+    "modern"
   ],
   "galleryBanner": {
     "color": "#FED703",

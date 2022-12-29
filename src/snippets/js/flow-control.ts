@@ -31,7 +31,7 @@ export const flowControl: XSnippetDefinition = {
     },
     tera: {
       name: "ternary expression assignment",
-      body: "const ${1:name} = $2 ? $3 : $4",
+      body: "const $1 = $2 ? $3 : $4",
     },
     // TODO: better implementation
     sw: {
@@ -40,7 +40,7 @@ export const flowControl: XSnippetDefinition = {
         "switch ($1) {\n\tcase $2 : $3\n\tdefault: $0\n}",
       ],
     },
-    cas: {
+    case: {
       name: "case",
       body: [
         "case ${1:value}:",
