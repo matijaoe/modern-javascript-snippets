@@ -1,7 +1,5 @@
 # Modern JavaScript Snippets ⚡
 
-
-
 > Short and memorable JavaScript & TypeScript snippets for the modern-day developer.
 
 <br>
@@ -26,7 +24,7 @@ Specific frameworks will get their own extensions. No bloat.
 ## Setup
 The following is not mandatory, but could provide a nicer experience. Test them out and see what works best for you.
 
-Find it in user settings, or edit the settings.json directly:
+Look for it in user settings, or edit the settings.json directly:
 ```jsonc
 // Tab complete snippets when their prefix match. Works best when 'quickSuggestions' aren't enabled.
 "editor.tabCompletion": "onlySnippets"
