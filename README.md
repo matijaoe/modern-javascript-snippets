@@ -207,7 +207,7 @@ const [$2] = ${1:array};
 
 ```javascript
 function $1($2) {
-	$0
+  $0
 }
 ```
 
@@ -221,7 +221,7 @@ function $1($2) {
 
 ```javascript
 async function $1($2) {
-	$0
+  $0
 }
 ```
 
@@ -283,7 +283,7 @@ async ($1) => $0
 
 ```javascript
 ($1) => {
-	$0
+  $0
 }
 ```
 
@@ -297,7 +297,7 @@ async ($1) => $0
 
 ```javascript
 async ($1) => {
-	$0
+  $0
 }
 ```
 
@@ -311,7 +311,7 @@ async ($1) => {
 
 ```javascript
 (($1) => {
-	$0
+  $0
 })($2)
 ```
 
@@ -372,7 +372,7 @@ if ($1) {$2} else if ($3) {$4}
 
 ```javascript
 else {
-	$0
+  $0
 }
 ```
 
@@ -422,8 +422,8 @@ const $1 = $2 ? $3 : $4
 
 ```javascript
 switch ($1) {
-	case $2 : $3
-	default: $0
+  case $2 : $3
+  default: $0
 }
 ```
 
@@ -449,9 +449,9 @@ case $1 : $2
 
 ```javascript
 try {
-	$1
+  $1
 } catch (error) {
-	$0
+  $0
 }
 ```
 
@@ -465,11 +465,11 @@ try {
 
 ```javascript
 try {
-	$1
+  $1
 } catch (error) {
-	$2
+  $2
 } finally {
-	$3
+  $3
 }
 ```
 
@@ -483,9 +483,9 @@ try {
 
 ```javascript
 try {
-	$1
+  $1
 } finally {
-	$2
+  $2
 }
 ```
 
@@ -510,7 +510,7 @@ try {
 
 ```javascript
 for (let ${1:i} = 0, ${2:len} = ${3:iter}.length; ${1:i} < ${2:len}; ${1:i}++) {
-	$0
+  $0
 }
 ```
 
@@ -524,7 +524,7 @@ for (let ${1:i} = 0, ${2:len} = ${3:iter}.length; ${1:i} < ${2:len}; ${1:i}++) {
 
 ```javascript
 for (let ${1:i} = ${2:iter}.length - 1; ${1:i} >= 0; ${1:i}--) {
-	$0
+  $0
 }
 ```
 
@@ -538,7 +538,7 @@ for (let ${1:i} = ${2:iter}.length - 1; ${1:i} >= 0; ${1:i}--) {
 
 ```javascript
 for (let ${1:i} = 0; ${1:i} < ${2:5}; ${1:i}++) {
-	$0
+  $0
 }
 ```
 
@@ -552,7 +552,7 @@ for (let ${1:i} = 0; ${1:i} < ${2:5}; ${1:i}++) {
 
 ```javascript
 for (let ${1:key} in ${2:array}) {
-	$0
+  $0
 }
 ```
 
@@ -566,7 +566,7 @@ for (let ${1:key} in ${2:array}) {
 
 ```javascript
 for (let ${1:item} of ${2:items}) {
-	$0
+  $0
 }
 ```
 
@@ -580,7 +580,7 @@ for (let ${1:item} of ${2:items}) {
 
 ```javascript
 for await (let ${1:item} of ${2:items}) {
-	$0
+  $0
 }
 ```
 
@@ -594,7 +594,7 @@ for await (let ${1:item} of ${2:items}) {
 
 ```javascript
 while (${1:true}) {
-	$0
+  $0
 }
 ```
 
@@ -608,7 +608,7 @@ while (${1:true}) {
 
 ```javascript
 do {
-	$0
+  $0
 } while ($1)
 ```
 
@@ -633,7 +633,7 @@ do {
 
 ```javascript
 class $1 {
-	$0
+  $0
 }
 ```
 
@@ -647,7 +647,7 @@ class $1 {
 
 ```javascript
 class $1 extends ${2:Base} {
-	$0
+  $0
 }
 ```
 
@@ -661,9 +661,9 @@ class $1 extends ${2:Base} {
 
 ```javascript
 class $1 {
-	constructor($2) {
-		$0
-	}
+  constructor($2) {
+    $0
+  }
 }
 ```
 
@@ -677,9 +677,9 @@ class $1 {
 
 ```javascript
 class $1 extends ${2:Base} {
-	constructor($3) {
-		$0
-	}
+  constructor($3) {
+    $0
+  }
 }
 ```
 
@@ -693,7 +693,7 @@ class $1 extends ${2:Base} {
 
 ```javascript
 constructor($1) {
-	$0
+  $0
 }
 ```
 
@@ -707,7 +707,7 @@ constructor($1) {
 
 ```javascript
 get ${1:property}() {
-	$0
+  $0
 }
 ```
 
@@ -721,7 +721,7 @@ get ${1:property}() {
 
 ```javascript
 set ${1:property}(${2:value}) {
-	$0
+  $0
 }
 ```
 
@@ -735,10 +735,10 @@ set ${1:property}(${2:value}) {
 
 ```javascript
 get ${1:property}() {
-	$0
+  $0
 }
 set ${1:property}(${2:value}) {
-	$0
+  $0
 }
 ```
 
@@ -752,7 +752,7 @@ set ${1:property}(${2:value}) {
 
 ```javascript
 ${1:name}($2) {
-	$0
+  $0
 }
 ```
 
@@ -766,7 +766,7 @@ ${1:name}($2) {
 
 ```javascript
 async ${1:name}($2) {
-	$0
+  $0
 }
 ```
 
@@ -803,7 +803,7 @@ $1.at(${2:0})
 
 ```javascript
 $1.forEach((${2:item}) => {
-	$0
+  $0
 })
 ```
 
@@ -829,7 +829,7 @@ $1.flatMap((${2:item}) => ${3})
 
 ```javascript
 $1.reduce((${2:acc}, ${3:curr}) => {
-	$0
+  $0
 }, ${4:initial})
 ```
 
@@ -843,7 +843,7 @@ $1.reduce((${2:acc}, ${3:curr}) => {
 
 ```javascript
 $1.reduceRight((${2:acc}, ${3:curr}) => {
-	$0
+  $0
 }, ${4:initial})
 ```
 
@@ -1180,7 +1180,7 @@ export const ${1:name} = { $0 }
 
 ```javascript
 export function ${1:name}($2) {
-	$0
+  $0
 }
 ```
 
@@ -1194,7 +1194,7 @@ export function ${1:name}($2) {
 
 ```javascript
 export default function ${1:name}($2) {
-	$0
+  $0
 }
 ```
 
@@ -1255,7 +1255,7 @@ const ${1|data,...|} = await fetch($2).then(res => res.json())
 
 ```javascript
 new Promise((resolve, reject) => {
-	$0
+  $0
 })
 ```
 
@@ -1317,8 +1317,8 @@ $1.catch((${2:err}) => $0)
 
 ```javascript
 $1
-	.then((${2:value}) => $3)
-	.catch((${4:err}) => $5)
+  .then((${2:value}) => $3)
+  .catch((${4:err}) => $5)
 ```
 
 </td>
@@ -1402,7 +1402,7 @@ Grouping them all together for now
 
 ```javascript
 {
-	$1: $2,$0
+  $1: $2,$0
 }
 ```
 
@@ -1869,7 +1869,7 @@ return $0
 
 ```javascript
 return {
-	$0
+  $0
 }
 ```
 
@@ -1918,7 +1918,7 @@ throw new ${1|Error,...|}($0)
 
 ```javascript
 setInterval(() => {
-	$0
+  $0
 }, ${1:delay});
 ```
 
@@ -1932,7 +1932,7 @@ setInterval(() => {
 
 ```javascript
 setTimeout(() => {
-	$0
+  $0
 }, ${1:delay});
 ```
 
@@ -1946,7 +1946,7 @@ setTimeout(() => {
 
 ```javascript
 setImmediate(() => {
-	$0
+  $0
 });
 ```
 
@@ -1960,7 +1960,7 @@ setImmediate(() => {
 
 ```javascript
 process.nextTick(() => {
-	$0
+  $0
 });
 ```
 
@@ -2414,7 +2414,7 @@ new Intl.NumberFormat('${1|en-US,...|}'$3).format($2);
 
 ```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
-	style: '${3|decimal,...|}',$4
+  style: '${3|decimal,...|}',$4
 }).format($2);
 ```
 
@@ -2428,8 +2428,8 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 
 ```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
-	style: 'currency',
-	currency: '${3|USD,...|}',$4
+  style: 'currency',
+  currency: '${3|USD,...|}',$4
 }).format($2);
 ```
 
@@ -2443,7 +2443,7 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 
 ```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
-	style: 'percent',$3
+  style: 'percent',$3
 }).format($2);
 ```
 
@@ -2457,9 +2457,9 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 
 ```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
-	style: 'unit',
-	unit: '${3|acceleration-g-force,...|}',
-	unitDisplay: '${4|long,...|}',$0
+  style: 'unit',
+  unit: '${3|acceleration-g-force,...|}',
+  unitDisplay: '${4|long,...|}',$0
 }).format($2);
 ```
 
@@ -2485,7 +2485,7 @@ new Intl.DateTimeFormat('${1|en-US,...|}'$3).format($2);
 
 ```javascript
 new Intl.DateTimeFormat ('${1|en-US,...|}', {
-	dateStyle: '$3',$0
+  dateStyle: '$3',$0
 }).format($2);
 ```
 
@@ -2605,7 +2605,7 @@ isNaN($0)
 
 ```javascript
 describe('$1', () => {
-	$0
+  $0
 })
 ```
 
@@ -2619,7 +2619,7 @@ describe('$1', () => {
 
 ```javascript
 context('$1', () => {
-	$0
+  $0
 })
 ```
 
@@ -2633,7 +2633,7 @@ context('$1', () => {
 
 ```javascript
 it('$1', () => {
-	$0
+  $0
 })
 ```
 
@@ -2647,7 +2647,7 @@ it('$1', () => {
 
 ```javascript
 it('$1', async () => {
-	$0
+  $0
 })
 ```
 
@@ -2661,8 +2661,8 @@ it('$1', async () => {
 
 ```javascript
 it('$1', (done) => {
-	$0
-	done()
+  $0
+  done()
 })
 ```
 
@@ -2676,7 +2676,7 @@ it('$1', (done) => {
 
 ```javascript
 before(() => {
-	$0
+  $0
 })
 ```
 
@@ -2690,7 +2690,7 @@ before(() => {
 
 ```javascript
 beforeEach(() => {
-	$0
+  $0
 })
 ```
 
@@ -2704,7 +2704,7 @@ beforeEach(() => {
 
 ```javascript
 after(() => {
-	$0
+  $0
 })
 ```
 
@@ -2718,7 +2718,7 @@ after(() => {
 
 ```javascript
 afterEach(() => {
-	$0
+  $0
 })
 ```
 
@@ -2877,7 +2877,7 @@ const $1: ${2:object} = { $0 };
 
 ```javascript
 interface ${1:Model} {
-	$0
+  $0
 }
 ```
 
@@ -2891,7 +2891,7 @@ interface ${1:Model} {
 
 ```javascript
 interface ${1:Model} extends ${2:Base} {
-	$0
+  $0
 }
 ```
 
