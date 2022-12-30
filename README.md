@@ -55,7 +55,7 @@ It's highly recommended to use these snippets along with Prettier/ESLint to have
 - Tabstops with multiple values → `${1|one,two,three|}`. 
 - Truncated in documentation, for easier viewing → `${1|one,...|}`. 
 
-<!-- START:docs-gen -->
+<!-- START:docgen -->
 ## Snippets
 
 
@@ -2935,7 +2935,7 @@ type ${1:Model} = $2 & $3
 </tr>
 </table>
 
-<!-- END:docs-gen -->
+<!-- END:docgen -->
 
 ## Running locally
 
