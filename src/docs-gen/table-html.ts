@@ -11,9 +11,9 @@ export const code = (s: string) => {
 
 export const codeBlock = (s: string, lang = "javascript") => {
   return joinByNewLine([
-    `${indent(escapeBackticks("```" + lang))}`,
+    `${escapeBackticks("```" + lang)}`,
     s,
-    `${indent(escapeBackticks("```"))}`,
+    `${escapeBackticks("```")}`,
   ]);
 };
 
