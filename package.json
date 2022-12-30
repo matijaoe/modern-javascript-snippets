@@ -1,7 +1,7 @@
 {
   "name": "modern-js-snippets",
   "displayName": "Modern JavaScript Snippets ⚡",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "license": "MIT",
   "description": "Code snippets for modern JavaScript & TypeScript",
   "icon": "assets/icon.png",
@@ -39,6 +39,7 @@
   },
   "scripts": {
     "publish": "vsce package && vsce publish",
+    "watch": "deno run -A --watch src/app.ts --snippets",
     "generate": "deno run -A src/app.ts --snippets --docs",
     "generate:snippets": "deno run -A src/app.ts --snippets"
   },

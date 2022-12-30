@@ -5,13 +5,17 @@ export const node: XSnippetDefinition = {
     title: "Node",
   },
   snippets: {
-    re: {
+    req: {
       name: "require",
       body: "require('${1:module}')",
     },
-    req: {
+    rqr: {
       name: "require assignment",
-      body: "const ${1} = require('${1:module}');",
+      body: "const $1 = require('${1:module}')",
+    },
+    mex: {
+      name: "module.exports",
+      body: "module.exports = {$1}",
     },
   },
 };

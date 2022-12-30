@@ -50,7 +50,7 @@ export const intl = {
         "new Intl.DateTimeFormat('${1|en-US,en-GB,en-CA,de-DE,fr-FR,es-ES,zh-CN,ru-RU,ja-JP|}'$3).format($2);",
     },
     idtfs: {
-      name: "Intl.DateTimeFormat with options",
+      name: "Intl.DateTimeFormat with style",
       body: [
         "new Intl.DateTimeFormat ('${1|en-US,en-GB,en-CA,de-DE,fr-FR,es-ES,zh-CN,ru-RU,ja-JP|}', {",
         "\tdateStyle: '$3',$0",

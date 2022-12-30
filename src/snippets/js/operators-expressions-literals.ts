@@ -1,10 +1,49 @@
-// TODO: categorize
 export const operatorsExpressionsLiterals = {
   meta: {
-    title: "Operators, Expressions, Literals",
+    title: "Literals, operators, expressions",
     description: "Grouping them all together for now",
   },
   snippets: {
+    al: {
+      name: "array literal",
+      body: "[$0]",
+    },
+    ol: {
+      name: "object literal",
+      body: "{ $1: $2,$0 }",
+    },
+    ole: {
+      name: "object literal expanded",
+      body: "{\n\t$1: $2,$0\n}",
+    },
+    tl: {
+      name: "template literal",
+      body: "`$0`",
+    },
+    tle: {
+      name: "template literal expression",
+      body: "`$1${$2}$3`",
+    },
+    tlo: {
+      name: "template literal operation",
+      body: "${$1}$0",
+    },
+    ns: {
+      name: "new Set",
+      body: "new Set($1)",
+    },
+    nm: {
+      name: "new Map",
+      body: "new Map($1)",
+    },
+    am: {
+      name: "array merge",
+      body: "[...$1]",
+    },
+    om: {
+      name: "object merge",
+      body: "{ ...$1 }",
+    },
     or: {
       name: "OR (||)",
       body: "|| $0",
@@ -39,11 +78,11 @@ export const operatorsExpressionsLiterals = {
     },
     ora: {
       name: "logical OR assignment (||=)",
-      body: "$1 ||= $0",
+      body: "$1 ||= $0;",
     },
     nca: {
       name: "nullish coalescing assignment (??=)",
-      body: "$1 ??= $0",
+      body: "$1 ??= $0;",
     },
     inc: {
       name: "addition assignment",
@@ -60,26 +99,6 @@ export const operatorsExpressionsLiterals = {
     div: {
       name: "division assignment",
       body: "$1 /= ${0:1}",
-    },
-    ol: {
-      name: "object literal",
-      body: "{ $1: $0 }",
-    },
-    al: {
-      name: "array literal",
-      body: "[$0]",
-    },
-    tl: {
-      name: "template literal",
-      body: "`$0`",
-    },
-    tlo: {
-      name: "template literal operation",
-      body: "${$1}$0",
-    },
-    tle: {
-      name: "template literal expression",
-      body: "`$1${$2}$3`",
     },
   },
 };

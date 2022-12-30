@@ -39,11 +39,11 @@ export const assignments: XSnippetDefinition = {
     },
     dob: {
       name: "object destructuring",
-      body: "const { $0 } = ${1:object};",
+      body: "const { $2 } = ${1:object};",
     },
     dar: {
       name: "array destructuring",
-      body: "const [$0] = ${1:array};",
+      body: "const [$2] = ${1:array};",
     },
   },
 };

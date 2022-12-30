@@ -11,5 +11,9 @@ export const dates = {
       name: "Date.now()",
       body: "Date.now()",
     },
+    tls: {
+      name: "Date.toLocaleString()",
+      body: "$1.toLocaleString('${2|en-US,en-GB,en-CA,de-DE,fr-FR,es-ES,zh-CN,ru-RU,ja-JP|}'$3)",
+    },
   },
 };

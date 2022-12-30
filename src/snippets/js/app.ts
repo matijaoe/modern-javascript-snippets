@@ -18,30 +18,30 @@ import { returns } from "./returns.ts";
 import { testing } from "./testing.ts";
 import { timers } from "./timers.ts";
 import { types } from "./types.ts";
-import { uncategorized } from "./uncategorized.ts";
+import { utilities } from "./utilities.ts";
 import { intl } from "./intl.ts";
 
 export const javascript = [
   assignments,
-  flowControl,
   functions,
+  flowControl,
   loops,
   classes,
-  promises,
-  modules,
   arrayMethods,
-  objects,
-  returns,
+  modules,
+  promises,
   operatorsExpressionsLiterals,
-  console,
+  objects,
+  utilities,
+  returns,
   timers,
   json,
-  dom,
+  console,
   dates,
+  dom,
   node,
-  testing,
-  types,
-  misc,
   intl,
-  uncategorized,
+  types,
+  testing,
+  misc,
 ];

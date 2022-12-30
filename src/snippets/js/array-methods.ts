@@ -17,6 +17,10 @@ export const arrayMethods: XSnippetDefinition = {
       name: "Array.map()",
       body: "$1.map((${2:item}) => ${3})",
     },
+    fmap: {
+      name: "Array.map()",
+      body: "$1.flatMap((${2:item}) => ${3})",
+    },
     reduce: {
       name: "Array.reduce()",
       body: "$1.reduce((${2:acc}, ${3:curr}) => {\n\t$0\n}, ${4:initial})",
@@ -33,6 +37,18 @@ export const arrayMethods: XSnippetDefinition = {
       name: "Array.find()",
       body: "$1.find((${2:item}) => ${3})",
     },
+    findl: {
+      name: "Array.findLast()",
+      body: "$1.findLast((${2:item}) => ${3})",
+    },
+    findi: {
+      name: "Array.findIndex()",
+      body: "$1.findIndex((${2:item}) => ${3})",
+    },
+    findli: {
+      name: "Array.findLastIndex()",
+      body: "$1.findLastIndex((${2:item}) => ${3})",
+    },
     every: {
       name: "Array.every()",
       body: "$1.every((${2:item}) => ${3})",
@@ -45,6 +61,19 @@ export const arrayMethods: XSnippetDefinition = {
       name: "Array.reverse()",
       body: "$1.reverse()",
     },
+    sort: {
+      name: "Array.sort(",
+      body: "$1.sort((${2:a}, ${3:b}) => $4)",
+    },
+    // TODO: experimental
+    // group: {
+    //   name: "Array.group()",
+    //   body: "$1.group((${2:item}) => $3)",
+    // },
+    // groupMap: {
+    //   name: "Array.groupToMap()",
+    //   body: "$1.groupToMap((${2:item}) => $3)",
+    // },
     mapStr: {
       name: "Array.map() as string",
       body: "$1.map(String)",
@@ -56,6 +85,10 @@ export const arrayMethods: XSnippetDefinition = {
     filterTrue: {
       name: "Array.filter() truthy",
       body: "$1.filter(Boolean)",
+    },
+    arfr: {
+      name: "Array.from",
+      body: "Array.from($1)",
     },
   },
 };

@@ -30,6 +30,10 @@ export const modules: XSnippetDefinition = {
       name: "await import dynamic",
       body: "await import('$0')",
     },
+    imm: {
+      name: "import meta",
+      body: "import.meta.$0",
+    },
     ime: {
       name: "import meta env",
       body: "import.meta.env.$0",

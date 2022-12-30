@@ -2,7 +2,7 @@ import { XSnippetDefinition } from "../../models/app.ts";
 
 export const returns: XSnippetDefinition = {
   meta: {
-    title: "Returns",
+    title: "Returns and exceptions",
   },
   snippets: {
     re: {
@@ -16,6 +16,10 @@ export const returns: XSnippetDefinition = {
     rei: {
       name: "return object inline",
       body: "return ({$0})",
+    },
+    te: {
+      name: "throw error",
+      body: "throw new ${1|Error,TypeError,RangeError|}($0)",
     },
   },
 };

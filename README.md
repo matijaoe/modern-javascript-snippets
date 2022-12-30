@@ -26,15 +26,18 @@ The following is not mandatory, but could provide a nicer experience. Test them 
 
 Look for it in user settings, or edit the settings.json directly:
 ```jsonc
+// Mainly to strip semicolons added for better tabstop management during active snippet (or add them, according to your formatter config)
+"editor.formatOnSave": true,
+
 // Tab complete snippets when their prefix match. Works best when 'quickSuggestions' aren't enabled.
 "editor.tabCompletion": "onlySnippets"
 
-// Controls whether an active snippet prevents quick suggestions.
+// Controls whether an active snippet prevents quick suggestions. It has its pros and cons though.
 // "editor.suggest.snippetsPreventQuickSuggestions": false,
 ```
 
 ## Style
-Most of the code snippets are without semicolons (`;`), except for where it allows for better tabstop management. String use single quotes (`'`).
+Most of the code snippets are without semicolons (`;`), except for where it allows for better tabstop management. Strings use single quotes (`'`).
 
 It's highly recommended to use these snippets along with Prettier/ESLint to have your code automatically formatted to your preference.
 
@@ -46,11 +49,11 @@ It's highly recommended to use these snippets along with Prettier/ESLint to have
 - Multiple occurrences of the same tabstop are linked and updated in sync
 
 ### Placeholders
-- Tabstops with default values, such as `${1:name}` 
+- Tabstops with default values → `${1:name}` 
 
 ### Choices
-- Tabstops with multiple values, such as `${1|one,two,three|}`. 
-- Truncated in documentation, for easier viewing.
+- Tabstops with multiple values → `${1|one,two,three|}`. 
+- Truncated in documentation, for easier viewing → `${1|one,...|}`. 
 
 <!-- START:docs-gen -->
 ## Snippets
@@ -71,9 +74,9 @@ It's highly recommended to use these snippets along with Prettier/ESLint to have
 <td>const</td>
 <td>
 
-  ```javascript
+```javascript
 const $0
-  ```
+```
 
 </td>
 </tr>
@@ -83,9 +86,9 @@ const $0
 <td>let</td>
 <td>
 
-  ```javascript
+```javascript
 let $0
-  ```
+```
 
 </td>
 </tr>
@@ -95,9 +98,9 @@ let $0
 <td>const assignment</td>
 <td>
 
-  ```javascript
+```javascript
 const $1 = $2;
-  ```
+```
 
 </td>
 </tr>
@@ -107,9 +110,9 @@ const $1 = $2;
 <td>let assignment</td>
 <td>
 
-  ```javascript
+```javascript
 let $1 = $2;
-  ```
+```
 
 </td>
 </tr>
@@ -119,9 +122,9 @@ let $1 = $2;
 <td>const string assignment</td>
 <td>
 
-  ```javascript
+```javascript
 const $1 = '$2';
-  ```
+```
 
 </td>
 </tr>
@@ -131,9 +134,9 @@ const $1 = '$2';
 <td>let string assignment</td>
 <td>
 
-  ```javascript
+```javascript
 let $1 = '$2';
-  ```
+```
 
 </td>
 </tr>
@@ -143,9 +146,9 @@ let $1 = '$2';
 <td>const array assignment</td>
 <td>
 
-  ```javascript
+```javascript
 const $1 = [$0]
-  ```
+```
 
 </td>
 </tr>
@@ -155,9 +158,9 @@ const $1 = [$0]
 <td>const object assignment</td>
 <td>
 
-  ```javascript
+```javascript
 const $1 = { $0 }
-  ```
+```
 
 </td>
 </tr>
@@ -167,9 +170,9 @@ const $1 = { $0 }
 <td>object destructuring</td>
 <td>
 
-  ```javascript
-const { $0 } = ${1:object};
-  ```
+```javascript
+const { $2 } = ${1:object};
+```
 
 </td>
 </tr>
@@ -179,197 +182,9 @@ const { $0 } = ${1:object};
 <td>array destructuring</td>
 <td>
 
-  ```javascript
-const [$0] = ${1:array};
-  ```
-
-</td>
-</tr>
-</table>
-
-### Flow control
-
-<table width="100%">
-
-<tr>
-<td>Prefix</td>
-<td>Name</td>
-<td>Body</td>
-</tr>
-
-<tr>
-<td><code>if</code></td>
-<td>if statement</td>
-<td>
-
-  ```javascript
-if ($1) {
-	$2
-}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ifel</code></td>
-<td>if/else statement</td>
-<td>
-
-  ```javascript
-if ($1) {
-	$2
-} else {
-	$3
-}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ifei</code></td>
-<td>if/else-if statement</td>
-<td>
-
-  ```javascript
-if ($1) {
-	$2
-} else if ($3) {
-	$4
-}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>el</code></td>
-<td>else statement</td>
-<td>
-
-  ```javascript
-else {
-	$0
-}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ei</code></td>
-<td>else if statement</td>
-<td>
-
-  ```javascript
-else if ($1) {
-	$2
-}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ter</code></td>
-<td>ternary operator</td>
-<td>
-
-  ```javascript
-$1 ? $2 : $3
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>tera</code></td>
-<td>ternary expression assignment</td>
-<td>
-
-  ```javascript
-const $1 = $2 ? $3 : $4
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>sw</code></td>
-<td>switch</td>
-<td>
-
-  ```javascript
-switch ($1) {
-	case $2 : $3
-	default: $0
-}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>case</code></td>
-<td>case</td>
-<td>
-
-  ```javascript
-case ${1:value}:
-	$0
-	break;
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>tc</code></td>
-<td>try/catch</td>
-<td>
-
-  ```javascript
-try {
-	$1
-} catch (error) {
-	$0
-}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>tcf</code></td>
-<td>try/catch/finally</td>
-<td>
-
-  ```javascript
-try {
-	$1
-} catch (error) {
-	$2
-} finally {
-	$3
-}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>tf</code></td>
-<td>try/finally</td>
-<td>
-
-  ```javascript
-try {
-	$1
-} finally {
-	$2
-}
-  ```
+```javascript
+const [$2] = ${1:array};
+```
 
 </td>
 </tr>
@@ -390,11 +205,11 @@ try {
 <td>function</td>
 <td>
 
-  ```javascript
-function ${1:name}($2) {
+```javascript
+function $1($2) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -404,11 +219,11 @@ function ${1:name}($2) {
 <td>async function</td>
 <td>
 
-  ```javascript
-async function ${1:name}($2) {
+```javascript
+async function $1($2) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -418,9 +233,9 @@ async function ${1:name}($2) {
 <td>named arrow function</td>
 <td>
 
-  ```javascript
+```javascript
 const ${1} = ($2) => {$0}
-  ```
+```
 
 </td>
 </tr>
@@ -430,9 +245,9 @@ const ${1} = ($2) => {$0}
 <td>async named arrow function</td>
 <td>
 
-  ```javascript
-const ${1:name} = async ($2) => {$0}
-  ```
+```javascript
+const $1 = async ($2) => {$0}
+```
 
 </td>
 </tr>
@@ -442,9 +257,9 @@ const ${1:name} = async ($2) => {$0}
 <td>arrow function</td>
 <td>
 
-  ```javascript
+```javascript
 ($1) => $0
-  ```
+```
 
 </td>
 </tr>
@@ -454,9 +269,9 @@ const ${1:name} = async ($2) => {$0}
 <td>async arrow function</td>
 <td>
 
-  ```javascript
+```javascript
 async ($1) => $0
-  ```
+```
 
 </td>
 </tr>
@@ -466,11 +281,11 @@ async ($1) => $0
 <td>arrow function with body</td>
 <td>
 
-  ```javascript
+```javascript
 ($1) => {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -480,11 +295,11 @@ async ($1) => $0
 <td>async arrow function with body</td>
 <td>
 
-  ```javascript
+```javascript
 async ($1) => {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -494,11 +309,185 @@ async ($1) => {
 <td>immediately-invoked function expression</td>
 <td>
 
-  ```javascript
+```javascript
 (($1) => {
 	$0
 })($2)
-  ```
+```
+
+</td>
+</tr>
+</table>
+
+### Flow control
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>iff</code></td>
+<td>if statement</td>
+<td>
+
+```javascript
+if ($1) {$2}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ifel</code></td>
+<td>if/else statement</td>
+<td>
+
+```javascript
+if ($1) {$2} else {$3}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ifei</code></td>
+<td>if/else-if statement</td>
+<td>
+
+```javascript
+if ($1) {$2} else if ($3) {$4}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>el</code></td>
+<td>else statement</td>
+<td>
+
+```javascript
+else {
+	$0
+}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ei</code></td>
+<td>else if statement</td>
+<td>
+
+```javascript
+else if ($1) {$2}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ter</code></td>
+<td>ternary operator</td>
+<td>
+
+```javascript
+$1 ? $2 : $3
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>tera</code></td>
+<td>ternary expression assignment</td>
+<td>
+
+```javascript
+const $1 = $2 ? $3 : $4
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>sw</code></td>
+<td>switch</td>
+<td>
+
+```javascript
+switch ($1) {
+	case $2 : $3
+	default: $0
+}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>scase</code></td>
+<td>switch case</td>
+<td>
+
+```javascript
+case $1 : $2
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>tc</code></td>
+<td>try/catch</td>
+<td>
+
+```javascript
+try {
+	$1
+} catch (error) {
+	$0
+}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>tcf</code></td>
+<td>try/catch/finally</td>
+<td>
+
+```javascript
+try {
+	$1
+} catch (error) {
+	$2
+} finally {
+	$3
+}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>tf</code></td>
+<td>try/finally</td>
+<td>
+
+```javascript
+try {
+	$1
+} finally {
+	$2
+}
+```
 
 </td>
 </tr>
@@ -519,11 +508,11 @@ async ($1) => {
 <td>for loop</td>
 <td>
 
-  ```javascript
+```javascript
 for (let ${1:i} = 0, ${2:len} = ${3:iter}.length; ${1:i} < ${2:len}; ${1:i}++) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -533,11 +522,11 @@ for (let ${1:i} = 0, ${2:len} = ${3:iter}.length; ${1:i} < ${2:len}; ${1:i}++) {
 <td>reverse for loop</td>
 <td>
 
-  ```javascript
+```javascript
 for (let ${1:i} = ${2:iter}.length - 1; ${1:i} >= 0; ${1:i}--) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -547,11 +536,11 @@ for (let ${1:i} = ${2:iter}.length - 1; ${1:i} >= 0; ${1:i}--) {
 <td>for loop (range)</td>
 <td>
 
-  ```javascript
+```javascript
 for (let ${1:i} = 0; ${1:i} < ${2:5}; ${1:i}++) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -561,11 +550,11 @@ for (let ${1:i} = 0; ${1:i} < ${2:5}; ${1:i}++) {
 <td>for...in loop</td>
 <td>
 
-  ```javascript
+```javascript
 for (let ${1:key} in ${2:array}) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -575,11 +564,11 @@ for (let ${1:key} in ${2:array}) {
 <td>for...of loop</td>
 <td>
 
-  ```javascript
+```javascript
 for (let ${1:item} of ${2:items}) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -589,11 +578,11 @@ for (let ${1:item} of ${2:items}) {
 <td>for await...of loop</td>
 <td>
 
-  ```javascript
+```javascript
 for await (let ${1:item} of ${2:items}) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -603,11 +592,11 @@ for await (let ${1:item} of ${2:items}) {
 <td>while loop</td>
 <td>
 
-  ```javascript
+```javascript
 while (${1:true}) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -617,11 +606,11 @@ while (${1:true}) {
 <td>do while loop</td>
 <td>
 
-  ```javascript
+```javascript
 do {
 	$0
 } while ($1)
-  ```
+```
 
 </td>
 </tr>
@@ -642,11 +631,11 @@ do {
 <td>class</td>
 <td>
 
-  ```javascript
+```javascript
 class $1 {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -656,11 +645,11 @@ class $1 {
 <td>class extends</td>
 <td>
 
-  ```javascript
+```javascript
 class $1 extends ${2:Base} {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -670,13 +659,13 @@ class $1 extends ${2:Base} {
 <td>class with constructor</td>
 <td>
 
-  ```javascript
+```javascript
 class $1 {
 	constructor($2) {
 		$0
 	}
 }
-  ```
+```
 
 </td>
 </tr>
@@ -686,13 +675,13 @@ class $1 {
 <td>class extends with constructor</td>
 <td>
 
-  ```javascript
+```javascript
 class $1 extends ${2:Base} {
 	constructor($3) {
 		$0
 	}
 }
-  ```
+```
 
 </td>
 </tr>
@@ -702,11 +691,11 @@ class $1 extends ${2:Base} {
 <td>class constructor</td>
 <td>
 
-  ```javascript
+```javascript
 constructor($1) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -716,11 +705,11 @@ constructor($1) {
 <td>getter</td>
 <td>
 
-  ```javascript
+```javascript
 get ${1:property}() {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -730,11 +719,11 @@ get ${1:property}() {
 <td>setter</td>
 <td>
 
-  ```javascript
+```javascript
 set ${1:property}(${2:value}) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -744,14 +733,14 @@ set ${1:property}(${2:value}) {
 <td>getter and setter</td>
 <td>
 
-  ```javascript
+```javascript
 get ${1:property}() {
 	$0
 }
 set ${1:property}(${2:value}) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -761,11 +750,11 @@ set ${1:property}(${2:value}) {
 <td>method</td>
 <td>
 
-  ```javascript
+```javascript
 ${1:name}($2) {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -775,351 +764,11 @@ ${1:name}($2) {
 <td>async method</td>
 <td>
 
-  ```javascript
+```javascript
 async ${1:name}($2) {
 	$0
 }
-  ```
-
-</td>
-</tr>
-</table>
-
-### Promises
-
-<table width="100%">
-
-<tr>
-<td>Prefix</td>
-<td>Name</td>
-<td>Body</td>
-</tr>
-
-<tr>
-<td><code>fet</code></td>
-<td>fetch</td>
-<td>
-
-  ```javascript
-fetch('$1'$2).then(res => res.json())
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>feta</code></td>
-<td>fetch assignment</td>
-<td>
-
-  ```javascript
-const ${1|data,...|} = await fetch('$2'$3).then(res => res.json())
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>pr</code></td>
-<td>promise</td>
-<td>
-
-  ```javascript
-new Promise((resolve, reject) => {
-	$0
-})
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>prs</code></td>
-<td>Promise.resolve</td>
-<td>
-
-  ```javascript
-Promise.resolve($1)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>prj</code></td>
-<td>Promise.reject</td>
-<td>
-
-  ```javascript
-Promise.reject($1)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>then</code></td>
-<td>promise then()</td>
-<td>
-
-  ```javascript
-$1.then((${2:value}) => $0)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>catch</code></td>
-<td>promise catch()</td>
-<td>
-
-  ```javascript
-$1.catch((${2:err}) => $0)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>thenc</code></td>
-<td>promise then().catch()</td>
-<td>
-
-  ```javascript
-$1.then((${2:value}) => $3).catch((${4:err}) => $5)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>pra</code></td>
-<td>Promise.all</td>
-<td>
-
-  ```javascript
-Promise.all($1)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>prsa</code></td>
-<td>Promise.allSettled</td>
-<td>
-
-  ```javascript
-Promise.allSettled($1)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>pran</code></td>
-<td>Promise.any</td>
-<td>
-
-  ```javascript
-Promise.any($1)
-  ```
-
-</td>
-</tr>
-</table>
-
-### Modules
-
-<table width="100%">
-
-<tr>
-<td>Prefix</td>
-<td>Name</td>
-<td>Body</td>
-</tr>
-
-<tr>
-<td><code>im</code></td>
-<td>import from module</td>
-<td>
-
-  ```javascript
-import { $2 } from '${1:module}';
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>imd</code></td>
-<td>import default</td>
-<td>
-
-  ```javascript
-import $2 from '${1:module}';
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ima</code></td>
-<td>import as</td>
-<td>
-
-  ```javascript
-import ${2:*} as ${3:name} from '${1:module}';
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>imf</code></td>
-<td>import file</td>
-<td>
-
-  ```javascript
-import '$1';
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>imp</code></td>
-<td>import dynamic</td>
-<td>
-
-  ```javascript
-import('$0')
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>impa</code></td>
-<td>await import dynamic</td>
-<td>
-
-  ```javascript
-await import('$0')
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ime</code></td>
-<td>import meta env</td>
-<td>
-
-  ```javascript
-import.meta.env.$0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ex</code></td>
-<td>export</td>
-<td>
-
-  ```javascript
-export $0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>exd</code></td>
-<td>export default</td>
-<td>
-
-  ```javascript
-export default $0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>exf</code></td>
-<td>export from</td>
-<td>
-
-  ```javascript
-export { $0 } from '${1:module}';
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>exa</code></td>
-<td>export all from</td>
-<td>
-
-  ```javascript
-export * from '${1:module}';
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>exo</code></td>
-<td>export object</td>
-<td>
-
-  ```javascript
-export const ${1:name} = { $0 }
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>efn</code></td>
-<td>export function</td>
-<td>
-
-  ```javascript
-export function ${1:name}($2) {
-	$0
-}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>edfn</code></td>
-<td>export default function</td>
-<td>
-
-  ```javascript
-export default function ${1:name}($2) {
-	$0
-}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>enfn</code></td>
-<td>export named arrow function</td>
-<td>
-
-  ```javascript
-export const ${1:name} = ($2) => {$0}
-  ```
+```
 
 </td>
 </tr>
@@ -1140,9 +789,9 @@ export const ${1:name} = ($2) => {$0}
 <td>array.at</td>
 <td>
 
-  ```javascript
+```javascript
 $1.at(${2:0})
-  ```
+```
 
 </td>
 </tr>
@@ -1152,23 +801,23 @@ $1.at(${2:0})
 <td>Array.forEach()</td>
 <td>
 
-  ```javascript
+```javascript
 $1.forEach((${2:item}) => {
 	$0
 })
-  ```
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>map</code></td>
+<td><code>fmap</code></td>
 <td>Array.map()</td>
 <td>
 
-  ```javascript
-$1.map((${2:item}) => ${3})
-  ```
+```javascript
+$1.flatMap((${2:item}) => ${3})
+```
 
 </td>
 </tr>
@@ -1178,11 +827,11 @@ $1.map((${2:item}) => ${3})
 <td>Array.reduce()</td>
 <td>
 
-  ```javascript
+```javascript
 $1.reduce((${2:acc}, ${3:curr}) => {
 	$0
 }, ${4:initial})
-  ```
+```
 
 </td>
 </tr>
@@ -1192,11 +841,11 @@ $1.reduce((${2:acc}, ${3:curr}) => {
 <td>Array.reduceRight()</td>
 <td>
 
-  ```javascript
+```javascript
 $1.reduceRight((${2:acc}, ${3:curr}) => {
 	$0
 }, ${4:initial})
-  ```
+```
 
 </td>
 </tr>
@@ -1206,9 +855,9 @@ $1.reduceRight((${2:acc}, ${3:curr}) => {
 <td>Array.filter()</td>
 <td>
 
-  ```javascript
+```javascript
 $1.filter((${2:item}) => ${3})
-  ```
+```
 
 </td>
 </tr>
@@ -1218,9 +867,45 @@ $1.filter((${2:item}) => ${3})
 <td>Array.find()</td>
 <td>
 
-  ```javascript
+```javascript
 $1.find((${2:item}) => ${3})
-  ```
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>findl</code></td>
+<td>Array.findLast()</td>
+<td>
+
+```javascript
+$1.findLast((${2:item}) => ${3})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>findi</code></td>
+<td>Array.findIndex()</td>
+<td>
+
+```javascript
+$1.findIndex((${2:item}) => ${3})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>findli</code></td>
+<td>Array.findLastIndex()</td>
+<td>
+
+```javascript
+$1.findLastIndex((${2:item}) => ${3})
+```
 
 </td>
 </tr>
@@ -1230,9 +915,9 @@ $1.find((${2:item}) => ${3})
 <td>Array.every()</td>
 <td>
 
-  ```javascript
+```javascript
 $1.every((${2:item}) => ${3})
-  ```
+```
 
 </td>
 </tr>
@@ -1242,9 +927,9 @@ $1.every((${2:item}) => ${3})
 <td>Array.some()</td>
 <td>
 
-  ```javascript
+```javascript
 $1.some((${2:item}) => ${3})
-  ```
+```
 
 </td>
 </tr>
@@ -1254,9 +939,21 @@ $1.some((${2:item}) => ${3})
 <td>Array.reverse()</td>
 <td>
 
-  ```javascript
+```javascript
 $1.reverse()
-  ```
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>sort</code></td>
+<td>Array.sort(</td>
+<td>
+
+```javascript
+$1.sort((${2:a}, ${3:b}) => $4)
+```
 
 </td>
 </tr>
@@ -1266,9 +963,9 @@ $1.reverse()
 <td>Array.map() as string</td>
 <td>
 
-  ```javascript
+```javascript
 $1.map(String)
-  ```
+```
 
 </td>
 </tr>
@@ -1278,9 +975,9 @@ $1.map(String)
 <td>Array.map() as number</td>
 <td>
 
-  ```javascript
+```javascript
 $1.map(Number)
-  ```
+```
 
 </td>
 </tr>
@@ -1290,9 +987,676 @@ $1.map(Number)
 <td>Array.filter() truthy</td>
 <td>
 
-  ```javascript
+```javascript
 $1.filter(Boolean)
-  ```
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>arfr</code></td>
+<td>Array.from</td>
+<td>
+
+```javascript
+Array.from($1)
+```
+
+</td>
+</tr>
+</table>
+
+### Modules
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>im</code></td>
+<td>import from module</td>
+<td>
+
+```javascript
+import { $2 } from '${1:module}';
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>imd</code></td>
+<td>import default</td>
+<td>
+
+```javascript
+import $2 from '${1:module}';
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ima</code></td>
+<td>import as</td>
+<td>
+
+```javascript
+import ${2:*} as ${3:name} from '${1:module}';
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>imf</code></td>
+<td>import file</td>
+<td>
+
+```javascript
+import '$1';
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>imp</code></td>
+<td>import dynamic</td>
+<td>
+
+```javascript
+import('$0')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>impa</code></td>
+<td>await import dynamic</td>
+<td>
+
+```javascript
+await import('$0')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>imm</code></td>
+<td>import meta</td>
+<td>
+
+```javascript
+import.meta.$0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ime</code></td>
+<td>import meta env</td>
+<td>
+
+```javascript
+import.meta.env.$0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ex</code></td>
+<td>export</td>
+<td>
+
+```javascript
+export $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>exd</code></td>
+<td>export default</td>
+<td>
+
+```javascript
+export default $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>exf</code></td>
+<td>export from</td>
+<td>
+
+```javascript
+export { $0 } from '${1:module}';
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>exa</code></td>
+<td>export all from</td>
+<td>
+
+```javascript
+export * from '${1:module}';
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>exo</code></td>
+<td>export object</td>
+<td>
+
+```javascript
+export const ${1:name} = { $0 }
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>efn</code></td>
+<td>export function</td>
+<td>
+
+```javascript
+export function ${1:name}($2) {
+	$0
+}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>edfn</code></td>
+<td>export default function</td>
+<td>
+
+```javascript
+export default function ${1:name}($2) {
+	$0
+}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>enfn</code></td>
+<td>export named arrow function</td>
+<td>
+
+```javascript
+export const ${1:name} = ($2) => {$0}
+```
+
+</td>
+</tr>
+</table>
+
+### Promises
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>fet</code></td>
+<td>fetch</td>
+<td>
+
+```javascript
+fetch($1).then(res => res.json())
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>feta</code></td>
+<td>fetch assignment</td>
+<td>
+
+```javascript
+const ${1|data,...|} = await fetch($2).then(res => res.json())
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>pr</code></td>
+<td>promise</td>
+<td>
+
+```javascript
+new Promise((resolve, reject) => {
+	$0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>prs</code></td>
+<td>Promise.resolve</td>
+<td>
+
+```javascript
+Promise.resolve($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>prj</code></td>
+<td>Promise.reject</td>
+<td>
+
+```javascript
+Promise.reject($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>then</code></td>
+<td>promise then()</td>
+<td>
+
+```javascript
+$1.then((${2:value}) => $0)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>catc</code></td>
+<td>promise catch()</td>
+<td>
+
+```javascript
+$1.catch((${2:err}) => $0)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>thenc</code></td>
+<td>promise then().catch()</td>
+<td>
+
+```javascript
+$1
+	.then((${2:value}) => $3)
+	.catch((${4:err}) => $5)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>pra</code></td>
+<td>Promise.all</td>
+<td>
+
+```javascript
+Promise.all($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>pras</code></td>
+<td>Promise.allSettled</td>
+<td>
+
+```javascript
+Promise.allSettled($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>pran</code></td>
+<td>Promise.any</td>
+<td>
+
+```javascript
+Promise.any($1)
+```
+
+</td>
+</tr>
+</table>
+
+### Literals, operators, expressions
+Grouping them all together for now
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>al</code></td>
+<td>array literal</td>
+<td>
+
+```javascript
+[$0]
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ol</code></td>
+<td>object literal</td>
+<td>
+
+```javascript
+{ $1: $2,$0 }
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ole</code></td>
+<td>object literal expanded</td>
+<td>
+
+```javascript
+{
+	$1: $2,$0
+}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>tl</code></td>
+<td>template literal</td>
+<td>
+
+```javascript
+`$0`
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>tle</code></td>
+<td>template literal expression</td>
+<td>
+
+```javascript
+`$1${$2}$3`
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>tlo</code></td>
+<td>template literal operation</td>
+<td>
+
+```javascript
+${$1}$0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ns</code></td>
+<td>new Set</td>
+<td>
+
+```javascript
+new Set($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nm</code></td>
+<td>new Map</td>
+<td>
+
+```javascript
+new Map($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>am</code></td>
+<td>array merge</td>
+<td>
+
+```javascript
+[...$1]
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>om</code></td>
+<td>object merge</td>
+<td>
+
+```javascript
+{ ...$1 }
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>or</code></td>
+<td>OR (||)</td>
+<td>
+
+```javascript
+|| $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>and</code></td>
+<td>AND (&&)</td>
+<td>
+
+```javascript
+&& $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nc</code></td>
+<td>nullish coalescing (??)</td>
+<td>
+
+```javascript
+?? $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>eq</code></td>
+<td>strict equality (===)</td>
+<td>
+
+```javascript
+=== $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ore</code></td>
+<td>logical OR expression</td>
+<td>
+
+```javascript
+$1 || $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ande</code></td>
+<td>logical AND expression</td>
+<td>
+
+```javascript
+$1 && $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nce</code></td>
+<td>nullish coalescing expression (??)</td>
+<td>
+
+```javascript
+$1 ?? $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>eqe</code></td>
+<td>strict equality expression</td>
+<td>
+
+```javascript
+$1 === $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ora</code></td>
+<td>logical OR assignment (||=)</td>
+<td>
+
+```javascript
+$1 ||= $0;
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nca</code></td>
+<td>nullish coalescing assignment (??=)</td>
+<td>
+
+```javascript
+$1 ??= $0;
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>inc</code></td>
+<td>addition assignment</td>
+<td>
+
+```javascript
+$1 += ${0:1}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>sub</code></td>
+<td>subtraction assignment</td>
+<td>
+
+```javascript
+$1 -= ${0:1}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>mul</code></td>
+<td>multiplication assignment</td>
+<td>
+
+```javascript
+$1 *= ${0:1}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>div</code></td>
+<td>division assignment</td>
+<td>
+
+```javascript
+$1 /= ${0:1}
+```
 
 </td>
 </tr>
@@ -1313,9 +1677,9 @@ $1.filter(Boolean)
 <td>Object.entries</td>
 <td>
 
-  ```javascript
+```javascript
 Object.entries($0)
-  ```
+```
 
 </td>
 </tr>
@@ -1325,9 +1689,9 @@ Object.entries($0)
 <td>Object.fromEntries</td>
 <td>
 
-  ```javascript
+```javascript
 Object.fromEntries($0)
-  ```
+```
 
 </td>
 </tr>
@@ -1337,9 +1701,9 @@ Object.fromEntries($0)
 <td>Object.keys</td>
 <td>
 
-  ```javascript
+```javascript
 Object.keys($0)
-  ```
+```
 
 </td>
 </tr>
@@ -1349,15 +1713,134 @@ Object.keys($0)
 <td>Object.values</td>
 <td>
 
-  ```javascript
+```javascript
 Object.values($0)
-  ```
+```
 
 </td>
 </tr>
 </table>
 
-### Returns
+### Utilities
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>pi</code></td>
+<td>parse int</td>
+<td>
+
+```javascript
+parseInt($1, ${2|10,...|})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>pf</code></td>
+<td>parse float</td>
+<td>
+
+```javascript
+parseFloat($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>uniq</code></td>
+<td>array of unique values</td>
+<td>
+
+```javascript
+[...new Set($0)]
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>seq</code></td>
+<td>sequence of 0..n</td>
+<td>
+
+```javascript
+[...Array(${1:length}).keys()]
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>cp</code></td>
+<td>copy to clipboard</td>
+<td>
+
+```javascript
+navigator.clipboard.writeText($1);
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nur</code></td>
+<td>new URL</td>
+<td>
+
+```javascript
+new URL($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>usp</code></td>
+<td>url search params</td>
+<td>
+
+```javascript
+new URL($1).searchParams
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>spg</code></td>
+<td>get search param</td>
+<td>
+
+```javascript
+$1.searchParams.get($2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>sps</code></td>
+<td>set search param</td>
+<td>
+
+```javascript
+$1.searchParams.set($2, $3)
+```
+
+</td>
+</tr>
+</table>
+
+### Returns and exceptions
 
 <table width="100%">
 
@@ -1372,9 +1855,9 @@ Object.values($0)
 <td>return</td>
 <td>
 
-  ```javascript
+```javascript
 return $0
-  ```
+```
 
 </td>
 </tr>
@@ -1384,11 +1867,11 @@ return $0
 <td>return object</td>
 <td>
 
-  ```javascript
+```javascript
 return {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -1398,429 +1881,21 @@ return {
 <td>return object inline</td>
 <td>
 
-  ```javascript
+```javascript
 return ({$0})
-  ```
-
-</td>
-</tr>
-</table>
-
-### Operators, Expressions, Literals
-Grouping them all together for now
-<table width="100%">
-
-<tr>
-<td>Prefix</td>
-<td>Name</td>
-<td>Body</td>
-</tr>
-
-<tr>
-<td><code>or</code></td>
-<td>OR (||)</td>
-<td>
-
-  ```javascript
-|| $0
-  ```
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>and</code></td>
-<td>AND (&&)</td>
+<td><code>te</code></td>
+<td>throw error</td>
 <td>
 
-  ```javascript
-&& $0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>nc</code></td>
-<td>nullish coalescing (??)</td>
-<td>
-
-  ```javascript
-?? $0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>eq</code></td>
-<td>strict equality (===)</td>
-<td>
-
-  ```javascript
-=== $0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ore</code></td>
-<td>logical OR expression</td>
-<td>
-
-  ```javascript
-$1 || $0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ande</code></td>
-<td>logical AND expression</td>
-<td>
-
-  ```javascript
-$1 && $0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>nce</code></td>
-<td>nullish coalescing expression (??)</td>
-<td>
-
-  ```javascript
-$1 ?? $0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>eqe</code></td>
-<td>strict equality expression</td>
-<td>
-
-  ```javascript
-$1 === $0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ora</code></td>
-<td>logical OR assignment (||=)</td>
-<td>
-
-  ```javascript
-$1 ||= $0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>nca</code></td>
-<td>nullish coalescing assignment (??=)</td>
-<td>
-
-  ```javascript
-$1 ??= $0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>inc</code></td>
-<td>addition assignment</td>
-<td>
-
-  ```javascript
-$1 += ${0:1}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>sub</code></td>
-<td>subtraction assignment</td>
-<td>
-
-  ```javascript
-$1 -= ${0:1}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>mul</code></td>
-<td>multiplication assignment</td>
-<td>
-
-  ```javascript
-$1 *= ${0:1}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>div</code></td>
-<td>division assignment</td>
-<td>
-
-  ```javascript
-$1 /= ${0:1}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ol</code></td>
-<td>object literal</td>
-<td>
-
-  ```javascript
-{ $1: $0 }
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>al</code></td>
-<td>array literal</td>
-<td>
-
-  ```javascript
-[$0]
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>tl</code></td>
-<td>template literal</td>
-<td>
-
-  ```javascript
-`$0`
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>tlo</code></td>
-<td>template literal operation</td>
-<td>
-
-  ```javascript
-${$1}$0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>tle</code></td>
-<td>template literal expression</td>
-<td>
-
-  ```javascript
-`$1${$2}$3`
-  ```
-
-</td>
-</tr>
-</table>
-
-### Console
-
-<table width="100%">
-
-<tr>
-<td>Prefix</td>
-<td>Name</td>
-<td>Body</td>
-</tr>
-
-<tr>
-<td><code>cl</code></td>
-<td>console.log</td>
-<td>
-
-  ```javascript
-console.log($0)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ci</code></td>
-<td>console.info</td>
-<td>
-
-  ```javascript
-console.info($1)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>cdi</code></td>
-<td>console.dir</td>
-<td>
-
-  ```javascript
-console.dir($1)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ce</code></td>
-<td>console.error</td>
-<td>
-
-  ```javascript
-console.error($1)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>cw</code></td>
-<td>console.warn</td>
-<td>
-
-  ```javascript
-console.warn($1)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ct</code></td>
-<td>console.time</td>
-<td>
-
-  ```javascript
-console.time('$1')
-$0
-console.timeEnd('$1')
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ctb</code></td>
-<td>console.table</td>
-<td>
-
-  ```javascript
-console.table($1)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>clr</code></td>
-<td>console.clear</td>
-<td>
-
-  ```javascript
-console.clear()
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>clm</code></td>
-<td>console.log message</td>
-<td>
-
-  ```javascript
-console.log('$0')
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>clo</code></td>
-<td>console.log object</td>
-<td>
-
-  ```javascript
-console.log({ $0 })
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>clc</code></td>
-<td>console.log clipboard</td>
-<td>
-
-  ```javascript
-console.log({ $CLIPBOARD })
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>cll</code></td>
-<td>console.log (labeled)</td>
-<td>
-
-  ```javascript
-console.log('$1 :', $1$2)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>cel</code></td>
-<td>console.error (labeled)</td>
-<td>
-
-  ```javascript
-console.error('$1 :', $1$2)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>cwl</code></td>
-<td>console.warn (labeled)</td>
-<td>
-
-  ```javascript
-console.warn('$1 :', ${2:$1})
-  ```
+```javascript
+throw new ${1|Error,...|}($0)
+```
 
 </td>
 </tr>
@@ -1841,11 +1916,11 @@ console.warn('$1 :', ${2:$1})
 <td>set interval</td>
 <td>
 
-  ```javascript
+```javascript
 setInterval(() => {
 	$0
-}, ${1:delay})
-  ```
+}, ${1:delay});
+```
 
 </td>
 </tr>
@@ -1855,11 +1930,11 @@ setInterval(() => {
 <td>set timeout</td>
 <td>
 
-  ```javascript
+```javascript
 setTimeout(() => {
 	$0
-}, ${1:delay})
-  ```
+}, ${1:delay});
+```
 
 </td>
 </tr>
@@ -1869,11 +1944,11 @@ setTimeout(() => {
 <td>set immediate</td>
 <td>
 
-  ```javascript
+```javascript
 setImmediate(() => {
 	$0
-})
-  ```
+});
+```
 
 </td>
 </tr>
@@ -1883,11 +1958,11 @@ setImmediate(() => {
 <td>process next tick</td>
 <td>
 
-  ```javascript
+```javascript
 process.nextTick(() => {
 	$0
-})
-  ```
+});
+```
 
 </td>
 </tr>
@@ -1908,9 +1983,9 @@ process.nextTick(() => {
 <td>JSON parse</td>
 <td>
 
-  ```javascript
+```javascript
 JSON.parse(${1:json})
-  ```
+```
 
 </td>
 </tr>
@@ -1920,9 +1995,9 @@ JSON.parse(${1:json})
 <td>JSON stringify</td>
 <td>
 
-  ```javascript
+```javascript
 JSON.stringify(${1:value})
-  ```
+```
 
 </td>
 </tr>
@@ -1932,9 +2007,9 @@ JSON.stringify(${1:value})
 <td>JSON stringify (formatted)</td>
 <td>
 
-  ```javascript
+```javascript
 JSON.stringify(${1:value}, null, 2)
-  ```
+```
 
 </td>
 </tr>
@@ -1944,15 +2019,15 @@ JSON.stringify(${1:value}, null, 2)
 <td>JSON.stringify if not string</td>
 <td>
 
-  ```javascript
+```javascript
 typeof $1 === 'string' ? $1 : JSON.stringify($1)
-  ```
+```
 
 </td>
 </tr>
 </table>
 
-### DOM
+### Console
 
 <table width="100%">
 
@@ -1963,87 +2038,171 @@ typeof $1 === 'string' ? $1 : JSON.stringify($1)
 </tr>
 
 <tr>
-<td><code>qs</code></td>
-<td>query selector</td>
+<td><code>cl</code></td>
+<td>console.log</td>
 <td>
 
-  ```javascript
-${1:document}.querySelector('$2')
-  ```
+```javascript
+console.log($0)
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>qsa</code></td>
-<td>query selector all</td>
+<td><code>ci</code></td>
+<td>console.info</td>
 <td>
 
-  ```javascript
-${1:document}.querySelectorAll('$2')
-  ```
+```javascript
+console.info($1)
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>qsaa</code></td>
-<td>query selector all as array</td>
+<td><code>cdi</code></td>
+<td>console.dir</td>
 <td>
 
-  ```javascript
-[...${1:document}.querySelectorAll('$2')]
-  ```
+```javascript
+console.dir($1)
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>ael</code></td>
-<td>event listener</td>
+<td><code>ce</code></td>
+<td>console.error</td>
 <td>
 
-  ```javascript
-${1:document}.addEventListener('${2:click}', (e$3) => $0)
-  ```
+```javascript
+console.error($1)
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>qsae</code></td>
-<td>query selector with event listener</td>
+<td><code>cw</code></td>
+<td>console.warn</td>
 <td>
 
-  ```javascript
-${1:document}.querySelector('$2')?.addEventListener('${3:click}', (e$4) => $0)
-  ```
+```javascript
+console.warn($1)
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>gid</code></td>
-<td>get element by id</td>
+<td><code>ct</code></td>
+<td>console.time</td>
 <td>
 
-  ```javascript
-${1:document}.getElementById('$2')
-  ```
+```javascript
+console.time('$1')
+$0
+console.timeEnd('$1')
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>on</code></td>
-<td>event handler</td>
+<td><code>ctb</code></td>
+<td>console.table</td>
 <td>
 
-  ```javascript
-${1:emitter}.on('${2:event}', (${3:arguments}) => {
-	$0
-})
-  ```
+```javascript
+console.table($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>clr</code></td>
+<td>console.clear</td>
+<td>
+
+```javascript
+console.clear()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>clm</code></td>
+<td>console.log message</td>
+<td>
+
+```javascript
+console.log('$0')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>clo</code></td>
+<td>console.log object</td>
+<td>
+
+```javascript
+console.log({ $0 })
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>clc</code></td>
+<td>console.log clipboard</td>
+<td>
+
+```javascript
+console.log({ $CLIPBOARD })
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>cll</code></td>
+<td>console.log (labeled)</td>
+<td>
+
+```javascript
+console.log('$1 :', $1$2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>cel</code></td>
+<td>console.error (labeled)</td>
+<td>
+
+```javascript
+console.error('$1 :', $1$2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>cwl</code></td>
+<td>console.warn (labeled)</td>
+<td>
+
+```javascript
+console.warn('$1 :', ${2:$1})
+```
 
 </td>
 </tr>
@@ -2064,9 +2223,9 @@ ${1:emitter}.on('${2:event}', (${3:arguments}) => {
 <td>new Date()</td>
 <td>
 
-  ```javascript
+```javascript
 new Date($1)
-  ```
+```
 
 </td>
 </tr>
@@ -2076,9 +2235,104 @@ new Date($1)
 <td>Date.now()</td>
 <td>
 
-  ```javascript
+```javascript
 Date.now()
-  ```
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>tls</code></td>
+<td>Date.toLocaleString()</td>
+<td>
+
+```javascript
+$1.toLocaleString('${2|en-US,...|}'$3)
+```
+
+</td>
+</tr>
+</table>
+
+### DOM
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>qs</code></td>
+<td>query selector</td>
+<td>
+
+```javascript
+${1:document}.querySelector('$2')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>qsa</code></td>
+<td>query selector all</td>
+<td>
+
+```javascript
+${1:document}.querySelectorAll('$2')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>qsaa</code></td>
+<td>query selector all as array</td>
+<td>
+
+```javascript
+[...${1:document}.querySelectorAll('$2')]
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ael</code></td>
+<td>event listener</td>
+<td>
+
+```javascript
+${1:document}.addEventListener('${2:click}', (e$3) => $0)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>qsae</code></td>
+<td>query selector with event listener</td>
+<td>
+
+```javascript
+${1:document}.querySelector('$2')?.addEventListener('${3:click}', (e$4) => $0)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>gid</code></td>
+<td>get element by id</td>
+<td>
+
+```javascript
+${1:document}.getElementById('$2')
+```
 
 </td>
 </tr>
@@ -2095,329 +2349,37 @@ Date.now()
 </tr>
 
 <tr>
-<td><code>re</code></td>
+<td><code>req</code></td>
 <td>require</td>
 <td>
 
-  ```javascript
+```javascript
 require('${1:module}')
-  ```
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>req</code></td>
+<td><code>rqr</code></td>
 <td>require assignment</td>
 <td>
 
-  ```javascript
-const ${1} = require('${1:module}');
-  ```
-
-</td>
-</tr>
-</table>
-
-### Testing
-
-<table width="100%">
-
-<tr>
-<td>Prefix</td>
-<td>Name</td>
-<td>Body</td>
-</tr>
-
-<tr>
-<td><code>desc</code></td>
-<td>describe</td>
-<td>
-
-  ```javascript
-describe('$1', () => {
-	$0
-})
-  ```
+```javascript
+const $1 = require('${1:module}')
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>cont</code></td>
-<td>context</td>
+<td><code>mex</code></td>
+<td>module.exports</td>
 <td>
 
-  ```javascript
-context('$1', () => {
-	$0
-})
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>it</code></td>
-<td>test (synchronous)</td>
-<td>
-
-  ```javascript
-it('$1', () => {
-	$0
-})
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ita</code></td>
-<td>test (asynchronous)</td>
-<td>
-
-  ```javascript
-it('$1', async () => {
-	$0
-})
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>itc</code></td>
-<td>test (callback)</td>
-<td>
-
-  ```javascript
-it('$1', (done) => {
-	$0
-	done()
-})
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>bf</code></td>
-<td>before test suite</td>
-<td>
-
-  ```javascript
-before(() => {
-	$0
-})
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>bfe</code></td>
-<td>before each test</td>
-<td>
-
-  ```javascript
-beforeEach(() => {
-	$0
-})
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>aft</code></td>
-<td>after test suite</td>
-<td>
-
-  ```javascript
-after(() => {
-	$0
-})
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>afe</code></td>
-<td>after each test</td>
-<td>
-
-  ```javascript
-afterEach(() => {
-	$0
-})
-  ```
-
-</td>
-</tr>
-</table>
-
-### Types
-
-<table width="100%">
-
-<tr>
-<td>Prefix</td>
-<td>Name</td>
-<td>Body</td>
-</tr>
-
-<tr>
-<td><code>aia</code></td>
-<td>is array</td>
-<td>
-
-  ```javascript
-Array.isArray($0)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>tof</code></td>
-<td>typeof</td>
-<td>
-
-  ```javascript
-typeof ${1:value} === '${2|undefined,...|}'
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>iof</code></td>
-<td>instanceof</td>
-<td>
-
-  ```javascript
-${1:object} instanceof ${0:Class}
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>isnil</code></td>
-<td>is nil</td>
-<td>
-
-  ```javascript
-${1:value} == null
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>nnil</code></td>
-<td>is not nil</td>
-<td>
-
-  ```javascript
-${1:value} != null
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>isnan</code></td>
-<td>is NaN</td>
-<td>
-
-  ```javascript
-isNan($0)
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>nnan</code></td>
-<td>is not NaN</td>
-<td>
-
-  ```javascript
-!isNan($0)
-  ```
-
-</td>
-</tr>
-</table>
-
-### Misc
-
-<table width="100%">
-
-<tr>
-<td>Prefix</td>
-<td>Name</td>
-<td>Body</td>
-</tr>
-
-<tr>
-<td><code>us</code></td>
-<td>'use strict' statement</td>
-<td>
-
-  ```javascript
-'use strict'
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>pse</code></td>
-<td>process.server</td>
-<td>
-
-  ```javascript
-process.server
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>pcl</code></td>
-<td>process.client</td>
-<td>
-
-  ```javascript
-process.client
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>env</code></td>
-<td>env variable</td>
-<td>
-
-  ```javascript
-process.env.$0
-  ```
-
-</td>
-</tr>
-
-<tr>
-<td><code>envv</code></td>
-<td>env variable (vite)</td>
-<td>
-
-  ```javascript
-import.meta.env.$0
-  ```
+```javascript
+module.exports = {$1}
+```
 
 </td>
 </tr>
@@ -2438,9 +2400,9 @@ Internationalization API
 <td>Intl.NumberFormat</td>
 <td>
 
-  ```javascript
+```javascript
 new Intl.NumberFormat('${1|en-US,...|}'$3).format($2);
-  ```
+```
 
 </td>
 </tr>
@@ -2450,11 +2412,11 @@ new Intl.NumberFormat('${1|en-US,...|}'$3).format($2);
 <td>Intl.NumberFormat style</td>
 <td>
 
-  ```javascript
+```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
 	style: '${3|decimal,...|}',$4
 }).format($2);
-  ```
+```
 
 </td>
 </tr>
@@ -2464,12 +2426,12 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 <td>Intl.NumberFormat as currency</td>
 <td>
 
-  ```javascript
+```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
 	style: 'currency',
 	currency: '${3|USD,...|}',$4
 }).format($2);
-  ```
+```
 
 </td>
 </tr>
@@ -2479,11 +2441,11 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 <td>Intl.NumberFormat as percentage</td>
 <td>
 
-  ```javascript
+```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
 	style: 'percent',$3
 }).format($2);
-  ```
+```
 
 </td>
 </tr>
@@ -2493,13 +2455,13 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 <td>Intl.NumberFormat as unit</td>
 <td>
 
-  ```javascript
+```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
 	style: 'unit',
 	unit: '${3|acceleration-g-force,...|}',
 	unitDisplay: '${4|long,...|}',$0
 }).format($2);
-  ```
+```
 
 </td>
 </tr>
@@ -2509,30 +2471,30 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 <td>Intl.DateTimeFormat</td>
 <td>
 
-  ```javascript
+```javascript
 new Intl.DateTimeFormat('${1|en-US,...|}'$3).format($2);
-  ```
+```
 
 </td>
 </tr>
 
 <tr>
 <td><code>idtfs</code></td>
-<td>Intl.DateTimeFormat with options</td>
+<td>Intl.DateTimeFormat with style</td>
 <td>
 
-  ```javascript
+```javascript
 new Intl.DateTimeFormat ('${1|en-US,...|}', {
 	dateStyle: '$3',$0
 }).format($2);
-  ```
+```
 
 </td>
 </tr>
 </table>
 
-### Uncategorized
-Will be sorted into appropriate categories in the future.
+### Types
+
 <table width="100%">
 
 <tr>
@@ -2542,145 +2504,294 @@ Will be sorted into appropriate categories in the future.
 </tr>
 
 <tr>
-<td><code>am</code></td>
-<td>array merge</td>
+<td><code>aia</code></td>
+<td>is array</td>
 <td>
 
-  ```javascript
-[...$1]
-  ```
+```javascript
+Array.isArray($0)
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>om</code></td>
-<td>object merge</td>
+<td><code>tof</code></td>
+<td>typeof</td>
 <td>
 
-  ```javascript
-{ ...$1 }
-  ```
+```javascript
+typeof $1 === '${2|undefined,...|}'
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>uniq</code></td>
-<td>array of unique values</td>
+<td><code>iof</code></td>
+<td>instanceof</td>
 <td>
 
-  ```javascript
-[...new Set($0)]
-  ```
+```javascript
+$1 instanceof ${0:Class}
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>pi</code></td>
-<td>parse int</td>
+<td><code>isnil</code></td>
+<td>is nil</td>
 <td>
 
-  ```javascript
-parseInt($1, ${2|10,...|})
-  ```
+```javascript
+$1 == null
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>pf</code></td>
-<td>parse float</td>
+<td><code>nnil</code></td>
+<td>is not nil</td>
 <td>
 
-  ```javascript
-parseFloat($1)
-  ```
+```javascript
+$1 != null
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>seq</code></td>
-<td>sequence of 0..n</td>
+<td><code>isnan</code></td>
+<td>is NaN</td>
 <td>
 
-  ```javascript
-[...Array(${1:length}).keys()]
-  ```
+```javascript
+isNaN($0)
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>te</code></td>
-<td>throw error</td>
+<td><code>nnan</code></td>
+<td>is not NaN</td>
 <td>
 
-  ```javascript
-throw new ${1|Error,...|}($0)
-  ```
+```javascript
+!isNaN($0)
+```
+
+</td>
+</tr>
+</table>
+
+### Testing
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>desc</code></td>
+<td>describe</td>
+<td>
+
+```javascript
+describe('$1', () => {
+	$0
+})
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>cp</code></td>
-<td>copy to clipboard</td>
+<td><code>cont</code></td>
+<td>context</td>
 <td>
 
-  ```javascript
-navigator.clipboard.writeText($1);
-  ```
+```javascript
+context('$1', () => {
+	$0
+})
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>nur</code></td>
-<td>new URL</td>
+<td><code>it</code></td>
+<td>test (synchronous)</td>
 <td>
 
-  ```javascript
-new URL($1)
-  ```
+```javascript
+it('$1', () => {
+	$0
+})
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>usp</code></td>
-<td>url search params</td>
+<td><code>ita</code></td>
+<td>test (asynchronous)</td>
 <td>
 
-  ```javascript
-new URL($1).searchParams
-  ```
+```javascript
+it('$1', async () => {
+	$0
+})
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>spg</code></td>
-<td>get search param</td>
+<td><code>itc</code></td>
+<td>test (callback)</td>
 <td>
 
-  ```javascript
-$1.searchParams.get($2)
-  ```
+```javascript
+it('$1', (done) => {
+	$0
+	done()
+})
+```
 
 </td>
 </tr>
 
 <tr>
-<td><code>sps</code></td>
-<td>set search param</td>
+<td><code>bf</code></td>
+<td>before test suite</td>
 <td>
 
-  ```javascript
-$1.searchParams.set($2, $3)
-  ```
+```javascript
+before(() => {
+	$0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>bfe</code></td>
+<td>before each test</td>
+<td>
+
+```javascript
+beforeEach(() => {
+	$0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>aft</code></td>
+<td>after test suite</td>
+<td>
+
+```javascript
+after(() => {
+	$0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>afe</code></td>
+<td>after each test</td>
+<td>
+
+```javascript
+afterEach(() => {
+	$0
+})
+```
+
+</td>
+</tr>
+</table>
+
+### Misc
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>us</code></td>
+<td>'use strict' statement</td>
+<td>
+
+```javascript
+'use strict'
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>pse</code></td>
+<td>process.server</td>
+<td>
+
+```javascript
+process.server
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>pcl</code></td>
+<td>process.client</td>
+<td>
+
+```javascript
+process.client
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>env</code></td>
+<td>env variable</td>
+<td>
+
+```javascript
+process.env.$0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>envv</code></td>
+<td>env variable (vite)</td>
+<td>
+
+```javascript
+import.meta.env.$0
+```
 
 </td>
 </tr>
@@ -2705,9 +2816,9 @@ Available only where TypeScript is supported
 <td>const assignment (typed)</td>
 <td>
 
-  ```javascript
+```javascript
 const $1: ${2:string} = $3;
-  ```
+```
 
 </td>
 </tr>
@@ -2717,9 +2828,9 @@ const $1: ${2:string} = $3;
 <td>let assignment (typed)</td>
 <td>
 
-  ```javascript
+```javascript
 let $1: ${2:string} = $3;
-  ```
+```
 
 </td>
 </tr>
@@ -2729,9 +2840,9 @@ let $1: ${2:string} = $3;
 <td>array assignment (typed)</td>
 <td>
 
-  ```javascript
+```javascript
 const $1: ${2:string}[] = [$0];
-  ```
+```
 
 </td>
 </tr>
@@ -2741,9 +2852,9 @@ const $1: ${2:string}[] = [$0];
 <td>object assignment (typed)</td>
 <td>
 
-  ```javascript
+```javascript
 const $1: ${2:object} = { $0 };
-  ```
+```
 
 </td>
 </tr>
@@ -2764,11 +2875,11 @@ const $1: ${2:object} = { $0 };
 <td>interface</td>
 <td>
 
-  ```javascript
+```javascript
 interface ${1:Model} {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -2778,11 +2889,11 @@ interface ${1:Model} {
 <td>interface extends</td>
 <td>
 
-  ```javascript
+```javascript
 interface ${1:Model} extends ${2:Base} {
 	$0
 }
-  ```
+```
 
 </td>
 </tr>
@@ -2792,9 +2903,9 @@ interface ${1:Model} extends ${2:Base} {
 <td>type</td>
 <td>
 
-  ```javascript
+```javascript
 type ${1:Model} = $0
-  ```
+```
 
 </td>
 </tr>
@@ -2804,9 +2915,9 @@ type ${1:Model} = $0
 <td>type union</td>
 <td>
 
-  ```javascript
+```javascript
 type ${1:Model} = $2 | $3
-  ```
+```
 
 </td>
 </tr>
@@ -2816,9 +2927,9 @@ type ${1:Model} = $2 | $3
 <td>type intersection</td>
 <td>
 
-  ```javascript
+```javascript
 type ${1:Model} = $2 & $3
-  ```
+```
 
 </td>
 </tr>
