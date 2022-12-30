@@ -12,27 +12,27 @@ export const types: XSnippetDefinition = {
     tof: {
       name: "typeof",
       body:
-        "typeof ${1:value} === '${2|undefined,string,number,object,function,boolean,symbol,bigint|}'",
+        "typeof $1 === '${2|undefined,string,number,object,function,boolean,symbol,bigint|}'",
     },
     iof: {
       name: "instanceof",
-      body: "${1:object} instanceof ${0:Class}",
+      body: "$1 instanceof ${0:Class}",
     },
     isnil: {
       name: "is nil",
-      body: "${1:value} == null",
+      body: "$1 == null",
     },
     nnil: {
       name: "is not nil",
-      body: "${1:value} != null",
+      body: "$1 != null",
     },
     isnan: {
       name: "is NaN",
-      body: "isNan($0)",
+      body: "isNaN($0)",
     },
     nnan: {
       name: "is not NaN",
-      body: "!isNan($0)",
+      body: "!isNaN($0)",
     },
   },
 };
