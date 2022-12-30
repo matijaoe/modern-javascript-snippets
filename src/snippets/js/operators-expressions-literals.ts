@@ -1,4 +1,3 @@
-// TODO: categorize
 export const operatorsExpressionsLiterals = {
   meta: {
     title: "Literals, operators, expressions",
@@ -28,6 +27,14 @@ export const operatorsExpressionsLiterals = {
     tlo: {
       name: "template literal operation",
       body: "${$1}$0",
+    },
+    ns: {
+      name: "new Set",
+      body: "new Set($1)",
+    },
+    nm: {
+      name: "new Map",
+      body: "new Map($1)",
     },
     am: {
       name: "array merge",
