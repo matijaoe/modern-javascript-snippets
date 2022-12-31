@@ -37,12 +37,6 @@
   "engines": {
     "vscode": "^1.x.x"
   },
-  "scripts": {
-    "publish": "vsce package && vsce publish",
-    "watch": "deno run -A --watch src/app.ts --snippets",
-    "generate": "deno run -A src/app.ts --snippets --docs",
-    "generate:snippets": "deno run -A src/app.ts --snippets"
-  },
   "contributes": {
     "snippets": [
       {

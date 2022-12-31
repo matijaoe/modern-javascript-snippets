@@ -2944,5 +2944,5 @@ type ${1:Model} = $2 & $3
 # https://deno.land/manual@v1.29.1/getting_started/installation
 
 # generate .code-snippets and documentation
-npm run generate
+deno task generate
 ```
