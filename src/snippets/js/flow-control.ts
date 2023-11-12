@@ -1,80 +1,79 @@
-import { XSnippetDefinition } from "../../models/app.ts";
+import { XSnippetDefinition } from '../../models/app.ts'
 
 export const flowControl: XSnippetDefinition = {
   meta: {
-    title: "Flow control",
+    title: 'Flow control',
   },
   snippets: {
     iff: {
-      name: "if statement",
-      body: "if ($1) {$2}",
+      name: 'if statement',
+      body: 'if (${1:true}) {$2}',
     },
     ifel: {
-      name: "if/else statement",
-      body: "if ($1) {$2} else {$3}",
+      name: 'if/else statement',
+      body: 'if (${1:true}) {$2} else {$3}',
     },
     ifei: {
-      name: "if/else-if statement",
-      body: "if ($1) {$2} else if ($3) {$4}",
+      name: 'if/else-if statement',
+      body: 'if (${1:true}) {$2} else if ($3) {$4}',
     },
     el: {
-      name: "else statement",
-      body: "else {\n\t$0\n}",
+      name: 'else statement',
+      body: 'else {\n\t$0\n}',
     },
     ei: {
-      name: "else if statement",
-      body: "else if ($1) {$2}",
+      name: 'else if statement',
+      body: 'else if ($1) {$2}',
     },
     ter: {
-      name: "ternary operator",
-      body: "$1 ? $2 : $3",
+      name: 'ternary operator',
+      body: '$1 ? $2 : $3',
     },
     tera: {
-      name: "ternary expression assignment",
-      body: "const $1 = $2 ? $3 : $4",
+      name: 'ternary expression assignment',
+      body: 'const ${1:name} = $2 ? $3 : $4',
     },
-    // TODO: better implementation
     sw: {
-      name: "switch",
+      name: 'switch',
       body: [
-        "switch ($1) {\n\tcase $2 : $3\n\tdefault: $0\n}",
+        'switch ($1) {\n\tcase $2 : $3\n\tdefault: $0\n}',
       ],
     },
     scase: {
-      name: "switch case",
-      body: "case $1 : $2",
+      name: 'switch case',
+      body: 'case $1 : $2',
     },
     tc: {
-      name: "try/catch",
+      name: 'try/catch',
       body: [
-        "try {",
-        "\t$1",
-        "} catch (error) {",
-        "\t$0",
-        "}",
+        'try {',
+        '\t$1',
+        '} catch (err) {',
+        '\t$0',
+        '}',
       ],
     },
     tcf: {
-      name: "try/catch/finally",
+      name: 'try/catch/finally',
       body: [
-        "try {",
-        "\t$1",
-        "} catch (error) {",
-        "\t$2",
-        "} finally {",
-        "\t$3",
-        "}",
+        'try {',
+        '\t$1',
+        '} catch (err) {',
+        '\t$2',
+        '} finally {',
+        '\t$3',
+        '}',
       ],
     },
     tf: {
-      name: "try/finally",
+      name: 'try/finally',
       body: [
-        "try {",
-        "\t$1",
-        "} finally {",
-        "\t$2",
-        "}",
+        'try {',
+        '\t$1',
+        '} finally {',
+        '\t$2',
+        '}',
       ],
     },
   },
-};
+}

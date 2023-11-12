@@ -1,10 +1,6 @@
-import { replaceInFile } from "../deps.ts";
-import { VscSnippetDefinition, VscSnippetVariant } from "../models/app.ts";
-import {
-  parseMultiline,
-  replaceSymbol,
-  replaceTabs,
-} from "../utils/general.ts";
+import { replaceInFile } from '../deps.ts'
+import { VscSnippetDefinition, VscSnippetVariant } from '../models/app.ts'
+import { parseMultiline, replaceSymbol, replaceTabs } from '../utils/general.ts'
 import {
   $col,
   $colCode,
@@ -14,42 +10,42 @@ import {
   htmlComment,
   joinByDoubleNewLine,
   joinByNewLine,
-} from "./table-html.ts";
+} from './table-html.ts'
 
 type SnippetRow = {
-  prefix: string;
-  name: string;
-  body: string | string[];
-};
+  prefix: string
+  name: string
+  body: string | string[]
+}
 
 const truncateOptions = (str: string) => {
-  const regex = /\|([^|]+)\|/g;
+  const regex = /\|([^|]+)\|/g
   return str.replace(regex, (_match, p1) => {
-    const [first] = p1.split(",").map((o: string) => o.trim());
-    return `|${first},...|`;
-  });
-};
+    const [first] = p1.split(',').map((o: string) => o.trim())
+    return `|${first},...|`
+  })
+}
 
 const snippetRow = ({ prefix, name, body }: SnippetRow) => {
   const cols = joinByNewLine([
     $colCode(prefix),
     $col(name),
     $colCodeBlock(truncateOptions(replaceTabs(parseMultiline(body)))),
-  ]);
+  ])
 
-  return $row(cols);
-};
+  return $row(cols)
+}
 
 const generateSnippetTable = (items: SnippetRow[]) => {
-  const headings = ["Prefix", "Name", "Body"];
-  const rows = items.map(snippetRow);
+  const headings = ['Prefix', 'Name', 'Body']
+  const rows = items.map(snippetRow)
 
-  return $table(headings, rows);
-};
+  return $table(headings, rows)
+}
 
 const generateSnippetSection = ({ meta, snippets }: VscSnippetDefinition) => {
-  const title = `### ${meta.title}`;
-  const description = meta.description ?? "";
+  const title = `### ${meta.title}`
+  const description = meta.description ?? ''
   const table = generateSnippetTable(
     Object.entries(snippets).map(([name, { body, prefix, description }]) => ({
       name: replaceSymbol(name),
@@ -57,56 +53,56 @@ const generateSnippetSection = ({ meta, snippets }: VscSnippetDefinition) => {
       prefix: parseMultiline(prefix),
       description,
     })),
-  );
+  )
 
-  return joinByNewLine([title, description, table, ""]);
-};
+  return joinByNewLine([title, description, table, ''])
+}
 
 const generateVariantSection = (variant: VscSnippetVariant) => {
-  const title = `## ${variant.label}`;
-  const description = variant.description ?? "";
-  const sections = variant.snippetDefinitions.map(generateSnippetSection);
+  const title = `## ${variant.label}`
+  const description = variant.description ?? ''
+  const sections = variant.snippetDefinitions.map(generateSnippetSection)
 
-  return joinByNewLine([title, description, "", ...sections]);
-};
+  return joinByNewLine([title, description, '', ...sections])
+}
 
 export const generateDocs = (variants: VscSnippetVariant[]) => {
-  return joinByDoubleNewLine(variants.map(generateVariantSection));
-};
+  return joinByDoubleNewLine(variants.map(generateVariantSection))
+}
 
-const docsGenId = "docs-gen";
+const docsGenId = 'docs-gen'
 const docsGen = {
   start: htmlComment(`START:${docsGenId}`),
   end: htmlComment(`END:${docsGenId}`),
-};
+}
 
 const docsBlock = (s: string) => {
-  return joinByNewLine([docsGen.start, s, docsGen.end]);
-};
+  return joinByNewLine([docsGen.start, s, docsGen.end])
+}
 
 export const populateDocsBlock = async (input: string) => {
   const regex = new RegExp(
     `${docsGen.start}[\\s\\S]*?${docsGen.end}`,
-    "g",
-  );
+    'g',
+  )
 
-  const file = "./README.md";
+  const file = './README.md'
   const options = {
     files: file,
     from: regex,
     to: docsBlock(input),
-  };
+  }
 
   try {
-    const results = await replaceInFile(options);
-    const readmeResult = results.find((r) => r.file === file);
+    const results = await replaceInFile(options)
+    const readmeResult = results.find((r) => r.file === file)
 
     if (readmeResult?.hasChanged) {
-      console.log("✅ README updated");
+      console.log('✅ README updated')
     } else {
-      console.log("👍 README already up to date");
+      console.log('👍 README already up to date')
     }
   } catch (error) {
-    console.error("Error while updating README:", error);
+    console.error('Error while updating README:', error)
   }
-};
+}
