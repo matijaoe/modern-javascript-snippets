@@ -5,7 +5,7 @@ export const returns: XSnippetDefinition = {
     title: 'Returns and exceptions',
   },
   snippets: {
-    re: {
+    ret: {
       name: 'return',
       body: 'return $0',
     },
@@ -17,7 +17,7 @@ export const returns: XSnippetDefinition = {
       name: 'return object inline',
       body: 'return ({$0})',
     },
-    te: {
+    terr: {
       name: 'throw error',
       body: 'throw new ${1|Error,TypeError,RangeError|}($0)',
     },

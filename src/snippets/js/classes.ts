@@ -13,6 +13,10 @@ export const classes: XSnippetDefinition = {
       name: 'class extends',
       body: 'class $1 extends ${2:Base} {\n\t$0\n}',
     },
+    csp: {
+      name: 'class proprety',
+      body: '${1:name} = ${2:value}',
+    },
     csc: {
       name: 'class with constructor',
       body: [

@@ -7,15 +7,15 @@ export const flowControl: XSnippetDefinition = {
   snippets: {
     iff: {
       name: 'if statement',
-      body: 'if ($1) {$2}',
+      body: 'if (${1:true}) {$2}',
     },
     ifel: {
       name: 'if/else statement',
-      body: 'if ($1) {$2} else {$3}',
+      body: 'if (${1:true}) {$2} else {$3}',
     },
     ifei: {
       name: 'if/else-if statement',
-      body: 'if ($1) {$2} else if ($3) {$4}',
+      body: 'if (${1:true}) {$2} else if ($3) {$4}',
     },
     el: {
       name: 'else statement',
@@ -31,9 +31,8 @@ export const flowControl: XSnippetDefinition = {
     },
     tera: {
       name: 'ternary expression assignment',
-      body: 'const $1 = $2 ? $3 : $4',
+      body: 'const ${1:name} = $2 ? $3 : $4',
     },
-    // TODO: better implementation
     sw: {
       name: 'switch',
       body: [
@@ -49,7 +48,7 @@ export const flowControl: XSnippetDefinition = {
       body: [
         'try {',
         '\t$1',
-        '} catch (error) {',
+        '} catch (err) {',
         '\t$0',
         '}',
       ],
@@ -59,7 +58,7 @@ export const flowControl: XSnippetDefinition = {
       body: [
         'try {',
         '\t$1',
-        '} catch (error) {',
+        '} catch (err) {',
         '\t$2',
         '} finally {',
         '\t$3',

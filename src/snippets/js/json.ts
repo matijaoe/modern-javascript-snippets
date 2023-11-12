@@ -5,21 +5,17 @@ export const json: XSnippetDefinition = {
     title: 'JSON',
   },
   snippets: {
-    jp: {
+    jsp: {
       name: 'JSON parse',
       body: 'JSON.parse(${1:json})',
     },
-    js: {
+    jss: {
       name: 'JSON stringify',
       body: 'JSON.stringify(${1:value})',
     },
-    jsf: {
+    jssf: {
       name: 'JSON stringify (formatted)',
       body: 'JSON.stringify(${1:value}, null, 2)',
-    },
-    jss: {
-      name: 'JSON.stringify if not string',
-      body: 'typeof $1 === \'string\' ? $1 : JSON.stringify($1)',
     },
   },
 }

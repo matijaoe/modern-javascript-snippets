@@ -18,7 +18,7 @@ export const arrayMethods: XSnippetDefinition = {
       body: '$1.map((${2:item}) => ${3})',
     },
     fmap: {
-      name: 'Array.map()',
+      name: 'Array.flatMap()',
       body: '$1.flatMap((${2:item}) => ${3})',
     },
     reduce: {
@@ -65,24 +65,27 @@ export const arrayMethods: XSnippetDefinition = {
       name: 'Array.sort(',
       body: '$1.sort((${2:a}, ${3:b}) => $4)',
     },
-    // TODO: experimental
-    // group: {
-    //   name: "Array.group()",
-    //   body: "$1.group((${2:item}) => $3)",
-    // },
-    // groupMap: {
-    //   name: "Array.groupToMap()",
-    //   body: "$1.groupToMap((${2:item}) => $3)",
-    // },
+    group: {
+      name: 'Array.group()',
+      body: '$1.group((${2:item}) => $3)',
+    },
+    groupMap: {
+      name: 'Array.groupToMap()',
+      body: '$1.groupToMap((${2:item}) => $3)',
+    },
     mapStr: {
-      name: 'Array.map() as string',
+      name: 'Array.map() to string',
       body: '$1.map(String)',
     },
     mapNum: {
-      name: 'Array.map() as number',
+      name: 'Array.map() to number',
       body: '$1.map(Number)',
     },
-    filterTrue: {
+    mapBool: {
+      name: 'Array.map() to boolean',
+      body: '$1.map(Boolean)',
+    },
+    filterTruthy: {
       name: 'Array.filter() truthy',
       body: '$1.filter(Boolean)',
     },

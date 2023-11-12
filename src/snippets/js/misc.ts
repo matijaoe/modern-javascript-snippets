@@ -9,11 +9,11 @@ export const misc: XSnippetDefinition = {
       name: '\'use strict\' statement',
       body: '\'use strict\'',
     },
-    pse: {
+    prs: {
       name: 'process.server',
       body: 'process.server',
     },
-    pcl: {
+    prc: {
       name: 'process.client',
       body: 'process.client',
     },
@@ -22,7 +22,7 @@ export const misc: XSnippetDefinition = {
       body: 'process.env.$0',
     },
     envv: {
-      name: 'env variable (vite)',
+      name: 'env variable (meta)',
       body: 'import.meta.env.$0',
     },
   },

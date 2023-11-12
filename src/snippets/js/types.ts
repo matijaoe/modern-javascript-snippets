@@ -11,6 +11,10 @@ export const types: XSnippetDefinition = {
     },
     tof: {
       name: 'typeof',
+      body: 'typeof $1',
+    },
+    tofc: {
+      name: 'typeof check',
       body:
         'typeof $1 === \'${2|undefined,string,number,object,function,boolean,symbol,bigint|}\'',
     },

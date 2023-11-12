@@ -68,8 +68,8 @@ your code automatically formatted to your preference.
 - Truncated in documentation, for easier viewing → `${1|one,...|}`.
 
 <!-- START:docs-gen -->
-
 ## Snippets
+
 
 ### Assignments
 
@@ -82,36 +82,12 @@ your code automatically formatted to your preference.
 </tr>
 
 <tr>
-<td><code>c</code></td>
-<td>const</td>
-<td>
-
-```javascript
-const $0
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>l</code></td>
-<td>let</td>
-<td>
-
-```javascript
-let $0
-```
-
-</td>
-</tr>
-
-<tr>
 <td><code>ca</code></td>
 <td>const assignment</td>
 <td>
 
 ```javascript
-const $1 = $2
+const ${1:name} = $2
 ```
 
 </td>
@@ -123,7 +99,7 @@ const $1 = $2
 <td>
 
 ```javascript
-let $1 = $2
+let ${1:name} = $2
 ```
 
 </td>
@@ -135,7 +111,7 @@ let $1 = $2
 <td>
 
 ```javascript
-const $1 = '$2'
+const ${1:name} = '$2'
 ```
 
 </td>
@@ -147,19 +123,19 @@ const $1 = '$2'
 <td>
 
 ```javascript
-let $1 = '$2'
+let ${1:name} = '$2'
 ```
 
 </td>
 </tr>
 
 <tr>
-<td><code>car</code></td>
+<td><code>caa</code></td>
 <td>const array assignment</td>
 <td>
 
 ```javascript
-const $1 = [$0]
+const ${1:arr} = [$0]
 ```
 
 </td>
@@ -171,7 +147,7 @@ const $1 = [$0]
 <td>
 
 ```javascript
-const $1 = { $0 }
+const ${1:obj} = { $0 }
 ```
 
 </td>
@@ -183,7 +159,7 @@ const $1 = { $0 }
 <td>
 
 ```javascript
-const { $2 } = ${1:object};
+const { $2 } = ${1:obj}$0
 ```
 
 </td>
@@ -195,7 +171,7 @@ const { $2 } = ${1:object};
 <td>
 
 ```javascript
-const [$2] = ${1:array};
+const [$2] = ${1:arr}$0
 ```
 
 </td>
@@ -218,7 +194,7 @@ const [$2] = ${1:array};
 <td>
 
 ```javascript
-function $1($2) {
+function ${1:fn}($2) {
   $0
 }
 ```
@@ -232,7 +208,7 @@ function $1($2) {
 <td>
 
 ```javascript
-async function $1($2) {
+async function ${1:fn}($2) {
   $0
 }
 ```
@@ -246,7 +222,7 @@ async function $1($2) {
 <td>
 
 ```javascript
-const ${1} = ($2) => {$0}
+const ${1:fn} = ($2) => {$0}
 ```
 
 </td>
@@ -258,9 +234,7 @@ const ${1} = ($2) => {$0}
 <td>
 
 ```javascript
-const $1 = async ($2) => {
-  $0
-}
+const ${1:fn} = async ($2) => {$0}
 ```
 
 </td>
@@ -272,7 +246,19 @@ const $1 = async ($2) => {
 <td>
 
 ```javascript
-;(($1) => $0)
+($1) => $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>arr</code></td>
+<td>arrow function arrow</td>
+<td>
+
+```javascript
+=> $0
 ```
 
 </td>
@@ -284,7 +270,7 @@ const $1 = async ($2) => {
 <td>
 
 ```javascript
-;(async ($1) => $0)
+async ($1) => $0
 ```
 
 </td>
@@ -296,9 +282,9 @@ const $1 = async ($2) => {
 <td>
 
 ```javascript
-;(($1) => {
+($1) => {
   $0
-})
+}
 ```
 
 </td>
@@ -310,9 +296,9 @@ const $1 = async ($2) => {
 <td>
 
 ```javascript
-;(async ($1) => {
+async ($1) => {
   $0
-})
+}
 ```
 
 </td>
@@ -324,7 +310,7 @@ const $1 = async ($2) => {
 <td>
 
 ```javascript
-;(($1) => {
+(($1) => {
   $0
 })($2)
 ```
@@ -349,7 +335,7 @@ const $1 = async ($2) => {
 <td>
 
 ```javascript
-if ($1) $2
+if (${1:true}) {$2}
 ```
 
 </td>
@@ -361,8 +347,7 @@ if ($1) $2
 <td>
 
 ```javascript
-if ($1) $2
-else $3
+if (${1:true}) {$2} else {$3}
 ```
 
 </td>
@@ -374,8 +359,7 @@ else $3
 <td>
 
 ```javascript
-if ($1) $2
-else if ($3) $4
+if (${1:true}) {$2} else if ($3) {$4}
 ```
 
 </td>
@@ -425,7 +409,7 @@ $1 ? $2 : $3
 <td>
 
 ```javascript
-const $1 = $2 ? $3 : $4
+const ${1:name} = $2 ? $3 : $4
 ```
 
 </td>
@@ -438,10 +422,8 @@ const $1 = $2 ? $3 : $4
 
 ```javascript
 switch ($1) {
-  case $2:
-    $3
-  default:
-    $0
+  case $2 : $3
+  default: $0
 }
 ```
 
@@ -468,7 +450,7 @@ case $1 : $2
 ```javascript
 try {
   $1
-} catch (error) {
+} catch (err) {
   $0
 }
 ```
@@ -484,7 +466,7 @@ try {
 ```javascript
 try {
   $1
-} catch (error) {
+} catch (err) {
   $2
 } finally {
   $3
@@ -522,12 +504,12 @@ try {
 </tr>
 
 <tr>
-<td><code>fl</code></td>
-<td>for loop</td>
+<td><code>flr</code></td>
+<td>for loop (range)</td>
 <td>
 
 ```javascript
-for (let ${1:i} = 0, ${2:len} = ${3:iter}.length; ${1:i} < ${2:len}; ${1:i}++) {
+for (let ${1:i} = 0; ${1:i} < ${2:5}; ${1:i}++) {
   $0
 }
 ```
@@ -542,20 +524,6 @@ for (let ${1:i} = 0, ${2:len} = ${3:iter}.length; ${1:i} < ${2:len}; ${1:i}++) {
 
 ```javascript
 for (let ${1:i} = ${2:iter}.length - 1; ${1:i} >= 0; ${1:i}--) {
-  $0
-}
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>flr</code></td>
-<td>for loop (range)</td>
-<td>
-
-```javascript
-for (let ${1:i} = 0; ${1:i} < ${2:5}; ${1:i}++) {
   $0
 }
 ```
@@ -667,6 +635,18 @@ class $1 {
 class $1 extends ${2:Base} {
   $0
 }
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>csp</code></td>
+<td>class proprety</td>
+<td>
+
+```javascript
+${1:name} = ${2:value}
 ```
 
 </td>
@@ -829,8 +809,20 @@ $1.forEach((${2:item}) => {
 </tr>
 
 <tr>
-<td><code>fmap</code></td>
+<td><code>map</code></td>
 <td>Array.map()</td>
+<td>
+
+```javascript
+$1.map((${2:item}) => ${3})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>fmap</code></td>
+<td>Array.flatMap()</td>
 <td>
 
 ```javascript
@@ -977,8 +969,32 @@ $1.sort((${2:a}, ${3:b}) => $4)
 </tr>
 
 <tr>
+<td><code>group</code></td>
+<td>Array.group()</td>
+<td>
+
+```javascript
+$1.group((${2:item}) => $3)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>groupMap</code></td>
+<td>Array.groupToMap()</td>
+<td>
+
+```javascript
+$1.groupToMap((${2:item}) => $3)
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>mapStr</code></td>
-<td>Array.map() as string</td>
+<td>Array.map() to string</td>
 <td>
 
 ```javascript
@@ -990,7 +1006,7 @@ $1.map(String)
 
 <tr>
 <td><code>mapNum</code></td>
-<td>Array.map() as number</td>
+<td>Array.map() to number</td>
 <td>
 
 ```javascript
@@ -1001,7 +1017,19 @@ $1.map(Number)
 </tr>
 
 <tr>
-<td><code>filterTrue</code></td>
+<td><code>mapBool</code></td>
+<td>Array.map() to boolean</td>
+<td>
+
+```javascript
+$1.map(Boolean)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>filterTruthy</code></td>
 <td>Array.filter() truthy</td>
 <td>
 
@@ -1053,7 +1081,7 @@ import { $2 } from '${1:module}'
 <td>
 
 ```javascript
-import $2 from '${1:module}'
+import ${2:thing} from '${1:module}'
 ```
 
 </td>
@@ -1065,7 +1093,7 @@ import $2 from '${1:module}'
 <td>
 
 ```javascript
-import ${2:*} as ${3:name} from '${1:module}';
+import ${2:*} as ${3:name} from '${1:module}'
 ```
 
 </td>
@@ -1114,18 +1142,6 @@ await import('$0')
 
 ```javascript
 import.meta.$0
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ime</code></td>
-<td>import meta env</td>
-<td>
-
-```javascript
-import.meta.env.$0
 ```
 
 </td>
@@ -1248,7 +1264,7 @@ export const ${1:name} = ($2) => {$0}
 <td>
 
 ```javascript
-fetch($1).then((res) => res.json())
+await fetch($1).then(res => res.json())
 ```
 
 </td>
@@ -1267,7 +1283,7 @@ const ${1|data,...|} = await fetch($2).then(res => res.json())
 </tr>
 
 <tr>
-<td><code>pr</code></td>
+<td><code>npr</code></td>
 <td>promise</td>
 <td>
 
@@ -1281,7 +1297,7 @@ new Promise((resolve, reject) => {
 </tr>
 
 <tr>
-<td><code>prs</code></td>
+<td><code>prr</code></td>
 <td>Promise.resolve</td>
 <td>
 
@@ -1334,8 +1350,7 @@ $1.catch((${2:err}) => $0)
 <td>
 
 ```javascript
-$1
-  .then((${2:value}) => $3)
+$1.then((${2:value}) => $3)
   .catch((${4:err}) => $5)
 ```
 
@@ -1380,9 +1395,7 @@ Promise.any($1)
 </table>
 
 ### Literals, operators, expressions
-
 Grouping them all together for now
-
 <table width="100%">
 
 <tr>
@@ -1392,40 +1405,24 @@ Grouping them all together for now
 </tr>
 
 <tr>
-<td><code>al</code></td>
+<td><code>arr</code></td>
 <td>array literal</td>
 <td>
 
 ```javascript
-;[$0]
+[$0]
 ```
 
 </td>
 </tr>
 
 <tr>
-<td><code>ol</code></td>
+<td><code>ob</code></td>
 <td>object literal</td>
 <td>
 
 ```javascript
-{
-  $1: $2, $0
-}
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ole</code></td>
-<td>object literal expanded</td>
-<td>
-
-```javascript
-{
-  $1: $2, $0
-}
+{ }
 ```
 
 </td>
@@ -1437,7 +1434,7 @@ Grouping them all together for now
 <td>
 
 ```javascript
-;`$0`
+`$0`
 ```
 
 </td>
@@ -1445,23 +1442,11 @@ Grouping them all together for now
 
 <tr>
 <td><code>tle</code></td>
-<td>template literal expression</td>
-<td>
-
-```javascript
-;`$1${$2}$3`
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>tlo</code></td>
 <td>template literal operation</td>
 <td>
 
 ```javascript
-${$1}$0
+${${1:name}}$0
 ```
 
 </td>
@@ -1497,7 +1482,7 @@ new Map($1)
 <td>
 
 ```javascript
-;[...$1]
+[...$1]
 ```
 
 </td>
@@ -1540,12 +1525,72 @@ new Map($1)
 </tr>
 
 <tr>
+<td><code>lt</code></td>
+<td>less than (<)</td>
+<td>
+
+```javascript
+< $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>lte</code></td>
+<td>less than or equal to (<=)</td>
+<td>
+
+```javascript
+<= $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>gt</code></td>
+<td>greater than (>)</td>
+<td>
+
+```javascript
+> $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>gte</code></td>
+<td>greater than or equal to (>=)</td>
+<td>
+
+```javascript
+>= $0
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>nc</code></td>
 <td>nullish coalescing (??)</td>
 <td>
 
 ```javascript
 ?? $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>neq</code></td>
+<td>strict non-equality (===)</td>
+<td>
+
+```javascript
+!== $0
 ```
 
 </td>
@@ -1564,60 +1609,12 @@ new Map($1)
 </tr>
 
 <tr>
-<td><code>ore</code></td>
-<td>logical OR expression</td>
-<td>
-
-```javascript
-$1 || $0
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>ande</code></td>
-<td>logical AND expression</td>
-<td>
-
-```javascript
-$1 && $0
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>nce</code></td>
-<td>nullish coalescing expression (??)</td>
-<td>
-
-```javascript
-$1 ?? $0
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>eqe</code></td>
-<td>strict equality expression</td>
-<td>
-
-```javascript
-$1 === $0
-```
-
-</td>
-</tr>
-
-<tr>
 <td><code>ora</code></td>
 <td>logical OR assignment (||=)</td>
 <td>
 
 ```javascript
-$1 ||= $0
+||= $0
 ```
 
 </td>
@@ -1629,7 +1626,67 @@ $1 ||= $0
 <td>
 
 ```javascript
-$1 ??= $0
+??= $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>plus</code></td>
+<td>addition</td>
+<td>
+
+```javascript
++ $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>minus</code></td>
+<td>subtraction</td>
+<td>
+
+```javascript
+- $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>mul</code></td>
+<td>multiplication</td>
+<td>
+
+```javascript
+* $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>div</code></td>
+<td>division</td>
+<td>
+
+```javascript
+/ $0
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>mod</code></td>
+<td>modulo</td>
+<td>
+
+```javascript
+% $0
 ```
 
 </td>
@@ -1641,7 +1698,7 @@ $1 ??= $0
 <td>
 
 ```javascript
-$1 += ${0:1}
++= ${0:1}
 ```
 
 </td>
@@ -1653,31 +1710,43 @@ $1 += ${0:1}
 <td>
 
 ```javascript
-$1 -= ${0:1}
+-= ${0:1}
 ```
 
 </td>
 </tr>
 
 <tr>
-<td><code>mul</code></td>
+<td><code>mula</code></td>
 <td>multiplication assignment</td>
 <td>
 
 ```javascript
-$1 *= ${0:1}
+*= ${0:1}
 ```
 
 </td>
 </tr>
 
 <tr>
-<td><code>div</code></td>
+<td><code>diva</code></td>
 <td>division assignment</td>
 <td>
 
 ```javascript
-$1 /= ${0:1}
+/= ${0:1}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>col</code></td>
+<td>colon</td>
+<td>
+
+```javascript
+: 
 ```
 
 </td>
@@ -1783,7 +1852,7 @@ parseFloat($1)
 <td>
 
 ```javascript
-;[...new Set($0)]
+[...new Set($0)]
 ```
 
 </td>
@@ -1814,7 +1883,7 @@ navigator.clipboard.writeText($1)
 </tr>
 
 <tr>
-<td><code>nur</code></td>
+<td><code>nurl</code></td>
 <td>new URL</td>
 <td>
 
@@ -1826,12 +1895,24 @@ new URL($1)
 </tr>
 
 <tr>
-<td><code>usp</code></td>
+<td><code>sp</code></td>
 <td>url search params</td>
 <td>
 
 ```javascript
-new URL($1).searchParams
+new URLSearchParams($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>spa</code></td>
+<td>url search params assignment</td>
+<td>
+
+```javascript
+const ${1:params} = new URLSearchParams($2)
 ```
 
 </td>
@@ -1843,7 +1924,7 @@ new URL($1).searchParams
 <td>
 
 ```javascript
-$1.searchParams.get($2)
+${1:params}.get($2)
 ```
 
 </td>
@@ -1855,7 +1936,7 @@ $1.searchParams.get($2)
 <td>
 
 ```javascript
-$1.searchParams.set($2, $3)
+${1:params}.set($2, $3)
 ```
 
 </td>
@@ -1873,7 +1954,7 @@ $1.searchParams.set($2, $3)
 </tr>
 
 <tr>
-<td><code>re</code></td>
+<td><code>ret</code></td>
 <td>return</td>
 <td>
 
@@ -1891,7 +1972,7 @@ return $0
 
 ```javascript
 return {
-  $0,
+  $0
 }
 ```
 
@@ -1904,14 +1985,14 @@ return {
 <td>
 
 ```javascript
-return ({ $0 })
+return ({$0})
 ```
 
 </td>
 </tr>
 
 <tr>
-<td><code>te</code></td>
+<td><code>terr</code></td>
 <td>throw error</td>
 <td>
 
@@ -1941,7 +2022,7 @@ throw new ${1|Error,...|}($0)
 ```javascript
 setInterval(() => {
   $0
-}, ${1:delay});
+}, ${1:1000})
 ```
 
 </td>
@@ -1955,7 +2036,7 @@ setInterval(() => {
 ```javascript
 setTimeout(() => {
   $0
-}, ${1:delay});
+}, ${1:1000})
 ```
 
 </td>
@@ -1976,7 +2057,7 @@ setImmediate(() => {
 </tr>
 
 <tr>
-<td><code>nt</code></td>
+<td><code>prnt</code></td>
 <td>process next tick</td>
 <td>
 
@@ -2001,7 +2082,7 @@ process.nextTick(() => {
 </tr>
 
 <tr>
-<td><code>jp</code></td>
+<td><code>jsp</code></td>
 <td>JSON parse</td>
 <td>
 
@@ -2013,7 +2094,7 @@ JSON.parse(${1:json})
 </tr>
 
 <tr>
-<td><code>js</code></td>
+<td><code>jss</code></td>
 <td>JSON stringify</td>
 <td>
 
@@ -2025,24 +2106,12 @@ JSON.stringify(${1:value})
 </tr>
 
 <tr>
-<td><code>jsf</code></td>
+<td><code>jssf</code></td>
 <td>JSON stringify (formatted)</td>
 <td>
 
 ```javascript
 JSON.stringify(${1:value}, null, 2)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>jss</code></td>
-<td>JSON.stringify if not string</td>
-<td>
-
-```javascript
-typeof $1 === 'string' ? $1 : JSON.stringify($1)
 ```
 
 </td>
@@ -2206,6 +2275,18 @@ console.log('$1 :', $1$2)
 </tr>
 
 <tr>
+<td><code>cil</code></td>
+<td>console.info (labeled)</td>
+<td>
+
+```javascript
+console.info('$1 :', $1$2)
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>cel</code></td>
 <td>console.error (labeled)</td>
 <td>
@@ -2247,6 +2328,18 @@ console.warn('$1 :', ${2:$1})
 
 ```javascript
 new Date($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nds</code></td>
+<td>new Date() with date string</td>
+<td>
+
+```javascript
+new Date('${1:2023}-${2:|01,...|}-${3:31}')
 ```
 
 </td>
@@ -2400,7 +2493,7 @@ const $1 = require('${1:module}')
 <td>
 
 ```javascript
-module.exports = { $1 }
+module.exports = {$1}
 ```
 
 </td>
@@ -2408,9 +2501,7 @@ module.exports = { $1 }
 </table>
 
 ### Intl
-
 Internationalization API
-
 <table width="100%">
 
 <tr>
@@ -2425,7 +2516,7 @@ Internationalization API
 <td>
 
 ```javascript
-new Intl.NumberFormat('${1|en-US,...|}'$3).format($2);
+new Intl.NumberFormat('${1|en-US,...|}'$3).format($2)
 ```
 
 </td>
@@ -2438,8 +2529,7 @@ new Intl.NumberFormat('${1|en-US,...|}'$3).format($2);
 
 ```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
-  style: '${3|decimal,...|}',
-  $4,
+  style: '${3|decimal,...|}',$4
 }).format($2)
 ```
 
@@ -2454,8 +2544,7 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 ```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
   style: 'currency',
-  currency: '${3|USD,...|}',
-  $4,
+  currency: '${3|USD,...|}',$4
 }).format($2)
 ```
 
@@ -2469,8 +2558,7 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 
 ```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
-  style: 'percent',
-  $3,
+  style: 'percent',$3
 }).format($2)
 ```
 
@@ -2486,8 +2574,7 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 new Intl.NumberFormat('${1|en-US,...|}', {
   style: 'unit',
   unit: '${3|acceleration-g-force,...|}',
-  unitDisplay: '${4|long,...|}',
-  $0,
+  unitDisplay: '${4|long,...|}',$0
 }).format($2)
 ```
 
@@ -2500,7 +2587,7 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 <td>
 
 ```javascript
-new Intl.DateTimeFormat('${1|en-US,...|}'$3).format($2);
+new Intl.DateTimeFormat('${1|en-US,...|}'$3).format($2)
 ```
 
 </td>
@@ -2512,9 +2599,8 @@ new Intl.DateTimeFormat('${1|en-US,...|}'$3).format($2);
 <td>
 
 ```javascript
-new Intl.DateTimeFormat('${1|en-US,...|}', {
-  dateStyle: '$3',
-  $0,
+new Intl.DateTimeFormat ('${1|en-US,...|}', {
+  dateStyle: '$3',$0
 }).format($2)
 ```
 
@@ -2547,6 +2633,18 @@ Array.isArray($0)
 <tr>
 <td><code>tof</code></td>
 <td>typeof</td>
+<td>
+
+```javascript
+typeof $1
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>tofc</code></td>
+<td>typeof check</td>
 <td>
 
 ```javascript
@@ -2755,6 +2853,41 @@ afterEach(() => {
 </tr>
 </table>
 
+### Globals
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>wlo</code></td>
+<td>window.location</td>
+<td>
+
+```javascript
+window.location
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>wlh</code></td>
+<td>window.location.href</td>
+<td>
+
+```javascript
+window.location.href
+```
+
+</td>
+</tr>
+</table>
+
 ### Misc
 
 <table width="100%">
@@ -2778,7 +2911,7 @@ afterEach(() => {
 </tr>
 
 <tr>
-<td><code>pse</code></td>
+<td><code>prs</code></td>
 <td>process.server</td>
 <td>
 
@@ -2790,7 +2923,7 @@ process.server
 </tr>
 
 <tr>
-<td><code>pcl</code></td>
+<td><code>prc</code></td>
 <td>process.client</td>
 <td>
 
@@ -2815,7 +2948,7 @@ process.env.$0
 
 <tr>
 <td><code>envv</code></td>
-<td>env variable (vite)</td>
+<td>env variable (meta)</td>
 <td>
 
 ```javascript
@@ -2826,8 +2959,8 @@ import.meta.env.$0
 </tr>
 </table>
 
-## TypeScript
 
+## TypeScript
 Available only where TypeScript is supported
 
 ### Declarations
@@ -2846,7 +2979,7 @@ Available only where TypeScript is supported
 <td>
 
 ```javascript
-const $1: ${2:string} = $3;
+const ${1:name}: ${2:string} = $3
 ```
 
 </td>
@@ -2858,7 +2991,7 @@ const $1: ${2:string} = $3;
 <td>
 
 ```javascript
-let $1: ${2:string} = $3;
+let ${1:name}: ${2:string} = $3
 ```
 
 </td>
@@ -2870,7 +3003,7 @@ let $1: ${2:string} = $3;
 <td>
 
 ```javascript
-const $1: ${2:string}[] = [$0];
+const ${1:arr}: ${2:string}[] = [$0]
 ```
 
 </td>
@@ -2882,7 +3015,7 @@ const $1: ${2:string}[] = [$0];
 <td>
 
 ```javascript
-const $1: ${2:object} = { $0 };
+const ${1:obj}: ${2:object} = { $0 }
 ```
 
 </td>
@@ -2933,7 +3066,7 @@ interface ${1:Model} extends ${2:Base} {
 <td>
 
 ```javascript
-type ${1:Model} = $0
+type ${1:Model} = $2
 ```
 
 </td>
@@ -2945,7 +3078,7 @@ type ${1:Model} = $0
 <td>
 
 ```javascript
-type ${1:Model} = $2 | $3
+type ${1:Model} = ${2:string} | ${3:number}
 ```
 
 </td>
@@ -2958,6 +3091,65 @@ type ${1:Model} = $2 | $3
 
 ```javascript
 type ${1:Model} = $2 & $3
+```
+
+</td>
+</tr>
+</table>
+
+### DOM
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>qst</code></td>
+<td>query selector (typed)</td>
+<td>
+
+```javascript
+${1:document}.querySelector<${2|HTMLElement,...|}>('$3')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>qsat</code></td>
+<td>query selector all (typed)</td>
+<td>
+
+```javascript
+${1:document}.querySelectorAll<${2|HTMLElement,...|}>('$3')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>qsaat</code></td>
+<td>query selector all as array (typed)</td>
+<td>
+
+```javascript
+[...${1:document}.querySelectorAll<${2|HTMLElement,...|}>('$3')]
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>gidt</code></td>
+<td>get element by id (typed)</td>
+<td>
+
+```javascript
+${1:document}.getElementById<${2|HTMLElement,...|}>('$3')
 ```
 
 </td>

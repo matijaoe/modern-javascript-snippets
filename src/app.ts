@@ -41,10 +41,7 @@ const main = () => {
     })
   }
 
-  const testing = 34
-  console.log(testing)
-
-  // important to know it generates docs off of defined xSnippets
+  // important to know it generates docs based on defined xSnippets
   // so .code-snippets could be out of date if you haven't run --snippets
   if (flags.docs) {
     console.log('\nGenerating docs...')

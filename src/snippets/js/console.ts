@@ -55,6 +55,10 @@ export const console = {
       name: 'console.log (labeled)',
       body: 'console.log(\'$1 :\', $1$2)',
     },
+    cil: {
+      name: 'console.info (labeled)',
+      body: 'console.info(\'$1 :\', $1$2)',
+    },
     cel: {
       name: 'console.error (labeled)',
       body: 'console.error(\'$1 :\', $1$2)',

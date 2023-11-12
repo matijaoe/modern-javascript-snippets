@@ -19,6 +19,7 @@ import { testing } from './testing.ts'
 import { timers } from './timers.ts'
 import { types } from './types.ts'
 import { utilities } from './utilities.ts'
+import { globals } from './globals.ts'
 import { intl } from './intl.ts'
 
 export const javascript = [
@@ -43,5 +44,6 @@ export const javascript = [
   intl,
   types,
   testing,
+  globals,
   misc,
 ]

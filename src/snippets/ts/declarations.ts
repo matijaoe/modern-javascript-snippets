@@ -7,19 +7,19 @@ export const declarations: XSnippetDefinition = {
   snippets: {
     cat: {
       name: 'const assignment (typed)',
-      body: 'const $1: ${2:string} = $3;',
+      body: 'const ${1:name}: ${2:string} = $3',
     },
     lat: {
       name: 'let assignment (typed)',
-      body: 'let $1: ${2:string} = $3;',
+      body: 'let ${1:name}: ${2:string} = $3',
     },
     caat: {
       name: 'array assignment (typed)',
-      body: 'const $1: ${2:string}[] = [$0];',
+      body: 'const ${1:arr}: ${2:string}[] = [$0]',
     },
     caot: {
       name: 'object assignment (typed)',
-      body: 'const $1: ${2:object} = { $0 };',
+      body: 'const ${1:obj}: ${2:object} = { $0 }',
     },
   },
 }

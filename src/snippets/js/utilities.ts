@@ -23,24 +23,27 @@ export const utilities: XSnippetDefinition = {
     },
     cp: {
       name: 'copy to clipboard',
-      body: 'navigator.clipboard.writeText($1);',
+      body: 'navigator.clipboard.writeText($1)',
     },
-    // TODO: wip
-    nur: {
+    nurl: {
       name: 'new URL',
       body: 'new URL($1)',
     },
-    usp: {
+    sp: {
       name: 'url search params',
-      body: 'new URL($1).searchParams',
+      body: 'new URLSearchParams($1)',
+    },
+    spa: {
+      name: 'url search params assignment',
+      body: 'const ${1:params} = new URLSearchParams($2)',
     },
     spg: {
       name: 'get search param',
-      body: '$1.searchParams.get($2)',
+      body: '${1:params}.get($2)',
     },
     sps: {
       name: 'set search param',
-      body: '$1.searchParams.set($2, $3)',
+      body: '${1:params}.set($2, $3)',
     },
   },
 }

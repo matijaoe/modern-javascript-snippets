@@ -5,19 +5,14 @@ export const loops: XSnippetDefinition = {
     title: 'Loops',
   },
   snippets: {
-    fl: {
-      name: 'for loop',
-      body:
-        'for (let ${1:i} = 0, ${2:len} = ${3:iter}.length; ${1:i} < ${2:len}; ${1:i}++) {\n\t$0\n}',
+    flr: {
+      name: 'for loop (range)',
+      body: 'for (let ${1:i} = 0; ${1:i} < ${2:5}; ${1:i}++) {\n\t$0\n}',
     },
     rfl: {
       name: 'reverse for loop',
       body:
         'for (let ${1:i} = ${2:iter}.length - 1; ${1:i} >= 0; ${1:i}--) {\n\t$0\n}',
-    },
-    flr: {
-      name: 'for loop (range)',
-      body: 'for (let ${1:i} = 0; ${1:i} < ${2:5}; ${1:i}++) {\n\t$0\n}',
     },
     fin: {
       name: 'for...in loop',

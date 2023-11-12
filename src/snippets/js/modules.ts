@@ -7,21 +7,20 @@ export const modules: XSnippetDefinition = {
   snippets: {
     im: {
       name: 'import from module',
-      body: 'import { $2 } from \'${1:module}\';',
+      body: 'import { $2 } from \'${1:module}\'',
     },
     imd: {
       name: 'import default',
-      body: 'import $2 from \'${1:module}\';',
+      body: 'import ${2:thing} from \'${1:module}\'',
     },
     ima: {
       name: 'import as',
-      body: 'import ${2:*} as ${3:name} from \'${1:module}\';',
+      body: 'import ${2:*} as ${3:name} from \'${1:module}\'',
     },
     imf: {
       name: 'import file',
-      body: 'import \'$1\';',
+      body: 'import \'$1\'',
     },
-    // TODO: decide on snippet prefix
     imp: {
       name: 'import dynamic',
       body: 'import(\'$0\')',
@@ -34,10 +33,6 @@ export const modules: XSnippetDefinition = {
       name: 'import meta',
       body: 'import.meta.$0',
     },
-    ime: {
-      name: 'import meta env',
-      body: 'import.meta.env.$0',
-    },
     ex: {
       name: 'export',
       body: 'export $0',
@@ -48,11 +43,11 @@ export const modules: XSnippetDefinition = {
     },
     exf: {
       name: 'export from',
-      body: 'export { $0 } from \'${1:module}\';',
+      body: 'export { $0 } from \'${1:module}\'',
     },
     exa: {
       name: 'export all from',
-      body: 'export * from \'${1:module}\';',
+      body: 'export * from \'${1:module}\'',
     },
     exo: {
       name: 'export object',

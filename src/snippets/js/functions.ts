@@ -7,23 +7,27 @@ export const functions: XSnippetDefinition = {
   snippets: {
     fn: {
       name: 'function',
-      body: 'function $1($2) {\n\t$0\n}',
+      body: 'function ${1:fn}($2) {\n\t$0\n}',
     },
     fna: {
       name: 'async function',
-      body: 'async function $1($2) {\n\t$0\n}',
+      body: 'async function ${1:fn}($2) {\n\t$0\n}',
     },
     nfn: {
       name: 'named arrow function',
-      body: 'const ${1} = ($2) => {$0}',
+      body: 'const ${1:fn} = ($2) => {$0}',
     },
     nfna: {
       name: 'async named arrow function',
-      body: 'const $1 = async ($2) => {$0}',
+      body: 'const ${1:fn} = async ($2) => {$0}',
     },
     af: {
       name: 'arrow function',
       body: '($1) => $0',
+    },
+    arr: {
+      name: 'arrow function arrow',
+      body: '=> $0',
     },
     afa: {
       name: 'async arrow function',
