@@ -10,35 +10,28 @@
 
 ## Features
 
-- Over **180** carefully crafted snippets
+- Over **200** carefully crafted snippets
 - Modern JavaScript syntax
 - Modern JavaScript APIs (Intl, URL, Navigator...)
 - Strategically placed tabstops
 - Prefixes created with exact-match in mind
-- (Mostly) GitHub Copilot compliant
 - Auto-generated documentation
 
 ## Support
 
-Only JavaScript and TypeScript will be supported. Specific frameworks will get
-their own extensions. No bloat.
+Only JavaScript and TypeScript will be supported. Specific frameworks get their own extensions. No bloat.
 
 ## Setup
 
-The following is not mandatory, but could provide a nicer experience. Test them
-out and see what works best for you.
+The following is not mandatory, but could provide a nicer experience. Test them out and decide what works best for you.
 
 Look for it in user settings, or edit the settings.json directly:
 
 ```jsonc
-// Mainly to strip semicolons added for better tabstop management during active snippet (or add them, according to your formatter config)
 "editor.formatOnSave": true,
 
 // Tab complete snippets when their prefix match. Works best when 'quickSuggestions' aren't enabled.
 "editor.tabCompletion": "onlySnippets"
-
-// Controls whether an active snippet prevents quick suggestions. It has its pros and cons though.
-// "editor.suggest.snippetsPreventQuickSuggestions": false,
 ```
 
 ## Style
