@@ -1,7 +1,7 @@
 {
   "name": "modern-js-snippets",
   "displayName": "Modern JavaScript Snippets ⚡",
-  "description": "Code snippets for modern JavaScript & TypeScript",
+  "description": "Short and effective JavaScript & TypeScript snippets for the modern-day developer.",
   "version": "0.7.1",
   "license": "MIT",
   "icon": "assets/icon.png",

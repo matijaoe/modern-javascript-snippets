@@ -1,7 +1,6 @@
 # Modern JavaScript Snippets ⚡
 
-> Short and memorable JavaScript & TypeScript snippets for the modern-day
-> developer.
+> Short and effective JavaScript & TypeScript snippets for the modern-day developer.
 
 <br>
 
