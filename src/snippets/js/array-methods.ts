@@ -1,69 +1,69 @@
-import { XSnippetDefinition } from "../../models/app.ts";
+import { XSnippetDefinition } from '../../models/app.ts'
 
 export const arrayMethods: XSnippetDefinition = {
   meta: {
-    title: "Array methods",
+    title: 'Array methods',
   },
   snippets: {
     aat: {
-      name: "array.at",
-      body: "$1.at(${2:0})",
+      name: 'array.at',
+      body: '$1.at(${2:0})',
     },
     fe: {
-      name: "Array.forEach()",
-      body: "$1.forEach((${2:item}) => {\n\t$0\n})",
+      name: 'Array.forEach()',
+      body: '$1.forEach((${2:item}) => {\n\t$0\n})',
     },
     map: {
-      name: "Array.map()",
-      body: "$1.map((${2:item}) => ${3})",
+      name: 'Array.map()',
+      body: '$1.map((${2:item}) => ${3})',
     },
     fmap: {
-      name: "Array.map()",
-      body: "$1.flatMap((${2:item}) => ${3})",
+      name: 'Array.map()',
+      body: '$1.flatMap((${2:item}) => ${3})',
     },
     reduce: {
-      name: "Array.reduce()",
-      body: "$1.reduce((${2:acc}, ${3:curr}) => {\n\t$0\n}, ${4:initial})",
+      name: 'Array.reduce()',
+      body: '$1.reduce((${2:acc}, ${3:curr}) => {\n\t$0\n}, ${4:initial})',
     },
     reduceRight: {
-      name: "Array.reduceRight()",
-      body: "$1.reduceRight((${2:acc}, ${3:curr}) => {\n\t$0\n}, ${4:initial})",
+      name: 'Array.reduceRight()',
+      body: '$1.reduceRight((${2:acc}, ${3:curr}) => {\n\t$0\n}, ${4:initial})',
     },
     filter: {
-      name: "Array.filter()",
-      body: "$1.filter((${2:item}) => ${3})",
+      name: 'Array.filter()',
+      body: '$1.filter((${2:item}) => ${3})',
     },
     find: {
-      name: "Array.find()",
-      body: "$1.find((${2:item}) => ${3})",
+      name: 'Array.find()',
+      body: '$1.find((${2:item}) => ${3})',
     },
     findl: {
-      name: "Array.findLast()",
-      body: "$1.findLast((${2:item}) => ${3})",
+      name: 'Array.findLast()',
+      body: '$1.findLast((${2:item}) => ${3})',
     },
     findi: {
-      name: "Array.findIndex()",
-      body: "$1.findIndex((${2:item}) => ${3})",
+      name: 'Array.findIndex()',
+      body: '$1.findIndex((${2:item}) => ${3})',
     },
     findli: {
-      name: "Array.findLastIndex()",
-      body: "$1.findLastIndex((${2:item}) => ${3})",
+      name: 'Array.findLastIndex()',
+      body: '$1.findLastIndex((${2:item}) => ${3})',
     },
     every: {
-      name: "Array.every()",
-      body: "$1.every((${2:item}) => ${3})",
+      name: 'Array.every()',
+      body: '$1.every((${2:item}) => ${3})',
     },
     some: {
-      name: "Array.some()",
-      body: "$1.some((${2:item}) => ${3})",
+      name: 'Array.some()',
+      body: '$1.some((${2:item}) => ${3})',
     },
     reverse: {
-      name: "Array.reverse()",
-      body: "$1.reverse()",
+      name: 'Array.reverse()',
+      body: '$1.reverse()',
     },
     sort: {
-      name: "Array.sort(",
-      body: "$1.sort((${2:a}, ${3:b}) => $4)",
+      name: 'Array.sort(',
+      body: '$1.sort((${2:a}, ${3:b}) => $4)',
     },
     // TODO: experimental
     // group: {
@@ -75,20 +75,20 @@ export const arrayMethods: XSnippetDefinition = {
     //   body: "$1.groupToMap((${2:item}) => $3)",
     // },
     mapStr: {
-      name: "Array.map() as string",
-      body: "$1.map(String)",
+      name: 'Array.map() as string',
+      body: '$1.map(String)',
     },
     mapNum: {
-      name: "Array.map() as number",
-      body: "$1.map(Number)",
+      name: 'Array.map() as number',
+      body: '$1.map(Number)',
     },
     filterTrue: {
-      name: "Array.filter() truthy",
-      body: "$1.filter(Boolean)",
+      name: 'Array.filter() truthy',
+      body: '$1.filter(Boolean)',
     },
     arfr: {
-      name: "Array.from",
-      body: "Array.from($1)",
+      name: 'Array.from',
+      body: 'Array.from($1)',
     },
   },
-};
+}

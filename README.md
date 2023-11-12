@@ -1,30 +1,35 @@
 # Modern JavaScript Snippets ⚡
 
-> Short and memorable JavaScript & TypeScript snippets for the modern-day developer.
+> Short and memorable JavaScript & TypeScript snippets for the modern-day
+> developer.
 
 <br>
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1C.svg?style=for-the-badge&logo=javascript&logoColor=%23323330)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-
 ## Features
+
 - Over **180** carefully crafted snippets
 - Modern JavaScript syntax
 - Modern JavaScript APIs (Intl, URL, Navigator...)
 - Strategically placed tabstops
-- Prefixes created with exact-match in mind 
+- Prefixes created with exact-match in mind
 - (Mostly) GitHub Copilot compliant
 - Auto-generated documentation
 
 ## Support
-Only JavaScript and TypeScript will be supported. 
-Specific frameworks will get their own extensions. No bloat.
+
+Only JavaScript and TypeScript will be supported. Specific frameworks will get
+their own extensions. No bloat.
 
 ## Setup
-The following is not mandatory, but could provide a nicer experience. Test them out and see what works best for you.
+
+The following is not mandatory, but could provide a nicer experience. Test them
+out and see what works best for you.
 
 Look for it in user settings, or edit the settings.json directly:
+
 ```jsonc
 // Mainly to strip semicolons added for better tabstop management during active snippet (or add them, according to your formatter config)
 "editor.formatOnSave": true,
@@ -37,27 +42,34 @@ Look for it in user settings, or edit the settings.json directly:
 ```
 
 ## Style
-Most of the code snippets are without semicolons (`;`), except for where it allows for better tabstop management. Strings use single quotes (`'`).
 
-It's highly recommended to use these snippets along with Prettier/ESLint to have your code automatically formatted to your preference.
+Most of the code snippets are without semicolons (`;`), except for where it
+allows for better tabstop management. Strings use single quotes (`'`).
+
+It's highly recommended to use these snippets along with Prettier/ESLint to have
+your code automatically formatted to your preference.
 
 ## Snippet syntax
 
 ### Tabstops
-- `$1`, `$2`, `$3` specify cursor locations, in order in which tabstops will be visited
+
+- `$1`, `$2`, `$3` specify cursor locations, in order in which tabstops will be
+  visited
 - `$0` denotes the final cursor position
 - Multiple occurrences of the same tabstop are linked and updated in sync
 
 ### Placeholders
-- Tabstops with default values → `${1:name}` 
+
+- Tabstops with default values → `${1:name}`
 
 ### Choices
-- Tabstops with multiple values → `${1|one,two,three|}`. 
-- Truncated in documentation, for easier viewing → `${1|one,...|}`. 
+
+- Tabstops with multiple values → `${1|one,two,three|}`.
+- Truncated in documentation, for easier viewing → `${1|one,...|}`.
 
 <!-- START:docs-gen -->
-## Snippets
 
+## Snippets
 
 ### Assignments
 
@@ -99,7 +111,7 @@ let $0
 <td>
 
 ```javascript
-const $1 = $2;
+const $1 = $2
 ```
 
 </td>
@@ -111,7 +123,7 @@ const $1 = $2;
 <td>
 
 ```javascript
-let $1 = $2;
+let $1 = $2
 ```
 
 </td>
@@ -123,7 +135,7 @@ let $1 = $2;
 <td>
 
 ```javascript
-const $1 = '$2';
+const $1 = '$2'
 ```
 
 </td>
@@ -135,7 +147,7 @@ const $1 = '$2';
 <td>
 
 ```javascript
-let $1 = '$2';
+let $1 = '$2'
 ```
 
 </td>
@@ -246,7 +258,9 @@ const ${1} = ($2) => {$0}
 <td>
 
 ```javascript
-const $1 = async ($2) => {$0}
+const $1 = async ($2) => {
+  $0
+}
 ```
 
 </td>
@@ -258,7 +272,7 @@ const $1 = async ($2) => {$0}
 <td>
 
 ```javascript
-($1) => $0
+;(($1) => $0)
 ```
 
 </td>
@@ -270,7 +284,7 @@ const $1 = async ($2) => {$0}
 <td>
 
 ```javascript
-async ($1) => $0
+;(async ($1) => $0)
 ```
 
 </td>
@@ -282,9 +296,9 @@ async ($1) => $0
 <td>
 
 ```javascript
-($1) => {
+;(($1) => {
   $0
-}
+})
 ```
 
 </td>
@@ -296,9 +310,9 @@ async ($1) => $0
 <td>
 
 ```javascript
-async ($1) => {
+;(async ($1) => {
   $0
-}
+})
 ```
 
 </td>
@@ -310,7 +324,7 @@ async ($1) => {
 <td>
 
 ```javascript
-(($1) => {
+;(($1) => {
   $0
 })($2)
 ```
@@ -335,7 +349,7 @@ async ($1) => {
 <td>
 
 ```javascript
-if ($1) {$2}
+if ($1) $2
 ```
 
 </td>
@@ -347,7 +361,8 @@ if ($1) {$2}
 <td>
 
 ```javascript
-if ($1) {$2} else {$3}
+if ($1) $2
+else $3
 ```
 
 </td>
@@ -359,7 +374,8 @@ if ($1) {$2} else {$3}
 <td>
 
 ```javascript
-if ($1) {$2} else if ($3) {$4}
+if ($1) $2
+else if ($3) $4
 ```
 
 </td>
@@ -422,8 +438,10 @@ const $1 = $2 ? $3 : $4
 
 ```javascript
 switch ($1) {
-  case $2 : $3
-  default: $0
+  case $2:
+    $3
+  default:
+    $0
 }
 ```
 
@@ -1023,7 +1041,7 @@ Array.from($1)
 <td>
 
 ```javascript
-import { $2 } from '${1:module}';
+import { $2 } from '${1:module}'
 ```
 
 </td>
@@ -1035,7 +1053,7 @@ import { $2 } from '${1:module}';
 <td>
 
 ```javascript
-import $2 from '${1:module}';
+import $2 from '${1:module}'
 ```
 
 </td>
@@ -1059,7 +1077,7 @@ import ${2:*} as ${3:name} from '${1:module}';
 <td>
 
 ```javascript
-import '$1';
+import '$1'
 ```
 
 </td>
@@ -1143,7 +1161,7 @@ export default $0
 <td>
 
 ```javascript
-export { $0 } from '${1:module}';
+export { $0 } from '${1:module}'
 ```
 
 </td>
@@ -1155,7 +1173,7 @@ export { $0 } from '${1:module}';
 <td>
 
 ```javascript
-export * from '${1:module}';
+export * from '${1:module}'
 ```
 
 </td>
@@ -1230,7 +1248,7 @@ export const ${1:name} = ($2) => {$0}
 <td>
 
 ```javascript
-fetch($1).then(res => res.json())
+fetch($1).then((res) => res.json())
 ```
 
 </td>
@@ -1362,7 +1380,9 @@ Promise.any($1)
 </table>
 
 ### Literals, operators, expressions
+
 Grouping them all together for now
+
 <table width="100%">
 
 <tr>
@@ -1377,7 +1397,7 @@ Grouping them all together for now
 <td>
 
 ```javascript
-[$0]
+;[$0]
 ```
 
 </td>
@@ -1389,7 +1409,9 @@ Grouping them all together for now
 <td>
 
 ```javascript
-{ $1: $2,$0 }
+{
+  $1: $2, $0
+}
 ```
 
 </td>
@@ -1402,7 +1424,7 @@ Grouping them all together for now
 
 ```javascript
 {
-  $1: $2,$0
+  $1: $2, $0
 }
 ```
 
@@ -1415,7 +1437,7 @@ Grouping them all together for now
 <td>
 
 ```javascript
-`$0`
+;`$0`
 ```
 
 </td>
@@ -1427,7 +1449,7 @@ Grouping them all together for now
 <td>
 
 ```javascript
-`$1${$2}$3`
+;`$1${$2}$3`
 ```
 
 </td>
@@ -1475,7 +1497,7 @@ new Map($1)
 <td>
 
 ```javascript
-[...$1]
+;[...$1]
 ```
 
 </td>
@@ -1595,7 +1617,7 @@ $1 === $0
 <td>
 
 ```javascript
-$1 ||= $0;
+$1 ||= $0
 ```
 
 </td>
@@ -1607,7 +1629,7 @@ $1 ||= $0;
 <td>
 
 ```javascript
-$1 ??= $0;
+$1 ??= $0
 ```
 
 </td>
@@ -1761,7 +1783,7 @@ parseFloat($1)
 <td>
 
 ```javascript
-[...new Set($0)]
+;[...new Set($0)]
 ```
 
 </td>
@@ -1785,7 +1807,7 @@ parseFloat($1)
 <td>
 
 ```javascript
-navigator.clipboard.writeText($1);
+navigator.clipboard.writeText($1)
 ```
 
 </td>
@@ -1869,7 +1891,7 @@ return $0
 
 ```javascript
 return {
-  $0
+  $0,
 }
 ```
 
@@ -1882,7 +1904,7 @@ return {
 <td>
 
 ```javascript
-return ({$0})
+return ({ $0 })
 ```
 
 </td>
@@ -1947,7 +1969,7 @@ setTimeout(() => {
 ```javascript
 setImmediate(() => {
   $0
-});
+})
 ```
 
 </td>
@@ -1961,7 +1983,7 @@ setImmediate(() => {
 ```javascript
 process.nextTick(() => {
   $0
-});
+})
 ```
 
 </td>
@@ -2378,7 +2400,7 @@ const $1 = require('${1:module}')
 <td>
 
 ```javascript
-module.exports = {$1}
+module.exports = { $1 }
 ```
 
 </td>
@@ -2386,7 +2408,9 @@ module.exports = {$1}
 </table>
 
 ### Intl
+
 Internationalization API
+
 <table width="100%">
 
 <tr>
@@ -2414,8 +2438,9 @@ new Intl.NumberFormat('${1|en-US,...|}'$3).format($2);
 
 ```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
-  style: '${3|decimal,...|}',$4
-}).format($2);
+  style: '${3|decimal,...|}',
+  $4,
+}).format($2)
 ```
 
 </td>
@@ -2429,8 +2454,9 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 ```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
   style: 'currency',
-  currency: '${3|USD,...|}',$4
-}).format($2);
+  currency: '${3|USD,...|}',
+  $4,
+}).format($2)
 ```
 
 </td>
@@ -2443,8 +2469,9 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 
 ```javascript
 new Intl.NumberFormat('${1|en-US,...|}', {
-  style: 'percent',$3
-}).format($2);
+  style: 'percent',
+  $3,
+}).format($2)
 ```
 
 </td>
@@ -2459,8 +2486,9 @@ new Intl.NumberFormat('${1|en-US,...|}', {
 new Intl.NumberFormat('${1|en-US,...|}', {
   style: 'unit',
   unit: '${3|acceleration-g-force,...|}',
-  unitDisplay: '${4|long,...|}',$0
-}).format($2);
+  unitDisplay: '${4|long,...|}',
+  $0,
+}).format($2)
 ```
 
 </td>
@@ -2484,9 +2512,10 @@ new Intl.DateTimeFormat('${1|en-US,...|}'$3).format($2);
 <td>
 
 ```javascript
-new Intl.DateTimeFormat ('${1|en-US,...|}', {
-  dateStyle: '$3',$0
-}).format($2);
+new Intl.DateTimeFormat('${1|en-US,...|}', {
+  dateStyle: '$3',
+  $0,
+}).format($2)
 ```
 
 </td>
@@ -2797,8 +2826,8 @@ import.meta.env.$0
 </tr>
 </table>
 
-
 ## TypeScript
+
 Available only where TypeScript is supported
 
 ### Declarations
